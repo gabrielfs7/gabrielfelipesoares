@@ -1,2 +1,3 @@
-# gabrielfelipesoares
-Personal Blog
+# Gabriel Felipe Soares Blog
+
+My Personal Blog
