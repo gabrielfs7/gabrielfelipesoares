@@ -17,13 +17,15 @@ After finish the implementation of the so (or sometimes not) desired system, how
 
 **Model checking** is the technique to check if the behaviour of the **State Model** of your system work as expected and notify any **violation**. 
 
-The **State Model** is an abstract **State Machine** that can be in one or various states, so the **Model checker** can verify if the state mode conforms with expected behavior and properties.
+## What is a State Model?
 
-## What are the State Model
+The **State Model** is an abstract **State Machine** that can be in one or various states, so the **Model checker** can verify if the state mode conforms with expected behavior and properties.
 
 ### Modeling phase
 
 Describe all possible states and properties to be checked against your system.
+
+You can use Unit Tests, BDD, etc. There are many tools out there to help you.
 
 ### Running phase
 
