@@ -1,7 +1,7 @@
 ---
 title: Object Modeling Principles
 categories:
-- Software Architecture
+- Software-Architecture
 feature_image: "https://picsum.photos/2560/600?image=87"
 ---
 
@@ -53,10 +53,29 @@ Instead of get crazy, we start breaking down (or decomposing) the previous class
 
 The goal here is to go deep in the details by decomposing the big problem in smaller and cotrolled solutons.
 
+### Types of Decomposition relations
+
+#### Association
+
+- Relationship is optional
+- Associated classes are completely independent.
+
+#### Aggregatione
+
+- Weak **has-a** relationship.
+- One object does not need to have the other to exist.
+
+#### Composition
+
+- Strong **has-a** relationship
+- Associated classes are **completely dependent**. Example, an object **Human** always has an object **Brain** associated, otherwise it cannot exist.
+
 
 ## 3. Encapsulation
 
-When decomposing the classes we start creating new methods and attributes that concern only for those classes. It is time to use inheritance, abstraction and access modifiers to to restrict for them. We have some conventions for this like "getters" and "setter" methods, besides today they are controversial in some cases after the surge of Object Calisthenics.
+When decomposing the classes we start creating new methods and attributes that concern only for those classes. It is time to use inheritance, abstraction and access modifiers to to restrict for them. 
+
+We have some conventions for this like "getters" and "setter" methods, besides today they are controversial in some cases after the surge of Object Calisthenics.
 
 
 ## 4. Generalization

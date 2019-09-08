@@ -16,8 +16,8 @@
 <meta property="og:locale" content="en_GB" />
 <meta name="description" content="There are 4 important Principles when modeling objects! They are the ADEG. Yes, as always I have invented a word to memorize them! Lets talk about them." />
 <meta property="og:description" content="There are 4 important Principles when modeling objects! They are the ADEG. Yes, as always I have invented a word to memorize them! Lets talk about them." />
-<link rel="canonical" href="http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/" />
-<meta property="og:url" content="http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/" />
+<link rel="canonical" href="http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/" />
+<meta property="og:url" content="http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/" />
 <meta property="og:site_name" content="Gabriel’s Blog" />
 <meta property="og:image" content="http://0.0.0.0:4000/assets/default-social-image.png" />
 <meta property="og:type" content="article" />
@@ -28,7 +28,7 @@
 <meta name="twitter:site" content="@GabrielSoaresOn" />
 <meta name="twitter:creator" content="@Gabriel Felipe Soares" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Gabriel Felipe Soares"},"headline":"Object Modeling Principles","dateModified":"2019-09-07T00:00:00+01:00","datePublished":"2019-09-07T00:00:00+01:00","description":"There are 4 important Principles when modeling objects! They are the ADEG. Yes, as always I have invented a word to memorize them! Lets talk about them.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/assets/logos/logo.svg"},"name":"Gabriel Felipe Soares"},"image":"http://0.0.0.0:4000/assets/default-social-image.png","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/"},"url":"http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Gabriel Felipe Soares"},"headline":"Object Modeling Principles","dateModified":"2019-09-07T00:00:00+01:00","datePublished":"2019-09-07T00:00:00+01:00","description":"There are 4 important Principles when modeling objects! They are the ADEG. Yes, as always I have invented a word to memorize them! Lets talk about them.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/assets/logos/logo.svg"},"name":"Gabriel Felipe Soares"},"image":"http://0.0.0.0:4000/assets/default-social-image.png","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/"},"url":"http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -214,7 +214,7 @@
   
   
     
-      <span class="label  label--category"><a href="/categories/#software architecture">Software Architecture</a></span>
+      <span class="label  label--category"><a href="/categories/#software-architecture">Software-Architecture</a></span>
     
   &nbsp;&middot;&nbsp;<time datetime="2019-09-07T00:00:00+01:00" class="time">07 Sep 2019</time>
 </small>
@@ -265,9 +265,34 @@
 
 <p>The goal here is to go deep in the details by decomposing the big problem in smaller and cotrolled solutons.</p>
 
+<h3 id="types-of-decomposition-relations">Types of Decomposition relations</h3>
+
+<h4 id="association">Association</h4>
+
+<ul>
+  <li>Relationship is optional</li>
+  <li>Associated classes are completely independent.</li>
+</ul>
+
+<h4 id="aggregatione">Aggregatione</h4>
+
+<ul>
+  <li>Weak <strong>has-a</strong> relationship.</li>
+  <li>One object does not need to have the other to exist.</li>
+</ul>
+
+<h4 id="composition">Composition</h4>
+
+<ul>
+  <li>Strong <strong>has-a</strong> relationship</li>
+  <li>Associated classes are <strong>completely dependent</strong>. Example, an object <strong>Human</strong> always has an object <strong>Brain</strong> associated, otherwise it cannot exist.</li>
+</ul>
+
 <h2 id="3-encapsulation">3. Encapsulation</h2>
 
-<p>When decomposing the classes we start creating new methods and attributes that concern only for those classes. It is time to use inheritance, abstraction and access modifiers to to restrict for them. We have some conventions for this like “getters” and “setter” methods, besides today they are controversial in some cases after the surge of Object Calisthenics.</p>
+<p>When decomposing the classes we start creating new methods and attributes that concern only for those classes. It is time to use inheritance, abstraction and access modifiers to to restrict for them.</p>
+
+<p>We have some conventions for this like “getters” and “setter” methods, besides today they are controversial in some cases after the surge of Object Calisthenics.</p>
 
 <h2 id="4-generalization">4. Generalization</h2>
 
@@ -294,7 +319,7 @@
 
       
 
-      <a class="button" href="https://twitter.com/intent/tweet/?url=http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/&text=Object%20Modeling%20Principles&via=GabrielSoaresOn" style="background: #0d94e7">Twitter&nbsp; <svg width="16" height="16" class="icon  icon--twitter" role="img" alt="twitter"><title>twitter</title><use xlink:href="#twitter" fill="CurrentColor"></use></svg>
+      <a class="button" href="https://twitter.com/intent/tweet/?url=http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/&text=Object%20Modeling%20Principles&via=GabrielSoaresOn" style="background: #0d94e7">Twitter&nbsp; <svg width="16" height="16" class="icon  icon--twitter" role="img" alt="twitter"><title>twitter</title><use xlink:href="#twitter" fill="CurrentColor"></use></svg>
 </a>
 
     
@@ -307,7 +332,7 @@
 
       
 
-      <a class="button" href="https://facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/" style="background: #3B5998">facebook&nbsp; <svg width="16" height="16" class="icon  icon--facebook" role="img" alt="facebook"><title>facebook</title><use xlink:href="#facebook" fill="CurrentColor"></use></svg>
+      <a class="button" href="https://facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/" style="background: #3B5998">facebook&nbsp; <svg width="16" height="16" class="icon  icon--facebook" role="img" alt="facebook"><title>facebook</title><use xlink:href="#facebook" fill="CurrentColor"></use></svg>
 </a>
 
     
@@ -320,7 +345,7 @@
 
       
 
-      <a class="button" href="mailto:?subject=Object Modeling Principles&body=Hey, check out this: http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/" style="background: true">Email&nbsp; <svg width="16" height="16" class="icon  icon--email" role="img" alt="email"><title>email</title><use xlink:href="#email" fill="CurrentColor"></use></svg>
+      <a class="button" href="mailto:?subject=Object Modeling Principles&body=Hey, check out this: http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/" style="background: true">Email&nbsp; <svg width="16" height="16" class="icon  icon--email" role="img" alt="email"><title>email</title><use xlink:href="#email" fill="CurrentColor"></use></svg>
 </a>
 
     

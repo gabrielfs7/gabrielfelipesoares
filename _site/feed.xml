@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-08T15:40:15+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architecture Design Principles</title><link href="http://0.0.0.0:4000/software%20architecture/2019/09/08/software-architecture-design-principles/" rel="alternate" type="text/html" title="Software Architecture Design Principles" /><published>2019-09-08T00:00:00+01:00</published><updated>2019-09-08T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software%20architecture/2019/09/08/software-architecture-design-principles</id><content type="html" xml:base="http://0.0.0.0:4000/software%20architecture/2019/09/08/software-architecture-design-principles/">&lt;p&gt;There are 4 important &lt;em&gt;Design Principles&lt;/em&gt; to guide architects when modeling software. They are the &lt;strong&gt;CoSICi&lt;/strong&gt; principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-08T15:49:34+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architecture Design Principles</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles/" rel="alternate" type="text/html" title="Software Architecture Design Principles" /><published>2019-09-08T00:00:00+01:00</published><updated>2019-09-08T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles/">&lt;p&gt;There are 4 important &lt;em&gt;Design Principles&lt;/em&gt; to guide architects when modeling software. They are the &lt;strong&gt;CoSICi&lt;/strong&gt; principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -80,7 +80,7 @@ should only know what he needs to know to fill his purpose and also only expose 
   &lt;li&gt;Traininig and adjust knowledge levels of the individuals to be as similar as possible.&lt;/li&gt;
   &lt;li&gt;Do Code Reviews to reinforce the standards are being applyed.&lt;/li&gt;
   &lt;li&gt;Have a weel defined, accepted and execute SDLC (Software Development Life Cycle). Does not matter if you use Scrum, Kanban, whaterfall or whatever. If it is accepted and used by the individuals, this is what matters.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">There are 4 important Design Principles to guide architects when modeling software. They are the CoSICi principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Object Modeling Principles</title><link href="http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/" rel="alternate" type="text/html" title="Object Modeling Principles" /><published>2019-09-07T00:00:00+01:00</published><updated>2019-09-07T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles</id><content type="html" xml:base="http://0.0.0.0:4000/software%20architecture/2019/09/07/object-modeling-principles/">&lt;p&gt;There are 4 important &lt;em&gt;Principles&lt;/em&gt; when modeling objects! They are the &lt;strong&gt;ADEG&lt;/strong&gt;. Yes, as always I have invented a word to memorize them! Lets talk about them.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">There are 4 important Design Principles to guide architects when modeling software. They are the CoSICi principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Object Modeling Principles</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/" rel="alternate" type="text/html" title="Object Modeling Principles" /><published>2019-09-07T00:00:00+01:00</published><updated>2019-09-07T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/07/object-modeling-principles/">&lt;p&gt;There are 4 important &lt;em&gt;Principles&lt;/em&gt; when modeling objects! They are the &lt;strong&gt;ADEG&lt;/strong&gt;. Yes, as always I have invented a word to memorize them! Lets talk about them.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -126,9 +126,34 @@ should only know what he needs to know to fill his purpose and also only expose 
 
 &lt;p&gt;The goal here is to go deep in the details by decomposing the big problem in smaller and cotrolled solutons.&lt;/p&gt;
 
+&lt;h3 id=&quot;types-of-decomposition-relations&quot;&gt;Types of Decomposition relations&lt;/h3&gt;
+
+&lt;h4 id=&quot;association&quot;&gt;Association&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Relationship is optional&lt;/li&gt;
+  &lt;li&gt;Associated classes are completely independent.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;aggregatione&quot;&gt;Aggregatione&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Weak &lt;strong&gt;has-a&lt;/strong&gt; relationship.&lt;/li&gt;
+  &lt;li&gt;One object does not need to have the other to exist.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;composition&quot;&gt;Composition&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Strong &lt;strong&gt;has-a&lt;/strong&gt; relationship&lt;/li&gt;
+  &lt;li&gt;Associated classes are &lt;strong&gt;completely dependent&lt;/strong&gt;. Example, an object &lt;strong&gt;Human&lt;/strong&gt; always has an object &lt;strong&gt;Brain&lt;/strong&gt; associated, otherwise it cannot exist.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;3-encapsulation&quot;&gt;3. Encapsulation&lt;/h2&gt;
 
-&lt;p&gt;When decomposing the classes we start creating new methods and attributes that concern only for those classes. It is time to use inheritance, abstraction and access modifiers to to restrict for them. We have some conventions for this like “getters” and “setter” methods, besides today they are controversial in some cases after the surge of Object Calisthenics.&lt;/p&gt;
+&lt;p&gt;When decomposing the classes we start creating new methods and attributes that concern only for those classes. It is time to use inheritance, abstraction and access modifiers to to restrict for them.&lt;/p&gt;
+
+&lt;p&gt;We have some conventions for this like “getters” and “setter” methods, besides today they are controversial in some cases after the surge of Object Calisthenics.&lt;/p&gt;
 
 &lt;h2 id=&quot;4-generalization&quot;&gt;4. Generalization&lt;/h2&gt;
 

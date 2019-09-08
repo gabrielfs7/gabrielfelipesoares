@@ -1,7 +1,7 @@
 ---
 title: Software Architecture Design Principles
 categories:
-- Software Architecture
+- Software-Architecture
 feature_image: "https://picsum.photos/2560/600?image=872"
 ---
 
