@@ -1,8 +1,8 @@
-const version = '20190908144003';
+const version = '20190908154015';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/software%20architecture/2019/09/08/software-architecture-design-principles/","/categories/","/elements/","/blog/","/","/manifest.json","/offline/","/assets/search.json","/search/","/assets/styles.css","/thanks/","/redirects.json","/sitemap.xml","/robots.txt","/feed.xml","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return ["/software%20architecture/2019/09/08/software-architecture-design-principles/","/software%20architecture/2019/09/07/object-modeling-principles/","/categories/","/blog/","/","/manifest.json","/offline/","/assets/search.json","/search/","/assets/styles.css","/thanks/","/redirects.json","/sitemap.xml","/robots.txt","/feed.xml","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 

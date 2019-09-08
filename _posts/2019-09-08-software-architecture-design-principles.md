@@ -5,11 +5,13 @@ categories:
 feature_image: "https://picsum.photos/2560/600?image=872"
 ---
 
-*WIP:* This article is a working in progress. There could be some errors :) 
-
-There are 4 important *Design Principles* to guide architects when modeling software. They are the *CoSICi* principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!
+There are 4 important *Design Principles* to guide architects when modeling software. They are the **CoSICi** principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!
 
 <!-- more -->
+
+<small>
+*WIP:* This article is a working in progress. There could be some errors. I will also add some images to help the understanding :)
+</small>
 
 ## 1. (Co) Coupling & Cohesion
 
