@@ -2,7 +2,7 @@
 
 My Personal Blog
 
-You can (access here)[https://gabrielfs7.github.io].
+You can [access here](https://gabrielfs7.github.io).
 
 ## Instruction in case you want to run locally
 
@@ -14,7 +14,9 @@ You can (access here)[https://gabrielfs7.github.io].
 docker-compose up --force-recreate
 ```
 
-### Regenerate container if needed
+### Regenerate content
+
+If needed, you can regenerate Jekyll content by running these commands.
 
 ```
 docker exec -it gabriel_blog_app bash
