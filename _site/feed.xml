@@ -1,36 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-08T17:37:15+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Model Checking, What it is and why to use it</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking/" rel="alternate" type="text/html" title="Model Checking, What it is and why to use it" /><published>2019-09-08T00:00:00+01:00</published><updated>2019-09-08T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking/">&lt;p&gt;After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems ocurr even in the best companies.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;&lt;small&gt;
-&lt;em&gt;WIP:&lt;/em&gt; This article is a working in progress. There could be some errors. I will also add some images to help the understanding :)
-&lt;/small&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-model-checking&quot;&gt;What is Model Checking?&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Model checking&lt;/strong&gt; is the technique to check if the behaviour of the &lt;strong&gt;State Model&lt;/strong&gt; of your system work as expected and notify any &lt;strong&gt;violation&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;State Model&lt;/strong&gt; is an abstract &lt;strong&gt;State Machine&lt;/strong&gt; that can be in one or various states, so the &lt;strong&gt;Model checker&lt;/strong&gt; can verify if the state mode conforms with expected behavior and properties.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-are-the-state-model&quot;&gt;What are the State Model&lt;/h2&gt;
-
-&lt;h3 id=&quot;modeling-phase&quot;&gt;Modeling phase&lt;/h3&gt;
-
-&lt;p&gt;Describe all possible states and properties to be checked against your system.&lt;/p&gt;
-
-&lt;h3 id=&quot;running-phase&quot;&gt;Running phase&lt;/h3&gt;
-
-&lt;p&gt;Run the necessary test of your &lt;strong&gt;State Machine&lt;/strong&gt; against the expectations described on the previous phase.&lt;/p&gt;
-
-&lt;h3 id=&quot;analysis-phase&quot;&gt;Analysis phase&lt;/h3&gt;
-
-&lt;p&gt;Check the results of the previous phase. If the State Model does not conforms with certain behaviour or property we ha a &lt;strong&gt;Violation&lt;/strong&gt; AKA &lt;strong&gt;Counterexamples&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The outuput of a &lt;strong&gt;Counterexample&lt;/strong&gt; must show you exaclty how to reproduce the violation, so you system can be fixed.&lt;/p&gt;
-
-&lt;h2 id=&quot;when-should-i-do-a-model-checking&quot;&gt;When should I do a Model checking?&lt;/h2&gt;
-
-&lt;p&gt;Always &lt;strong&gt;after implementation&lt;/strong&gt; and &lt;strong&gt;before production deploy&lt;/strong&gt;. It is untrue that a Software can be perfect during the planning or modeling phases. The beauty of software is that it can change many times before and after its implementation. Business needs flexiblity, but we (developers) need to make sure it will work as expected after all those changes.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems ocurr even in the best companies.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Software Architecture Design Principles</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles/" rel="alternate" type="text/html" title="Software Architecture Design Principles" /><published>2019-09-08T00:00:00+01:00</published><updated>2019-09-08T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles/">&lt;p&gt;There are 4 important &lt;em&gt;Design Principles&lt;/em&gt; to guide architects when modeling software. They are the &lt;strong&gt;CoSICi&lt;/strong&gt; principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-08T17:39:25+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architecture Design Principles</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles/" rel="alternate" type="text/html" title="Software Architecture Design Principles" /><published>2019-09-08T00:00:00+01:00</published><updated>2019-09-08T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-design-principles/">&lt;p&gt;There are 4 important &lt;em&gt;Design Principles&lt;/em&gt; to guide architects when modeling software. They are the &lt;strong&gt;CoSICi&lt;/strong&gt; principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
