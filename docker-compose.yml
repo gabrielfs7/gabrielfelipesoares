@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  gabriel_blog_app:
+    container_name: gabriel_blog_app
+    build: ./docker
+    command: >
+      bash -c "cd /srv/jekyll
+      && pwd
+      && bundle install
+      && bundle exec jekyll serve"
+    working_dir: "/srv/jekyll"
+    volumes:
+      - ./:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
+    ports:
+      - '4000:4000'
+      - '35729:35729'
+    networks:
+      - gabriel_blog_network
+
+networks:
+  gabriel_blog_network:
+    external: true
