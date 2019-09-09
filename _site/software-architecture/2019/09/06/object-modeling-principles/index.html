@@ -223,9 +223,9 @@
 
 <!-- more -->
 
-<p>&lt;/small&gt;
+<p><small>
 <em>WIP:</em> This article is a working in progress. There could be some errors. I will also add some images to help the understanding :)
-&lt;/small&gt;</p>
+</small></p>
 
 <p>An brief history review, first:</p>
 
@@ -245,11 +245,58 @@
 
 <p>This was the age of Algol, C, Pascal and other programing languages that allowed developers to use Abstract Types and local variables.</p>
 
+<p><strong>C Struct example:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">struct</span> <span class="nx">Person</span>
+<span class="p">{</span>
+    <span class="nx">char</span> <span class="nx">name</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
+    <span class="nx">int</span> <span class="nx">citNo</span><span class="p">;</span>
+    <span class="nx">float</span> <span class="nx">salary</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
 <h1 id="1980s-to-now">1980’s to now</h1>
 
 <p>Finally the concept of object was applyed to program languages and became possible split the problem and classes and methods and became easier to use business language in the code.</p>
 
 <p>As examples of languages we can mention Java, C++, C# among many others object oriented languages.</p>
+
+<p><strong>Java class example</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kr">public</span> <span class="kd">class</span> <span class="nx">Car</span>
+<span class="p">{</span>
+    <span class="kr">private</span> <span class="nb">String</span> <span class="nx">brand</span><span class="p">;</span>
+    <span class="kr">private</span> <span class="nb">String</span> <span class="nx">model</span><span class="p">;</span>
+
+    <span class="kr">public</span> <span class="nx">Car</span><span class="p">(</span><span class="nb">String</span> <span class="nx">brand</span><span class="p">,</span> <span class="nb">String</span> <span class="nx">model</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">brand</span> <span class="o">=</span> <span class="nx">brand</span><span class="p">;</span>
+        <span class="nx">model</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    
+    <span class="kr">public</span> <span class="nb">String</span> <span class="nx">getModel</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">model</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="k">void</span> <span class="nx">setModel</span><span class="p">(</span><span class="nb">String</span> <span class="nx">model</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">model</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="nb">String</span> <span class="nx">getBrand</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">brand</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="k">void</span> <span class="nx">setBrand</span><span class="p">(</span><span class="nb">String</span> <span class="nx">brand</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">brand</span> <span class="o">=</span> <span class="nx">brand</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="1-abstraction">1. Abstraction</h2>
 
@@ -274,12 +321,22 @@
   <li>Associated classes are completely independent.</li>
 </ul>
 
-<h4 id="aggregatione">Aggregatione</h4>
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/uml-class-diagram-association.png" alt="Uml class diagram Association example" width="" height="" />
+  <figcaption class="caption">Uml class diagram Association example</figcaption>
+</figure>
+
+<h4 id="aggregation">Aggregation</h4>
 
 <ul>
   <li>Weak <strong>has-a</strong> relationship.</li>
   <li>One object does not need to have the other to exist.</li>
 </ul>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/uml-class-diagram-aggregation.png" alt="Uml class diagram aggregation example" width="" height="" />
+  <figcaption class="caption">Uml class diagram aggregation example</figcaption>
+</figure>
 
 <h4 id="composition">Composition</h4>
 
@@ -287,6 +344,11 @@
   <li>Strong <strong>has-a</strong> relationship</li>
   <li>Associated classes are <strong>completely dependent</strong>. Example, an object <strong>Human</strong> always has an object <strong>Brain</strong> associated, otherwise it cannot exist.</li>
 </ul>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/uml-class-diagram-composition.png" alt="Uml class diagram composition example" width="" height="" />
+  <figcaption class="caption">Uml class diagram composition example</figcaption>
+</figure>
 
 <h2 id="3-encapsulation">3. Encapsulation</h2>
 
@@ -297,6 +359,11 @@
 <h2 id="4-generalization">4. Generalization</h2>
 
 <p>When a class inherits behavior or interface from a superior (super) class we call it <strong>Generalization</strong>. It can happen in two ways:</p>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/uml-class-diagram-generalization.png" alt="Uml class diagram Generalization example" width="" height="" />
+  <figcaption class="caption">Uml class diagram Generalization example</figcaption>
+</figure>
 
 <h3 id="by-abstraction">By Abstraction</h3>
 

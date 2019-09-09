@@ -9,7 +9,7 @@ There are 4 important *Principles* when modeling objects! They are the **ADEG**.
 
 <!-- more -->
 
-</small>
+<small>
 *WIP:* This article is a working in progress. There could be some errors. I will also add some images to help the understanding :)
 </small>
 
@@ -32,12 +32,62 @@ In this time, programs started beign splited in multiple files and C header file
 This was the age of Algol, C, Pascal and other programing languages that allowed developers to use Abstract Types and local variables.
 
 
+**C Struct example:**
+
+``` js
+struct Person
+{
+    char name[50];
+    int citNo;
+    float salary;
+};
+```
+
+
+
 # 1980's to now
 
 Finally the concept of object was applyed to program languages and became possible split the problem and classes and methods and became easier to use business language in the code.
 
 As examples of languages we can mention Java, C++, C# among many others object oriented languages.
 
+**Java class example**
+
+``` js
+
+public class Car
+{
+    private String brand;
+    private String model;
+
+    public Car(String brand, String model)
+    {
+        brand = brand;
+        model = model;
+    }
+
+    
+    public String getModel()
+    {
+        return model;
+    }
+
+    public void setModel(String model)
+    {
+        model = model;
+    }
+
+    public String getBrand()
+    {
+        return brand;
+    }
+
+    public void setBrand(String brand)
+    {
+        brand = brand;
+    }
+}
+```
 
 ## 1. Abstraction
  
@@ -60,15 +110,21 @@ The goal here is to go deep in the details by decomposing the big problem in sma
 - Relationship is optional
 - Associated classes are completely independent.
 
-#### Aggregatione
+{% include post-figure.html image="uml-class-diagram-association.png" caption="Uml class diagram Association example" %}
+
+#### Aggregation
 
 - Weak **has-a** relationship.
 - One object does not need to have the other to exist.
+
+{% include post-figure.html image="uml-class-diagram-aggregation.png" caption="Uml class diagram aggregation example" %}
 
 #### Composition
 
 - Strong **has-a** relationship
 - Associated classes are **completely dependent**. Example, an object **Human** always has an object **Brain** associated, otherwise it cannot exist.
+
+{% include post-figure.html image="uml-class-diagram-composition.png" caption="Uml class diagram composition example" %}
 
 
 ## 3. Encapsulation
@@ -81,6 +137,8 @@ We have some conventions for this like "getters" and "setter" methods, besides t
 ## 4. Generalization
 
 When a class inherits behavior or interface from a superior (super) class we call it **Generalization**. It can happen in two ways:
+
+{% include post-figure.html image="uml-class-diagram-generalization.png" caption="Uml class diagram Generalization example" %}
 
 ### By Abstraction 
 
