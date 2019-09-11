@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-09T21:42:07+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Model Checking, What it is and why to use it</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking/" rel="alternate" type="text/html" title="Model Checking, What it is and why to use it" /><published>2019-09-08T00:00:00+01:00</published><updated>2019-09-08T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking/">&lt;p&gt;After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems ocurr even in the best companies.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-11T20:13:47+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Important concepts about Software Design and Software architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/" rel="alternate" type="text/html" title="Important concepts about Software Design and Software architecture" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/">&lt;p&gt;What is Software Design and Architecture? How they relate and differ each other?&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&quot;software-architecture&quot;&gt;Software Architecture&lt;/h1&gt;
+
+&lt;p&gt;You can imagine the project of a house as example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How many rooms does it have and how they are connected: What is the house position and how many people it can support? These are higher level questions and show interactions of many “components” in a wide scope.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So during the architecture we need to know:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The big picture of the problem we need to solve.&lt;/li&gt;
+  &lt;li&gt;What are the possible solutions.&lt;/li&gt;
+  &lt;li&gt;Define how the “overall” solution would look like.&lt;/li&gt;
+  &lt;li&gt;Necessary requirements for an stable and long living solution.&lt;/li&gt;
+  &lt;li&gt;Define the quality tradeoffs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-quality-trade-off&quot;&gt;What is quality trade-off?&lt;/h2&gt;
+
+&lt;p&gt;A tradeoff happens when to make an improvement you must sacrifice some other quality, for example: Adding security layer even if it costs some performance, but application is safier.&lt;/p&gt;
+
+&lt;h1 id=&quot;software-design&quot;&gt;Software Design&lt;/h1&gt;
+
+&lt;p&gt;For the very same project of the house, now we need to build the kitchen.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Which pipes will we use? What will be the wall’s colors and material. How many sinks and which sizes? etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When we enter in “implementation” details of a “components” we are talking about the design. But what are the stages of the design?&lt;/p&gt;
+
+&lt;h2 id=&quot;stage-1-conceptual-design&quot;&gt;Stage 1: Conceptual Design&lt;/h2&gt;
+
+&lt;p&gt;This part is closer to the software behaviour and funcional validation.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Collect and validate customer requirements.&lt;/li&gt;
+  &lt;li&gt;Create conceptual mockups: Mockups will help you visualize your problem space in the earliest stages.&lt;/li&gt;
+  &lt;li&gt;Validate mockups with customers.&lt;/li&gt;
+  &lt;li&gt;Create the CRC (Class Responsibility Colaborator) cards: They will help you identify classes and components.&lt;/li&gt;
+  &lt;li&gt;Reveal “hidden” questions from customer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;technical-design&quot;&gt;Technical Design&lt;/h2&gt;
+
+&lt;p&gt;This part is closer to the software implementation.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Turn the conceptual design into a more precise design. Go into details, for instance using UML.&lt;/li&gt;
+  &lt;li&gt;Define code structure and turn mockups into classes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;what-is-crc-class-responsibility-colaborator&quot;&gt;What is CRC (Class Responsibility Colaborator)?&lt;/h1&gt;
+
+&lt;p&gt;This technique helps you see the relations between classes or components.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Class or Component: The class or components that interact with other class or components.&lt;/li&gt;
+  &lt;li&gt;Responsibilities: The responsibilities of this component.&lt;/li&gt;
+  &lt;li&gt;Colaborators: Components this component interacts with.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;what-are-the-categories-of-objects-we-found-in-the-design-phase&quot;&gt;What are the categories of objects we found in the design phase?&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Entity Objects: Real world entities that know threis rules and attributes. Example: Customer.&lt;/li&gt;
+  &lt;li&gt;Boundary objects: Objects responsible to collect / send information to other systems. Example: Gateway, ContactForm.&lt;/li&gt;
+  &lt;li&gt;Control objects: Objects that control other objects. Example: “Mediator”.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">What is Software Design and Architecture? How they relate and differ each other?</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Emulate Android on Android Studio 3 using Mac OSX El Captain 10.11.6</title><link href="http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/" rel="alternate" type="text/html" title="Emulate Android on Android Studio 3 using Mac OSX El Captain 10.11.6" /><published>2019-09-10T00:00:00+01:00</published><updated>2019-09-10T00:00:00+01:00</updated><id>http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6</id><content type="html" xml:base="http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/">&lt;p&gt;If you are having problems to emulate Android using Mac OSX El Captain 10.11.6, may this can help you.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;If when trying to run the emulation you got the following message:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Emulator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Sorry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;qemu-system-x86_64&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Qt&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;requires&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;later&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The solution can be downgrad your emulator version to (Android Emulator Version 28.0.25)[https://dl.google.com/android/repository/emulator-darwin-5395263.zip].&lt;/p&gt;
+
+&lt;p&gt;After download you should replace your current emulator with this one. The emulator for &lt;strong&gt;Android Studio&lt;/strong&gt; generally is located on:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;YOUR_USERNAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Library/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sdk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;emulator&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So you can just replace the files and restart your Android studio.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">If you are having problems to emulate Android using Mac OSX El Captain 10.11.6, may this can help you.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Model Checking, What it is and why to use it</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking/" rel="alternate" type="text/html" title="Model Checking, What it is and why to use it" /><published>2019-09-08T00:00:00+01:00</published><updated>2019-09-08T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking/">&lt;p&gt;After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems ocurr even in the best companies.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
