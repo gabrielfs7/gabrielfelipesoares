@@ -1,76 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-11T20:13:47+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Important concepts about Software Design and Software architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/" rel="alternate" type="text/html" title="Important concepts about Software Design and Software architecture" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/">&lt;p&gt;What is Software Design and Architecture? How they relate and differ each other?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-12T22:37:24+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">A brief overview about Software Design and Software architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/" rel="alternate" type="text/html" title="A brief overview about Software Design and Software architecture" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/">&lt;p&gt;What is Software Design and Architecture? How they relate and differ each other?&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
+&lt;p&gt;To try to understand Software Design/Architecture, we can do an analogy using a project of a house, for example:&lt;/p&gt;
+
 &lt;h1 id=&quot;software-architecture&quot;&gt;Software Architecture&lt;/h1&gt;
 
-&lt;p&gt;You can imagine the project of a house as example:&lt;/p&gt;
+&lt;p&gt;As an architect, you would have &lt;strong&gt;high level&lt;/strong&gt; concerns, such as:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;How many rooms does it have and how they are connected: What is the house position and how many people it can support? These are higher level questions and show interactions of many “components” in a wide scope.&lt;/li&gt;
+  &lt;li&gt;How many people does it needs to support?&lt;/li&gt;
+  &lt;li&gt;How many rooms does it have?&lt;/li&gt;
+  &lt;li&gt;How are they connected / acessible?&lt;/li&gt;
+  &lt;li&gt;What would be the best house position, angle, size?&lt;/li&gt;
+  &lt;li&gt;What is the region where the house is located?&lt;/li&gt;
+  &lt;li&gt;What materials should I use?&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;These are higher level questions and show &lt;strong&gt;interactions of many “components”&lt;/strong&gt; on a wide scope.&lt;/p&gt;
 
 &lt;p&gt;So during the architecture we need to know:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The big picture of the problem we need to solve.&lt;/li&gt;
-  &lt;li&gt;What are the possible solutions.&lt;/li&gt;
+  &lt;li&gt;The &lt;strong&gt;big picture&lt;/strong&gt; of the problem we need to solve.&lt;/li&gt;
+  &lt;li&gt;What are the &lt;strong&gt;possible solutions&lt;/strong&gt;.&lt;/li&gt;
   &lt;li&gt;Define how the “overall” solution would look like.&lt;/li&gt;
-  &lt;li&gt;Necessary requirements for an stable and long living solution.&lt;/li&gt;
-  &lt;li&gt;Define the quality tradeoffs.&lt;/li&gt;
+  &lt;li&gt;Raise the &lt;strong&gt;Necessary requirements&lt;/strong&gt; for an stable and long living solution.&lt;/li&gt;
+  &lt;li&gt;Define the &lt;strong&gt;quality tradeoffs&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;what-is-quality-trade-off&quot;&gt;What is quality trade-off?&lt;/h2&gt;
+&lt;h2 id=&quot;what-is-a-quality-trade-off&quot;&gt;What is a quality trade-off?&lt;/h2&gt;
 
-&lt;p&gt;A tradeoff happens when to make an improvement you must sacrifice some other quality, for example: Adding security layer even if it costs some performance, but application is safier.&lt;/p&gt;
+&lt;p&gt;A tradeoff happens when to make an improvement you must sacrifice some other quality, for example: Adding security layer even if it costs some performance, makes the application safier.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-important-skills-for-a-software-architect&quot;&gt;What are important skills for a Software Architect?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Tech Skills&lt;/strong&gt;: Having good years of experience programing with different languages, databases, frameworks, solving problems in different scales, etc are mandatory.
+    &lt;ul&gt;
+      &lt;li&gt;Design patterns.&lt;/li&gt;
+      &lt;li&gt;Code standards.&lt;/li&gt;
+      &lt;li&gt;Distributed processing.&lt;/li&gt;
+      &lt;li&gt;Network.&lt;/li&gt;
+      &lt;li&gt;Event Oriented and Object Oriented Programing.&lt;/li&gt;
+      &lt;li&gt;…Any other Technology close to your professional scope. Example: An architect for mobile apps, must know cloud computing, mobile programing (ie. Java), UI and so on.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Business knowledge&lt;/strong&gt;: An architect must be close to the business in order to clearly understand their needs and find the better approach to create a successful solution.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Organizational skills&lt;/strong&gt;: Handle multiple concerns: Security, Performance, Business requirements, technical limitations, deadlines, etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Soft skills&lt;/strong&gt;: It’s true that we use computers to create our applications, but we actually work with people for people. It’s important to maitain good relationship with colleagues from the team and other departments. Make the work environment pleasant and colaborative. Happy people produce more and do not get sick so often.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Know what is available&lt;/strong&gt;: Do not get stuck on your technologies and ideas. Always try to find out what is happening in the market, which technologies are available, what can you use? I mean, you do not need to know everything in details, but it comes handy when you have a problem to solve and planty of alternatives to nail it.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;software-design&quot;&gt;Software Design&lt;/h1&gt;
 
-&lt;p&gt;For the very same project of the house, now we need to build the kitchen.&lt;/p&gt;
+&lt;p&gt;Still considering the house project as example, the “Design” involves a &lt;strong&gt;low level&lt;/strong&gt; scope, which means, we can can &lt;strong&gt;go on details for a given component&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Considering we need to build the kitchen, now the questions are:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Which pipes will we use? What will be the wall’s colors and material. How many sinks and which sizes? etc.&lt;/li&gt;
+  &lt;li&gt;How would the person interact with the kitchen?&lt;/li&gt;
+  &lt;li&gt;How many sinks and which sizes we would need?&lt;/li&gt;
+  &lt;li&gt;For plumbing, which pipes should we use, and in which disposition?&lt;/li&gt;
+  &lt;li&gt;What will be the best material for this type of kitchen?&lt;/li&gt;
+  &lt;li&gt;How would be better electrical wires connections to use, and how many plugs and sockets?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;When we enter in “implementation” details of a “components” we are talking about the design. But what are the stages of the design?&lt;/p&gt;
+&lt;p&gt;When we enter in &lt;strong&gt;“implementation” details&lt;/strong&gt; of a &lt;strong&gt;“component”&lt;/strong&gt; we are talking about the design.&lt;/p&gt;
+
+&lt;p&gt;But what are the &lt;strong&gt;Stages of the Software Design&lt;/strong&gt;?&lt;/p&gt;
 
 &lt;h2 id=&quot;stage-1-conceptual-design&quot;&gt;Stage 1: Conceptual Design&lt;/h2&gt;
 
 &lt;p&gt;This part is closer to the software behaviour and funcional validation.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Collect and validate customer requirements.&lt;/li&gt;
-  &lt;li&gt;Create conceptual mockups: Mockups will help you visualize your problem space in the earliest stages.&lt;/li&gt;
-  &lt;li&gt;Validate mockups with customers.&lt;/li&gt;
-  &lt;li&gt;Create the CRC (Class Responsibility Colaborator) cards: They will help you identify classes and components.&lt;/li&gt;
-  &lt;li&gt;Reveal “hidden” questions from customer.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Concept validation&lt;/strong&gt;: Collect and validate customer requirements.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Conceptual mockups&lt;/strong&gt;: Create mockups to help you visualize your problems in the earlier stage.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Validate mockups&lt;/strong&gt;: Show, validate and adapt your mockups with the customers.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Create the CRC cards&lt;/strong&gt;: Class Responsibility Colaborator cards will help you identify classes and components in your system and how they interact each other.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Reveal “hidden” questions&lt;/strong&gt;: Durnig the previous steps, many questions might come to you. Bring them to the customer, before moving forward.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;technical-design&quot;&gt;Technical Design&lt;/h2&gt;
-
-&lt;p&gt;This part is closer to the software implementation.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Turn the conceptual design into a more precise design. Go into details, for instance using UML.&lt;/li&gt;
-  &lt;li&gt;Define code structure and turn mockups into classes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;what-is-crc-class-responsibility-colaborator&quot;&gt;What is CRC (Class Responsibility Colaborator)?&lt;/h1&gt;
+&lt;h3 id=&quot;what-is-crc-class-responsibility-colaborator&quot;&gt;What is CRC (Class Responsibility Colaborator)?&lt;/h3&gt;
 
 &lt;p&gt;This technique helps you see the relations between classes or components.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Class or Component: The class or components that interact with other class or components.&lt;/li&gt;
-  &lt;li&gt;Responsibilities: The responsibilities of this component.&lt;/li&gt;
-  &lt;li&gt;Colaborators: Components this component interacts with.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Class or Component&lt;/strong&gt;: The class or components that interact with other class or components.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Responsibilities&lt;/strong&gt;: The responsibilities of this component.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Colaborators&lt;/strong&gt;: Components this component interacts with.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;what-are-the-categories-of-objects-we-found-in-the-design-phase&quot;&gt;What are the categories of objects we found in the design phase?&lt;/h1&gt;
+&lt;h2 id=&quot;stage-2-technical-design&quot;&gt;Stage 2: Technical Design&lt;/h2&gt;
+
+&lt;p&gt;This part is closer to the software &lt;strong&gt;implementation&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Entity Objects: Real world entities that know threis rules and attributes. Example: Customer.&lt;/li&gt;
-  &lt;li&gt;Boundary objects: Objects responsible to collect / send information to other systems. Example: Gateway, ContactForm.&lt;/li&gt;
-  &lt;li&gt;Control objects: Objects that control other objects. Example: “Mediator”.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Go into details&lt;/strong&gt;: Turn the conceptual design into a more precise design, for example, start the UML class diagram.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Programing&lt;/strong&gt; Define code structure and turn mockups into classes and then an application.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;categories-of-objects&quot;&gt;Categories of objects&lt;/h3&gt;
+
+&lt;p&gt;During the technical design, many types of objects will be evidenced:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Entity Objects&lt;/strong&gt;: Real world entities that know threis rules and attributes. Example: Customer.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Boundary objects&lt;/strong&gt;: Objects responsible to collect / send information to other systems. Example: Gateway, ContactForm.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Control objects&lt;/strong&gt;: Objects that control other objects. Example: “Mediator”.&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">What is Software Design and Architecture? How they relate and differ each other?</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Emulate Android on Android Studio 3 using Mac OSX El Captain 10.11.6</title><link href="http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/" rel="alternate" type="text/html" title="Emulate Android on Android Studio 3 using Mac OSX El Captain 10.11.6" /><published>2019-09-10T00:00:00+01:00</published><updated>2019-09-10T00:00:00+01:00</updated><id>http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6</id><content type="html" xml:base="http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/">&lt;p&gt;If you are having problems to emulate Android using Mac OSX El Captain 10.11.6, may this can help you.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -218,7 +262,7 @@ should only know what he needs to know to fill his purpose and also only expose 
 
 &lt;p&gt;During the 1960’s there was the &lt;strong&gt;Imperative Paradigm&lt;/strong&gt; where programs basically were composed of routines that interact with other small routines and shared the same &lt;strong&gt;Global Variables&lt;/strong&gt;. The processment were really expensive and the focus were most about hardware capacity than in the solution itself.&lt;/p&gt;
 
-&lt;p&gt;This was the age of Cobol, Fortran and such imperative programing languages.&lt;/p&gt;
+&lt;p&gt;This was the age of (Cobol)[https://en.wikipedia.org/wiki/COBOL], (Fortran)[https://en.wikipedia.org/wiki/Fortran] and others &lt;strong&gt;Imperative Programing&lt;/strong&gt; languages.&lt;/p&gt;
 
 &lt;h1 id=&quot;1970s&quot;&gt;1970’s&lt;/h1&gt;
 
@@ -228,7 +272,7 @@ should only know what he needs to know to fill his purpose and also only expose 
 
 &lt;p&gt;In this time, programs started beign splited in multiple files and C header file was introduced.&lt;/p&gt;
 
-&lt;p&gt;This was the age of Algol, C, Pascal and other programing languages that allowed developers to use Abstract Types and local variables.&lt;/p&gt;
+&lt;p&gt;This was the age of (Algol)[https://www.computerhope.com/jargon/a/algol.htm], (C)[https://www.learn-c.org/], (Pascal)[https://www.freepascal.org/advantage.var]and other programing languages that allowed developers to use Abstract Types and local variables.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;C Struct example:&lt;/strong&gt;&lt;/p&gt;
 
@@ -244,7 +288,7 @@ should only know what he needs to know to fill his purpose and also only expose 
 
 &lt;p&gt;Finally the concept of object was applyed to program languages and became possible split the problem and classes and methods and became easier to use business language in the code.&lt;/p&gt;
 
-&lt;p&gt;As examples of languages we can mention Java, C++, C# among many others object oriented languages.&lt;/p&gt;
+&lt;p&gt;As examples of languages we can mention (Java)[https://en.wikipedia.org/wiki/Java_(programming_language)], C++, C# among many others object oriented languages.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Java class example&lt;/strong&gt;&lt;/p&gt;
 
