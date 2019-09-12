@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-12T22:37:24+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">A brief overview about Software Design and Software architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/" rel="alternate" type="text/html" title="A brief overview about Software Design and Software architecture" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/">&lt;p&gt;What is Software Design and Architecture? How they relate and differ each other?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-12T22:42:51+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">A brief overview about Software Design and Software architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/" rel="alternate" type="text/html" title="A brief overview about Software Design and Software architecture" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/">&lt;p&gt;What is Software Design and Architecture? How they relate and differ each other?&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -124,7 +124,7 @@
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Emulator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Sorry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;qemu-system-x86_64&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Qt&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;requires&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;later&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The solution can be downgrad your emulator version to (Android Emulator Version 28.0.25)[https://dl.google.com/android/repository/emulator-darwin-5395263.zip].&lt;/p&gt;
+&lt;p&gt;The solution can be downgrad your emulator version to &lt;a href=&quot;https://dl.google.com/android/repository/emulator-darwin-5395263.zip&quot;&gt;Android Emulator Version 28.0.25&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;After download you should replace your current emulator with this one. The emulator for &lt;strong&gt;Android Studio&lt;/strong&gt; generally is located on:&lt;/p&gt;
 
@@ -262,7 +262,7 @@ should only know what he needs to know to fill his purpose and also only expose 
 
 &lt;p&gt;During the 1960’s there was the &lt;strong&gt;Imperative Paradigm&lt;/strong&gt; where programs basically were composed of routines that interact with other small routines and shared the same &lt;strong&gt;Global Variables&lt;/strong&gt;. The processment were really expensive and the focus were most about hardware capacity than in the solution itself.&lt;/p&gt;
 
-&lt;p&gt;This was the age of (Cobol)[https://en.wikipedia.org/wiki/COBOL], (Fortran)[https://en.wikipedia.org/wiki/Fortran] and others &lt;strong&gt;Imperative Programing&lt;/strong&gt; languages.&lt;/p&gt;
+&lt;p&gt;This was the age of &lt;a href=&quot;https://en.wikipedia.org/wiki/COBOL&quot;&gt;Cobol&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Fortran&quot;&gt;Fortran&lt;/a&gt; and others &lt;strong&gt;Imperative Programing&lt;/strong&gt; languages.&lt;/p&gt;
 
 &lt;h1 id=&quot;1970s&quot;&gt;1970’s&lt;/h1&gt;
 
@@ -272,7 +272,7 @@ should only know what he needs to know to fill his purpose and also only expose 
 
 &lt;p&gt;In this time, programs started beign splited in multiple files and C header file was introduced.&lt;/p&gt;
 
-&lt;p&gt;This was the age of (Algol)[https://www.computerhope.com/jargon/a/algol.htm], (C)[https://www.learn-c.org/], (Pascal)[https://www.freepascal.org/advantage.var]and other programing languages that allowed developers to use Abstract Types and local variables.&lt;/p&gt;
+&lt;p&gt;This was the age of &lt;a href=&quot;https://www.computerhope.com/jargon/a/algol.htm&quot;&gt;Algol&lt;/a&gt;, &lt;a href=&quot;https://www.learn-c.org/&quot;&gt;C&lt;/a&gt;, &lt;a href=&quot;https://www.freepascal.org/advantage.var&quot;&gt;Pascal&lt;/a&gt; and other programing languages that allowed developers to use Abstract Types and local variables.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;C Struct example:&lt;/strong&gt;&lt;/p&gt;
 
@@ -288,7 +288,7 @@ should only know what he needs to know to fill his purpose and also only expose 
 
 &lt;p&gt;Finally the concept of object was applyed to program languages and became possible split the problem and classes and methods and became easier to use business language in the code.&lt;/p&gt;
 
-&lt;p&gt;As examples of languages we can mention (Java)[https://en.wikipedia.org/wiki/Java_(programming_language)], C++, C# among many others object oriented languages.&lt;/p&gt;
+&lt;p&gt;As examples of languages we can mention &lt;a href=&quot;https://en.wikipedia.org/wiki/Java_(programming_language)&quot;&gt;Java&lt;/a&gt;, C++, C# among many others object oriented languages.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Java class example&lt;/strong&gt;&lt;/p&gt;
 
