@@ -5,7 +5,7 @@ categories:
 feature_image: "https://picsum.photos/2560/600?image=872"
 ---
 
-After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems ocurr even in the best companies.
+After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems occur even in the best companies.
 
 <!-- more -->
 
@@ -15,7 +15,7 @@ After finish the implementation of the so (or sometimes not) desired system, how
 
 ## What is Model Checking?
 
-**Model checking** is the technique to check if the behaviour of the **State Model** of your system work as expected and notify any **violation**. 
+**Model checking** is the technique to check if the behavior of the **State Model** of your system work as expected and notify any **violation**. 
 
 ## What is a State Model?
 
@@ -33,11 +33,11 @@ Run the necessary test of your **State Machine** against the expectations descri
 
 ### Analysis phase
 
-Check the results of the previous phase. If the State Model does not conforms with certain behaviour or property we ha a **Violation** AKA **Counterexamples**. 
+Check the results of the previous phase. If the State Model does not conforms with certain behavior or property we ha a **Violation** AKA **Counterexamples**. 
 
-The outuput of a **Counterexample** must show you exaclty how to reproduce the violation, so you system can be fixed.
+The output of a **Counterexample** must show you exactly how to reproduce the violation, so you system can be fixed.
 
 
 ## When should I do a Model checking?
 
-Always **after implementation** and **before production deploy**. It is untrue that a Software can be perfect during the planning or modeling phases. The beauty of software is that it can change many times before and after its implementation. Business needs flexiblity, but we (developers) need to make sure it will work as expected after all those changes.
+Always **after implementation** and **before production deploy**. It is untrue that a Software can be perfect during the planning or modeling phases. The beauty of software is that it can change many times before and after its implementation. Business needs flexibility, but we (developers) need to make sure it will work as expected after all those changes.
