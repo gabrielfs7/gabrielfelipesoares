@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-14T18:05:18+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">A brief overview about Software Design and Software architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/" rel="alternate" type="text/html" title="A brief overview about Software Design and Software architecture" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/">&lt;p&gt;What is Software Design and Architecture? How they relate and differ each other?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-14T18:43:44+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">The 23 Design Patterns you must know</title><link href="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" rel="alternate" type="text/html" title="The 23 Design Patterns you must know" /><published>2019-09-12T00:00:00+01:00</published><updated>2019-09-12T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/">&lt;p&gt;Based on a famous book I will try to simplify and give examples of the 
+23 famous design patterns that can help your daily work as developer.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;If you do not know the book I am talking about, it is &lt;a href=&quot;https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612&quot;&gt;Design Patterns: Elements of Reusable Object-Oriented Software&lt;/a&gt;.
+Even nowadays the Book is still handy and we realize how timeless is its content.&lt;/p&gt;
+
+&lt;h1 id=&quot;before-we-start&quot;&gt;Before we start&lt;/h1&gt;
+
+&lt;p&gt;So what are &lt;strong&gt;Design Patterns&lt;/strong&gt;?&lt;/p&gt;
+
+&lt;p&gt;Yes, Design Patterns are everywhere we need to do a recurring action.&lt;/p&gt;
+
+&lt;p&gt;Besides construction, medicine, engineering, we have patterns also for teaching people, cooking (recipes), social interactions (greet, thanks, apologize), selling, designing packings and many many others areas.&lt;/p&gt;
+
+&lt;p&gt;Basically, for any repeating task, by experience, the specialists found approaches that work better on each situation and then it becomes a pattern.&lt;/p&gt;
+
+&lt;p&gt;Along the history developers have solved similar problems with different solutions. It turned out that to solve common problems, some solutions provided a better result and made the code more &lt;strong&gt;ReFlexMain&lt;/strong&gt;, which is &lt;strong&gt;Reusable, Flexible and Maintainable&lt;/strong&gt;, the holy trinity.&lt;/p&gt;
+
+&lt;p&gt;As an Architect, Software Engineer or Developer, Design patterns will give to you the &lt;strong&gt;Foundation&lt;/strong&gt; to solve more complex design problems.&lt;/p&gt;
+
+&lt;p&gt;Lets explore them!&lt;/p&gt;
+
+&lt;h1 id=&quot;creational-patterns&quot;&gt;Creational Patterns&lt;/h1&gt;
+
+&lt;p&gt;TBD.&lt;/p&gt;
+
+&lt;h1 id=&quot;structural-patterns&quot;&gt;Structural Patterns&lt;/h1&gt;
+
+&lt;p&gt;TBD.&lt;/p&gt;
+
+&lt;h1 id=&quot;behavioral-patterns&quot;&gt;Behavioral Patterns&lt;/h1&gt;
+
+&lt;p&gt;TBD.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Based on a famous book I will try to simplify and give examples of the 23 famous design patterns that can help your daily work as developer.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">A brief overview about Software Design and Software architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/" rel="alternate" type="text/html" title="A brief overview about Software Design and Software architecture" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/">&lt;p&gt;What is Software Design and Architecture? How they relate and differ each other?&lt;/p&gt;
 
 &lt;!-- more --&gt;
 

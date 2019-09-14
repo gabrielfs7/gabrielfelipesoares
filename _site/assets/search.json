@@ -40,6 +40,13 @@
         "url": "/software-architecture/2019/09/11/software-design-architecuture/"
       },
     
+      {
+        "title": "The 23 Design Patterns you must know",
+        "excerpt": "Based on a famous book I will try to simplify and give examples of the \n23 famous design patterns that can help your daily work as developer.\n\n",
+        "content": "Based on a famous book I will try to simplify and give examples of the \n23 famous design patterns that can help your daily work as developer.\n\n\n\nIf you do not know the book I am talking about, it is Design Patterns: Elements of Reusable Object-Oriented Software.\nEven nowadays the Book is still handy and we realize how timeless is its content.\n\nBefore we start\n\nSo what are Design Patterns?\n\nYes, Design Patterns are everywhere we need to do a recurring action.\n\nBesides construction, medicine, engineering, we have patterns also for teaching people, cooking (recipes), social interactions (greet, thanks, apologize), selling, designing packings and many many others areas.\n\nBasically, for any repeating task, by experience, the specialists found approaches that work better on each situation and then it becomes a pattern.\n\nAlong the history developers have solved similar problems with different solutions. It turned out that to solve common problems, some solutions provided a better result and made the code more ReFlexMain, which is Reusable, Flexible and Maintainable, the holy trinity.\n\nAs an Architect, Software Engineer or Developer, Design patterns will give to you the Foundation to solve more complex design problems.\n\nLets explore them!\n\nCreational Patterns\n\nTBD.\n\nStructural Patterns\n\nTBD.\n\nBehavioral Patterns\n\nTBD.\n",
+        "url": "/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/"
+      },
+    
   
   
   

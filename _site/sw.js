@@ -1,8 +1,8 @@
-const version = '20190914180518';
+const version = '20190914184344';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/software-architecture/2019/09/11/software-design-architecuture/","/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/","/software-architecture/2019/09/08/software-architecture-model-checking/","/software-architecture/2019/09/07/software-architecture-design-principles/","/software-architecture/2019/09/06/object-modeling-principles/","/categories/","/blog/","/","/manifest.json","/offline/","/assets/search.json","/search/","/assets/styles.css","/thanks/","/redirects.json","/sitemap.xml","/robots.txt","/blog/page2/","/blog/page3/","/feed.xml","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return ["/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/","/software-architecture/2019/09/11/software-design-architecuture/","/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/","/software-architecture/2019/09/08/software-architecture-model-checking/","/software-architecture/2019/09/07/software-architecture-design-principles/","/software-architecture/2019/09/06/object-modeling-principles/","/categories/","/blog/","/","/manifest.json","/offline/","/assets/search.json","/search/","/assets/styles.css","/thanks/","/redirects.json","/sitemap.xml","/robots.txt","/blog/page2/","/blog/page3/","/feed.xml","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 

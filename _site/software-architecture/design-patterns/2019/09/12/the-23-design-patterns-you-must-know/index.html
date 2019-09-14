@@ -9,33 +9,28 @@
 
     
       <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The 23 Design Patterns you must know | Gabriel’s Blog</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="Gabriel’s Blog" />
+<meta property="og:title" content="The 23 Design Patterns you must know" />
 <meta name="author" content="Gabriel Felipe Soares" />
 <meta property="og:locale" content="en_GB" />
-<meta name="description" content="Sharing my thoughts about IT related subjects" />
-<meta property="og:description" content="Sharing my thoughts about IT related subjects" />
-<link rel="canonical" href="http://0.0.0.0:4000/blog/page2/" />
-<meta property="og:url" content="http://0.0.0.0:4000/blog/page2/" />
+<meta name="description" content="Based on a famous book I will try to simplify and give examples of the 23 famous design patterns that can help your daily work as developer." />
+<meta property="og:description" content="Based on a famous book I will try to simplify and give examples of the 23 famous design patterns that can help your daily work as developer." />
+<link rel="canonical" href="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" />
+<meta property="og:url" content="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" />
 <meta property="og:site_name" content="Gabriel’s Blog" />
 <meta property="og:image" content="http://0.0.0.0:4000/assets/default-social-image.png" />
-<link rel="prev" href="http://0.0.0.0:4000/blog/" />
-<link rel="next" href="http://0.0.0.0:4000/blog/page3" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-12T00:00:00+01:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="http://0.0.0.0:4000/assets/default-social-image.png" />
-<meta property="twitter:title" content="Gabriel’s Blog" />
+<meta property="twitter:title" content="The 23 Design Patterns you must know" />
 <meta name="twitter:site" content="@GabrielSoaresOn" />
 <meta name="twitter:creator" content="@Gabriel Felipe Soares" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Gabriel Felipe Soares"},"description":"Sharing my thoughts about IT related subjects","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/assets/logos/logo.svg"},"name":"Gabriel Felipe Soares"},"@type":"WebPage","image":"http://0.0.0.0:4000/assets/default-social-image.png","url":"http://0.0.0.0:4000/blog/page2/","headline":"Gabriel’s Blog","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Gabriel Felipe Soares"},"description":"Based on a famous book I will try to simplify and give examples of the 23 famous design patterns that can help your daily work as developer.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/assets/logos/logo.svg"},"name":"Gabriel Felipe Soares"},"@type":"BlogPosting","image":"http://0.0.0.0:4000/assets/default-social-image.png","url":"http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/","headline":"The 23 Design Patterns you must know","dateModified":"2019-09-12T00:00:00+01:00","datePublished":"2019-09-12T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-
-      
-      <title>Posts - Gabriel's Blog</title>
-      <meta property="og:title" content="Posts">
-      <meta name="description" content="My thoughts and ideas">
-      <meta property="og:description" content="My thoughts and ideas">
     
 
     <link rel="manifest" href="/manifest.json">
@@ -84,7 +79,7 @@
 
   </head>
 
-  <body class="layout-blog">
+  <body class="layout-post  the-23-design-patterns-you-must-know">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="height: 0; position: absolute">
   <symbol id="codepen" viewBox="0 0 16 16"><path d="M15.988 5.443c-.004-.02-.007-.04-.012-.058l-.01-.033c-.006-.017-.012-.034-.02-.05-.003-.012-.01-.023-.014-.034l-.023-.045-.02-.032-.03-.04-.024-.03c-.01-.013-.022-.026-.034-.038l-.027-.027-.04-.032-.03-.024-.012-.01L8.38.117c-.23-.155-.53-.155-.76 0L.305 4.99.296 5c-.012.007-.022.015-.032.023-.014.01-.027.02-.04.032l-.027.027-.034.037-.024.03-.03.04c-.006.012-.013.022-.02.033l-.023.045-.015.034c-.007.016-.012.033-.018.05l-.01.032c-.005.02-.01.038-.012.058l-.006.03C.002 5.5 0 5.53 0 5.56v4.875c0 .03.002.06.006.09l.007.03c.003.02.006.04.013.058l.01.033c.006.018.01.035.018.05l.015.033c.006.016.014.03.023.047l.02.03c.008.016.018.03.03.042.007.01.014.02.023.03.01.012.02.025.034.036.01.01.018.02.028.026l.04.033.03.023.01.01 7.31 4.876c.116.078.248.117.382.116.134 0 .266-.04.38-.116l7.314-4.875.01-.01c.012-.007.022-.015.032-.023.014-.01.027-.02.04-.032l.027-.027.034-.037.024-.03.03-.04.02-.032.023-.046.015-.033.018-.052.01-.033c.005-.02.01-.038.013-.058 0-.01.003-.02.004-.03.004-.03.006-.06.006-.09V5.564c0-.03-.002-.06-.006-.09l-.007-.03zM8 9.626L5.568 8 8 6.374 10.432 8 8 9.626zM7.312 5.18l-2.98 1.993-2.406-1.61 5.386-3.59v3.206zM3.095 8l-1.72 1.15v-2.3L3.095 8zm1.237.828l2.98 1.993v3.208l-5.386-3.59 2.406-1.61zm4.355 1.993l2.98-1.993 2.407 1.61-5.387 3.59v-3.206zM12.905 8l1.72-1.15v2.3L12.905 8zm-1.237-.827L8.688 5.18V1.97l5.386 3.59-2.406 1.61z" fill-rule="nonzero"/></symbol>
   <symbol id="dribbble" viewBox="0 0 16 16"><path d="M8 16c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm6.747-6.905c-.234-.074-2.115-.635-4.257-.292.894 2.456 1.258 4.456 1.328 4.872 1.533-1.037 2.624-2.68 2.93-4.58zM10.67 14.3c-.102-.6-.5-2.688-1.46-5.18l-.044.014C5.312 10.477 3.93 13.15 3.806 13.4c1.158.905 2.614 1.444 4.194 1.444.947 0 1.85-.194 2.67-.543zm-7.747-1.72c.155-.266 2.03-3.37 5.555-4.51.09-.03.18-.056.27-.08-.173-.39-.36-.778-.555-1.16C4.78 7.85 1.47 7.807 1.17 7.8l-.003.208c0 1.755.665 3.358 1.756 4.57zM1.31 6.61c.307.005 3.122.017 6.318-.832-1.132-2.012-2.353-3.705-2.533-3.952-1.912.902-3.34 2.664-3.784 4.785zM6.4 1.368c.188.253 1.43 1.943 2.548 4 2.43-.91 3.46-2.293 3.582-2.468C11.323 1.827 9.736 1.176 8 1.176c-.55 0-1.087.066-1.6.19zm6.89 2.322c-.145.194-1.29 1.662-3.816 2.694.16.325.31.656.453.99.05.117.1.235.147.352 2.274-.286 4.533.172 4.758.22-.015-1.613-.59-3.094-1.543-4.257z"/></symbol>
@@ -196,9 +191,9 @@
 
 
 
-  <div class="feature" style="background-image: url(https://picsum.photos/2560/600?image=866)">
+  <div class="feature" style="background-image: url(https://picsum.photos/2560/600?image=872)">
     <div class="container  typeset">
-      <p>Welcome to the blog</p>
+      
 
     </div>
   </div>
@@ -210,90 +205,107 @@
 
 <main class="main  container">
 
-  <div class="content">
+  <article class="article  article--post  content  typeset">
 
-    <article class="article  article--page  typeset">
-
-      
-        
-        <h1>Posts</h1>
-        <p>My thoughts and ideas</p>
-
-
-      
-
-    </article>
-
+    <h1>The 23 Design Patterns you must know</h1>
     
-  <section class="section  typeset">
-    <ul class="list  list--posts">
-      
-        <li class="item  item--post">
-          <article class="article  article--post">
-
-            <h2><a href="/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/">Emulate Android on Android Studio 3 using Mac OSX El Captain 10.11.6</a></h2>
-            
 
 <small class="small  post-meta">
   
   
     
-      <span class="label  label--category"><a href="/categories/#android">Android</a></span>,
+      <span class="label  label--category"><a href="/categories/#software-architecture">Software-Architecture</a></span>,
     
-      <span class="label  label--category"><a href="/categories/#macos">MacOs</a></span>
+      <span class="label  label--category"><a href="/categories/#design-patterns">Design-patterns</a></span>
     
-  &nbsp;&middot;&nbsp;<time datetime="2019-09-10T00:00:00+01:00" class="time">10 Sep 2019</time>
+  &nbsp;&middot;&nbsp;<time datetime="2019-09-12T00:00:00+01:00" class="time">12 Sep 2019</time>
 </small>
 
-            <p>If you are having problems to emulate Android using Mac OSX El Captain 10.11.6, may this can help you.</p>
+    <p>Based on a famous book I will try to simplify and give examples of the 
+23 famous design patterns that can help your daily work as developer.</p>
+
+<!-- more -->
+
+<p>If you do not know the book I am talking about, it is <a href="https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612">Design Patterns: Elements of Reusable Object-Oriented Software</a>.
+Even nowadays the Book is still handy and we realize how timeless is its content.</p>
+
+<h1 id="before-we-start">Before we start</h1>
+
+<p>So what are <strong>Design Patterns</strong>?</p>
+
+<p>Yes, Design Patterns are everywhere we need to do a recurring action.</p>
+
+<p>Besides construction, medicine, engineering, we have patterns also for teaching people, cooking (recipes), social interactions (greet, thanks, apologize), selling, designing packings and many many others areas.</p>
+
+<p>Basically, for any repeating task, by experience, the specialists found approaches that work better on each situation and then it becomes a pattern.</p>
+
+<p>Along the history developers have solved similar problems with different solutions. It turned out that to solve common problems, some solutions provided a better result and made the code more <strong>ReFlexMain</strong>, which is <strong>Reusable, Flexible and Maintainable</strong>, the holy trinity.</p>
+
+<p>As an Architect, Software Engineer or Developer, Design patterns will give to you the <strong>Foundation</strong> to solve more complex design problems.</p>
+
+<p>Lets explore them!</p>
+
+<h1 id="creational-patterns">Creational Patterns</h1>
+
+<p>TBD.</p>
+
+<h1 id="structural-patterns">Structural Patterns</h1>
+
+<p>TBD.</p>
+
+<h1 id="behavioral-patterns">Behavioral Patterns</h1>
+
+<p>TBD.</p>
 
 
-
-          </article>
-        </li>
-      
-        <li class="item  item--post">
-          <article class="article  article--post">
-
-            <h2><a href="/software-architecture/2019/09/08/software-architecture-model-checking/">Model Checking, What it is and why to use it</a></h2>
-            
-
-<small class="small  post-meta">
-  
+    <div class="share">
   
     
-      <span class="label  label--category"><a href="/categories/#software-architecture">Software-Architecture</a></span>
-    
-  &nbsp;&middot;&nbsp;<time datetime="2019-09-08T00:00:00+01:00" class="time">08 Sep 2019</time>
-</small>
-
-            <p>After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems occur even in the best companies.</p>
-
-
-
-          </article>
-        </li>
       
-    </ul>
-    <nav class="nav  nav--paginator">
+      
+      
+      
 
+      
+
+      <a class="button" href="https://twitter.com/intent/tweet/?url=http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/&text=The%2023%20Design%20Patterns%20you%20must%20know&via=GabrielSoaresOn" style="background: #0d94e7">Twitter&nbsp; <svg width="16" height="16" class="icon  icon--twitter" role="img" alt="twitter"><title>twitter</title><use xlink:href="#twitter" fill="CurrentColor"></use></svg>
+</a>
+
+    
   
-    <a href="/blog/" class="pagination  pagination--previous">&larr; Newer</a>
+    
+      
+      
+      
+      
+
+      
+
+      <a class="button" href="https://facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" style="background: #3B5998">facebook&nbsp; <svg width="16" height="16" class="icon  icon--facebook" role="img" alt="facebook"><title>facebook</title><use xlink:href="#facebook" fill="CurrentColor"></use></svg>
+</a>
+
+    
   
+    
+      
+      
+      
+      
 
-  <span class="pagination  pagination--counter">Page: 2 of 3</span>
+      
 
+      <a class="button" href="mailto:?subject=The 23 Design Patterns you must know&body=Hey, check out this: http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" style="background: true">Email&nbsp; <svg width="16" height="16" class="icon  icon--email" role="img" alt="email"><title>email</title><use xlink:href="#email" fill="CurrentColor"></use></svg>
+</a>
+
+    
   
-    <a href="/blog/page3" class="pagination  pagination--next">Older &rarr;</a>
-  
-
-</nav>
-
-  </section>
+</div>
 
 
+    
 
-  </div>
+
+  </article>
 
   
 
