@@ -32,12 +32,50 @@ Lets explore them!
 
 # Creational Patterns
 
-TBD.
+Define patterns to be used when creating or cloning objects.
+
+## Singleton
+
+Singleton actually became an **anti-patterns**, because it brings many restrictions due the fact is is a single instance of an object, thus a global state in the whole application. It makes system more complex and hard to test.
+
+For a matter of information, I will show the pattern here just for you to don not use it.
+
+Goals of the pattern:
+
+- Object must be globally accessible.
+- There must **a single instance of an object** for the whole application.
+
+Basically we make impossible to create an instance externally by making a **private constructor** and then we create a public static method to cache and retrieve the single global state of this class.
+
+**Example in PHP**:
+
+``` php
+<?php
+class Singleton
+{
+    private $instance;
+
+    private function __construct(){}
+
+    public static function getInstance(): Singleton 
+    {
+        if (null === $this->instance) {
+            $this->instance = new self();
+        }
+
+        return $this->instance;
+    }
+}
+```
 
 # Structural Patterns
 
-TBD.
+These patterns describe how objects are connected to each other:
+
+- How they relate with generalization: Composition, Association, Aggregation, Inheritance or Interface 
+- How classes and subclasses interact trough inheritance.
 
 # Behavioral Patterns
 
-TBD.
+Define how **independent** object work towards a common goal.
+

@@ -247,15 +247,56 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 <h1 id="creational-patterns">Creational Patterns</h1>
 
-<p>TBD.</p>
+<p>Define patterns to be used when creating or cloning objects.</p>
+
+<h2 id="singleton">Singleton</h2>
+
+<p>Singleton actually became an <strong>anti-patterns</strong>, because it brings many restrictions due the fact is is a single instance of an object, thus a global state in the whole application. It makes system more complex and hard to test.</p>
+
+<p>For a matter of information, I will show the pattern here just for you to don not use it.</p>
+
+<p>Goals of the pattern:</p>
+
+<ul>
+  <li>Object must be globally accessible.</li>
+  <li>There must <strong>a single instance of an object</strong> for the whole application.</li>
+</ul>
+
+<p>Basically we make impossible to create an instance externally by making a <strong>private constructor</strong> and then we create a public static method to cache and retrieve the single global state of this class.</p>
+
+<p><strong>Example in PHP</strong>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kd">class</span> <span class="nc">Singleton</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$instance</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(){}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getInstance</span><span class="p">()</span><span class="o">:</span> <span class="nx">Singleton</span> 
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">instance</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">self</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h1 id="structural-patterns">Structural Patterns</h1>
 
-<p>TBD.</p>
+<p>These patterns describe how objects are connected to each other:</p>
+
+<ul>
+  <li>How they relate with generalization: Composition, Association, Aggregation, Inheritance or Interface</li>
+  <li>How classes and subclasses interact trough inheritance.</li>
+</ul>
 
 <h1 id="behavioral-patterns">Behavioral Patterns</h1>
 
-<p>TBD.</p>
+<p>Define how <strong>independent</strong> object work towards a common goal.</p>
+
 
 
     <div class="share">
