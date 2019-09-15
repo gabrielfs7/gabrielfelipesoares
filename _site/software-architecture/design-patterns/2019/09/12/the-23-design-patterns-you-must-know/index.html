@@ -348,7 +348,9 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 <p><strong>Benefits:</strong></p>
 
 <ul>
-  <li>Code for implementation</li>
+  <li>Code for interface rather than implementation.</li>
+  <li>Easier to extend the code.</li>
+  <li>Does not inflate factories.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Shipping</span>
@@ -398,6 +400,102 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 <ul>
   <li>How they relate with generalization: Composition, Association, Aggregation, Inheritance or Interface</li>
   <li>How classes and subclasses interact trough inheritance.</li>
+</ul>
+
+<h2 id="facade">Facade</h2>
+
+<p>A client of a subsystem don’t want (and don’t need) to know the details of how it works internally. It just wants to request something in order to get something.</p>
+
+<p>A Facade is:</p>
+
+<ul>
+  <li>A <strong>point of entry</strong> to your subsystem(s).</li>
+  <li>A <strong>wrapper class</strong> to allow the client to interact with subsystems.</li>
+  <li>A pattern that <strong>puts all the complexity of the subsystems behind a “facade”</strong></li>
+</ul>
+
+<h3 id="key-principles-to-use-a-facade">Key principles to use a Facade</h3>
+
+<ul>
+  <li><strong>Encapsulation</strong>: Inject the necessary subsystem classes into the Facade.</li>
+  <li><strong>Information Hiding</strong>: Do not expose subsystems to the client.</li>
+  <li><strong>Separation of concerns</strong>: The client does not need to be concerned about subsystems implementations details or business rules.</li>
+</ul>
+
+<p>Example in PHP:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="kd">interface</span> <span class="nc">IAccount</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getBalance</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">withdraw</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$amount</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">deposit</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$amount</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">InvestmentAccount</span> <span class="k">implements</span> <span class="nx">IAccount</span> <span class="p">{}</span>
+
+<span class="kd">class</span> <span class="nc">SavingAccount</span> <span class="k">implements</span> <span class="nx">IAccount</span> <span class="p">{}</span>
+
+<span class="kd">class</span> <span class="nc">CurrentAccount</span> <span class="k">implements</span> <span class="nx">IAccount</span> <span class="p">{}</span>
+
+<span class="kd">class</span> <span class="nc">BankFacade</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">checkAccountBalance</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$accountNumber</span><span class="p">)</span><span class="o">:</span> <span class="nx">float</span>
+    <span class="p">{</span>
+        <span class="nv">$account</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">accountRepository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nx">accountNumber</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$account</span><span class="o">-&gt;</span><span class="na">getBalance</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">accountWithdraw</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$accountNumber</span><span class="p">,</span> <span class="nx">float</span> <span class="nv">$amount</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$account</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">accountRepository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nx">accountNumber</span><span class="p">);</span>
+
+        <span class="nv">$account</span><span class="o">-&gt;</span><span class="na">withdraw</span><span class="p">(</span><span class="nv">$amount</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">accountDeposit</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$accountNumber</span><span class="p">,</span> <span class="nx">float</span> <span class="nv">$amount</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$account</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">accountRepository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nx">accountNumber</span><span class="p">);</span>
+
+        <span class="nv">$account</span><span class="o">-&gt;</span><span class="na">deposit</span><span class="p">(</span><span class="nv">$amount</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">createAccount</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$type</span><span class="p">,</span> <span class="nx">Customer</span> <span class="nv">$customer</span><span class="p">)</span><span class="o">:</span> <span class="nx">Account</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'saving'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SavingAccount</span><span class="p">(</span><span class="nv">$customer</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'investment'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InvestmentAccount</span><span class="p">(</span><span class="nv">$customer</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'current'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CurrentAccount</span><span class="p">(</span><span class="nv">$customer</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">accountRepository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nx">accountNumber</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$account</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">ApplicationClient</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$bankFacade</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">BankFacade</span> <span class="nv">$bankFacade</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bankFacade</span> <span class="o">=</span> <span class="nv">$bankFacade</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h3 id="when-to-use-facade">When to use Facade?</h3>
+
+<ul>
+  <li>If you need a class to represent an interface between a subsystem and a client class.</li>
+  <li>To simplify the interaction between client and subsystems.</li>
 </ul>
 
 <h1 id="behavioral-patterns">Behavioral Patterns</h1>
