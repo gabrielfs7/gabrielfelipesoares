@@ -198,6 +198,11 @@ A Facade is:
 - **Information Hiding**: Do not expose subsystems to the client.
 - **Separation of concerns**: The client does not need to be concerned about subsystems implementations details or business rules.
 
+### When to use Facade?
+
+- If you need a class to represent an interface between a subsystem and a client class.
+- To simplify the interaction between client and subsystems.
+
 Example in PHP:
 
 ``` php
@@ -288,11 +293,82 @@ class ApplicationClient
 }
 ```
 
-### When to use Facade?
+## Adapter
 
-- If you need a class to represent an interface between a subsystem and a client class.
-- To simplify the interaction between client and subsystems.
+The output of a system might not comply with the expected input of another system. It requires an **adapter** to transform this output to an accepted input to the other system.
 
+Involved parts to use the Adapter pattern:
+
+- **Client**: Class of your your system that wants to use a third-party library or external system.
+- **Adaptee**: It is the class in the third-party library or external library you want to use.
+- **Adapter**: It will adapt (or translate) the Adaptee to the Client and vice-versa.
+  - The Adapter must implements an **Target Interface** that the Adaptee understands.
+
+Example in Java:
+
+``` Java
+// This is the "Target interface"
+public interface IWsRequester
+{
+    public Response request(Order order);
+}
+
+// This is the "Adapter"
+public class WsAdapter implements IWsRequester
+{
+    //WebService is a third-party library class which we cannot change...
+    private WebService adaptee;
+
+    //...constructor
+
+    public Response request(Order order)
+    {
+        String json = this.orderToJson(order);
+
+        return this.adaptee.request(json);
+    }
+
+    private String orderToJson(Order order)
+    {
+        //... Adapts / translates Order object to JSON string
+    }
+}
+
+// This is the "Client"
+public class WsClient
+{
+    private IWsRequest requester;
+
+    //...constructor
+
+    public void dispatchOrder(String orderNumber)
+    {
+        Order order = this.orderRepository.getOrder(orderNumber);
+
+        Response response = this.requester.request(order);
+
+        if (response.code === 200) {
+            System.out.println('Success!');
+        } else {
+            System.out.println('Error!');
+        }
+    }
+}
+
+public class Main
+{
+    public static void main(String args[])
+    {
+        WebService adaptee = new WebService("http://external-system-url");
+        WsAdapter adapter = new WsAdapter(adaptee);
+
+        WsClient client = new WsClient(adapter);
+
+        //Note that the client does not need to be aware of the "adapteeo" interface thanks to the adapter...
+        client.dispatchOrder(args[0]);
+    }
+}
+```
 
 # Behavioral Patterns
 

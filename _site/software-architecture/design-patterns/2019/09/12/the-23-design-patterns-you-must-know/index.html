@@ -422,6 +422,13 @@ Even nowadays the Book is still handy and we realize how timeless is its content
   <li><strong>Separation of concerns</strong>: The client does not need to be concerned about subsystems implementations details or business rules.</li>
 </ul>
 
+<h3 id="when-to-use-facade">When to use Facade?</h3>
+
+<ul>
+  <li>If you need a class to represent an interface between a subsystem and a client class.</li>
+  <li>To simplify the interaction between client and subsystems.</li>
+</ul>
+
 <p>Example in PHP:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -440,7 +447,7 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 <span class="kd">class</span> <span class="nc">BankFacade</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">checkAccountBalance</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$accountNumber</span><span class="p">)</span><span class="o">:</span> <span class="nx">float</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">accountBalance</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$accountNumber</span><span class="p">)</span><span class="o">:</span> <span class="nx">float</span>
     <span class="p">{</span>
         <span class="nv">$account</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">accountRepository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nx">accountNumber</span><span class="p">);</span>
 
@@ -461,14 +468,14 @@ Even nowadays the Book is still handy and we realize how timeless is its content
         <span class="nv">$account</span><span class="o">-&gt;</span><span class="na">deposit</span><span class="p">(</span><span class="nv">$amount</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">createAccount</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$type</span><span class="p">,</span> <span class="nx">Customer</span> <span class="nv">$customer</span><span class="p">)</span><span class="o">:</span> <span class="nx">Account</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">createAccount</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$type</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$customerName</span><span class="p">)</span><span class="o">:</span> <span class="nx">Account</span>
     <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'saving'</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SavingAccount</span><span class="p">(</span><span class="nv">$customer</span><span class="p">);</span>
+            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SavingAccount</span><span class="p">(</span><span class="nv">$customerName</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'investment'</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InvestmentAccount</span><span class="p">(</span><span class="nv">$customer</span><span class="p">);</span>
+            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InvestmentAccount</span><span class="p">(</span><span class="nv">$customerName</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'current'</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CurrentAccount</span><span class="p">(</span><span class="nv">$customer</span><span class="p">);</span>
+            <span class="nv">$account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CurrentAccount</span><span class="p">(</span><span class="nv">$customerName</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">accountRepository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nx">accountNumber</span><span class="p">);</span>
@@ -477,6 +484,10 @@ Even nowadays the Book is still handy and we realize how timeless is its content
     <span class="p">}</span>
 <span class="p">}</span>
 
+<span class="cd">/**
+ * The client is not aware about internal behavior or implementation of subsystems. 
+ * It just know about the exposed functionality.
+ */</span>
 <span class="kd">class</span> <span class="nc">ApplicationClient</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$bankFacade</span><span class="p">;</span>
@@ -486,17 +497,107 @@ Even nowadays the Book is still handy and we realize how timeless is its content
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bankFacade</span> <span class="o">=</span> <span class="nv">$bankFacade</span><span class="p">;</span>
     <span class="p">}</span>
 
-    
-<span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">operation</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$operation</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$parameters</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$operation</span> <span class="o">===</span> <span class="s1">'new-account'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bankFacade</span><span class="o">-&gt;</span><span class="na">createAccount</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">'accountType'</span><span class="p">],</span> <span class="nv">$parameters</span><span class="p">[</span><span class="s1">'customerName'</span><span class="p">]);</span>
+        <span class="p">}</span>
 
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$operation</span> <span class="o">===</span> <span class="s1">'deposit'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bankFacade</span><span class="o">-&gt;</span><span class="na">accountDeposit</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">'accountNumber'</span><span class="p">],</span> <span class="nv">$parameters</span><span class="p">[</span><span class="s1">'amount'</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$operation</span> <span class="o">===</span> <span class="s1">'withdraw'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bankFacade</span><span class="o">-&gt;</span><span class="na">accountWithdraw</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">'accountNumber'</span><span class="p">],</span> <span class="nv">$parameters</span><span class="p">[</span><span class="s1">'amount'</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$operation</span> <span class="o">===</span> <span class="s1">'balance'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bankFacade</span><span class="o">-&gt;</span><span class="na">accountBalance</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">'accountType'</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="when-to-use-facade">When to use Facade?</h3>
+<h2 id="adapter">Adapter</h2>
+
+<p>The output of a system might not comply with the expected input of another system. It requires an <strong>adapter</strong> to transform this output to an accepted input to the other system.</p>
+
+<p>Involved parts to use the Adapter pattern:</p>
 
 <ul>
-  <li>If you need a class to represent an interface between a subsystem and a client class.</li>
-  <li>To simplify the interaction between client and subsystems.</li>
+  <li><strong>Client</strong>: Class of your your system that wants to use a third-party library or external system.</li>
+  <li><strong>Adaptee</strong>: It is the class in the third-party library or external library you want to use.</li>
+  <li><strong>Adapter</strong>: It will adapt (or translate) the Adaptee to the Client and vice-versa.
+    <ul>
+      <li>The Adapter must implements an <strong>Target Interface</strong> that the Adaptee understands.</li>
+    </ul>
+  </li>
 </ul>
+
+<p>Example in Java:</p>
+
+<pre><code class="language-Java">// This is the "Target interface"
+public interface IWsRequester
+{
+    public Response request(Order order);
+}
+
+// This is the "Adapter"
+public class WsAdapter implements IWsRequester
+{
+    //WebService is a third-party library class which we cannot change...
+    private WebService adaptee;
+
+    //...constructor
+
+    public Response request(Order order)
+    {
+        String json = this.orderToJson(order);
+
+        return this.adaptee.request(json);
+    }
+
+    private String orderToJson(Order order)
+    {
+        //... Adapts / translates Order object to JSON string
+    }
+}
+
+// This is the "Client"
+public class WsClient
+{
+    private IWsRequest requester;
+
+    //...constructor
+
+    public void dispatchOrder(String orderNumber)
+    {
+        Order order = this.orderRepository.getOrder(orderNumber);
+
+        Response response = this.requester.request(order);
+
+        if (response.code === 200) {
+            System.out.println('Success!');
+        } else {
+            System.out.println('Error!');
+        }
+    }
+}
+
+public class Main
+{
+    public static void main(String args[])
+    {
+        WebService adaptee = new WebService("http://external-system-url");
+        WsAdapter adapter = new WsAdapter(adaptee);
+
+        WsClient client = new WsClient(adapter);
+
+        //Note that the client does not need to be aware of the "adapteeo" interface thanks to the adapter...
+        client.dispatchOrder(args[0]);
+    }
+}
+</code></pre>
 
 <h1 id="behavioral-patterns">Behavioral Patterns</h1>
 
