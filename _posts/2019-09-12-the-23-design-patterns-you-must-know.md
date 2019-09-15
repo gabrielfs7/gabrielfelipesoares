@@ -68,7 +68,7 @@ class MySingleton
 }
 ```
 
-## Factory Method
+## Factory Object
 
 As in the real world, the purpose of this patterns is also to create objects.
 
@@ -100,7 +100,7 @@ public class PackageFactory
     }
 }
 
-// Using the factory
+// Using the factory object
 public class Shipping
 {
     private PackageFactory packageFactory;
@@ -117,8 +117,60 @@ public class Shipping
         package = this.packageFactory.create(type);
         package.addItem(item);
         package.close();
-
         //... other implementation...
+    }
+}
+```
+
+### Factory method
+
+As the factory object, this pattern also creates object, but in a separate method of specialized classes instead.
+
+We can do this making the previously client of the factory an abstract class, so the **subclasses will be specialized** and responsible to **decide which type of object to create**.
+
+**Benefits:**
+
+- Code for interface rather than implementation.
+- Easier to extend the code.
+- Does not inflate factories.
+
+``` java
+public abstract class Shipping
+{
+    public void dispatch(PackageType type, Item item)
+    {
+        IPackage package;
+
+        package = this.createPackage(type);
+        package.addItem(item);
+        package.close();
+        //... other implementation...
+    }
+
+    abstract IPackage createPackage(PackageType type);
+}
+
+public class CarrierShipping extends Shipping
+{
+    IPackage createPackage(PackageType type)
+    {
+        return new CarrierPackage();
+    }
+}
+
+public class PostShipping extends Shipping
+{
+    IPackage createPackage(PackageType type)
+    {
+        return new PostPackage();
+    }
+}
+
+public class OrdinaryShipping extends Shipping
+{
+    IPackage createPackage(PackageType type)
+    {
+        return new OrdinaryPackage();
     }
 }
 ```

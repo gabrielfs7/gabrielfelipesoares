@@ -284,7 +284,7 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="factory-method">Factory Method</h2>
+<h2 id="factory-object">Factory Object</h2>
 
 <p>As in the real world, the purpose of this patterns is also to create objects.</p>
 
@@ -317,7 +317,7 @@ Even nowadays the Book is still handy and we realize how timeless is its content
     <span class="o">}</span>
 <span class="o">}</span>
 
-<span class="c1">// Using the factory</span>
+<span class="c1">// Using the factory object</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shipping</span>
 <span class="o">{</span>
     <span class="kd">private</span> <span class="nc">PackageFactory</span> <span class="n">packageFactory</span><span class="o">;</span>
@@ -334,8 +334,59 @@ Even nowadays the Book is still handy and we realize how timeless is its content
         <span class="kn">package</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">packageFactory</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">type</span><span class="o">);</span>
         <span class="kn">package</span><span class="o">.</span><span class="na">addItem</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
         <span class="kn">package</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-
         <span class="c1">//... other implementation...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="factory-method">Factory method</h3>
+
+<p>As the factory object, this pattern also creates object, but in a separate method of specialized classes instead.</p>
+
+<p>We can do this making the previously client of the factory an abstract class, so the <strong>subclasses will be specialized</strong> and responsible to <strong>decide which type of object to create</strong>.</p>
+
+<p><strong>Benefits:</strong></p>
+
+<ul>
+  <li>Code for implementation</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Shipping</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dispatch</span><span class="o">(</span><span class="nc">PackageType</span> <span class="n">type</span><span class="o">,</span> <span class="nc">Item</span> <span class="n">item</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="nc">IPackage</span> <span class="kn">package</span><span class="o">;</span>
+
+        <span class="kn">package</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">createPackage</span><span class="o">(</span><span class="n">type</span><span class="o">);</span>
+        <span class="kn">package</span><span class="o">.</span><span class="na">addItem</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+        <span class="kn">package</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="c1">//... other implementation...</span>
+    <span class="o">}</span>
+
+    <span class="kd">abstract</span> <span class="nc">IPackage</span> <span class="nf">createPackage</span><span class="o">(</span><span class="nc">PackageType</span> <span class="n">type</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CarrierShipping</span> <span class="kd">extends</span> <span class="nc">Shipping</span>
+<span class="o">{</span>
+    <span class="nc">IPackage</span> <span class="nf">createPackage</span><span class="o">(</span><span class="nc">PackageType</span> <span class="n">type</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">CarrierPackage</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostShipping</span> <span class="kd">extends</span> <span class="nc">Shipping</span>
+<span class="o">{</span>
+    <span class="nc">IPackage</span> <span class="nf">createPackage</span><span class="o">(</span><span class="nc">PackageType</span> <span class="n">type</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">PostPackage</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrdinaryShipping</span> <span class="kd">extends</span> <span class="nc">Shipping</span>
+<span class="o">{</span>
+    <span class="nc">IPackage</span> <span class="nf">createPackage</span><span class="o">(</span><span class="nc">PackageType</span> <span class="n">type</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">OrdinaryPackage</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
