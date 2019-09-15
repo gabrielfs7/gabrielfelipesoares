@@ -267,13 +267,13 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 <p><strong>Example in PHP</strong>:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="kd">class</span> <span class="nc">Singleton</span>
+<span class="kd">class</span> <span class="nc">MySingleton</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$instance</span><span class="p">;</span>
 
     <span class="k">private</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(){}</span>
 
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getInstance</span><span class="p">()</span><span class="o">:</span> <span class="nx">Singleton</span> 
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getInstance</span><span class="p">()</span><span class="o">:</span> <span class="nx">MySingleton</span> 
     <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">instance</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">self</span><span class="p">();</span>
@@ -282,6 +282,62 @@ Even nowadays the Book is still handy and we realize how timeless is its content
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">instance</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="factory-method">Factory Method</h2>
+
+<p>As in the real world, the purpose of this patterns is also to create objects.</p>
+
+<p>Benefits:</p>
+
+<ul>
+  <li>Centralize object creation.</li>
+  <li>Avoid repeat code. DRY, since other parts of the system can use the factory.</li>
+  <li>Make code easier to maintain.</li>
+  <li>Decouple multiple responsibilities from classes.</li>
+</ul>
+
+<p><strong>Example in Java</strong>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PackageFactory</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">IPackage</span> <span class="nf">create</span><span class="o">(</span><span class="nc">PackageType</span> <span class="n">type</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="nc">IPackage</span> <span class="kn">package</span><span class="o">;</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">type</span><span class="o">.</span><span class="na">is</span><span class="o">(</span><span class="err">'</span><span class="n">carrier</span><span class="err">'</span><span class="o">))</span> <span class="o">{</span>
+            <span class="kn">package</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CarrierPackage</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">type</span><span class="o">.</span><span class="na">is</span><span class="o">(</span><span class="err">'</span><span class="n">post</span><span class="err">'</span><span class="o">))</span> <span class="o">{</span>
+            <span class="kn">package</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PostPackage</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="kn">package</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrdinaryPackage</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="kn">package</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Using the factory</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shipping</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">PackageFactory</span> <span class="n">packageFactory</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Shipping</span><span class="o">(</span><span class="nc">PackageFactory</span> <span class="n">packageFactory</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">packageFactory</span> <span class="o">=</span> <span class="n">packageFactory</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dispatch</span><span class="o">(</span><span class="nc">PackageType</span> <span class="n">type</span><span class="o">,</span> <span class="nc">Item</span> <span class="n">item</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="nc">IPackage</span> <span class="kn">package</span><span class="o">;</span>
+
+        <span class="kn">package</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">packageFactory</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">type</span><span class="o">);</span>
+        <span class="kn">package</span><span class="o">.</span><span class="na">addItem</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+        <span class="kn">package</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+
+        <span class="c1">//... other implementation...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <h1 id="structural-patterns">Structural Patterns</h1>

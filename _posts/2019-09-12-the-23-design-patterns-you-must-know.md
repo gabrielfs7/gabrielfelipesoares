@@ -51,19 +51,74 @@ Basically we make impossible to create an instance externally by making a **priv
 
 ``` php
 <?php
-class Singleton
+class MySingleton
 {
     private $instance;
 
     private function __construct(){}
 
-    public static function getInstance(): Singleton 
+    public static function getInstance(): MySingleton 
     {
         if (null === $this->instance) {
             $this->instance = new self();
         }
 
         return $this->instance;
+    }
+}
+```
+
+## Factory Method
+
+As in the real world, the purpose of this patterns is also to create objects.
+
+Benefits:
+
+- Centralize object creation.
+- Avoid repeat code. DRY, since other parts of the system can use the factory.
+- Make code easier to maintain.
+- Decouple multiple responsibilities from classes.
+
+**Example in Java**:
+
+``` java
+public class PackageFactory
+{
+    public IPackage create(PackageType type)
+    {
+        IPackage package;
+
+        if (type.is('carrier')) {
+            package = new CarrierPackage();
+        } else if (type.is('post')) {
+            package = new PostPackage();
+        } else {
+            package = new OrdinaryPackage();
+        }
+
+        return package;
+    }
+}
+
+// Using the factory
+public class Shipping
+{
+    private PackageFactory packageFactory;
+
+    public Shipping(PackageFactory packageFactory)
+    {
+        this.packageFactory = packageFactory;
+    }
+
+    public void dispatch(PackageType type, Item item)
+    {
+        IPackage package;
+
+        package = this.packageFactory.create(type);
+        package.addItem(item);
+        package.close();
+
+        //... other implementation...
     }
 }
 ```
