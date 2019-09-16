@@ -2,7 +2,7 @@
 title: Gabriel's Blog
 feature_text: |
   ## Gabriel's Blog
-  Sharing my thoughs and things that I've learned
+  Sharing my thoughts and things that I've learned
 
 excerpt: "..."
 ---
