@@ -306,7 +306,7 @@ Involved parts to use the Adapter pattern:
 
 Example in Java:
 
-``` Java
+``` java
 // This is the "Target interface"
 public interface IWsRequester
 {

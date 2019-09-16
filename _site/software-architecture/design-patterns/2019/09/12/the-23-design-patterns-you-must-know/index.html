@@ -536,68 +536,68 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 <p>Example in Java:</p>
 
-<pre><code class="language-Java">// This is the "Target interface"
-public interface IWsRequester
-{
-    public Response request(Order order);
-}
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This is the "Target interface"</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IWsRequester</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">Response</span> <span class="nf">request</span><span class="o">(</span><span class="nc">Order</span> <span class="n">order</span><span class="o">);</span>
+<span class="o">}</span>
 
-// This is the "Adapter"
-public class WsAdapter implements IWsRequester
-{
-    //WebService is a third-party library class which we cannot change...
-    private WebService adaptee;
+<span class="c1">// This is the "Adapter"</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WsAdapter</span> <span class="kd">implements</span> <span class="nc">IWsRequester</span>
+<span class="o">{</span>
+    <span class="c1">//WebService is a third-party library class which we cannot change...</span>
+    <span class="kd">private</span> <span class="nc">WebService</span> <span class="n">adaptee</span><span class="o">;</span>
 
-    //...constructor
+    <span class="c1">//...constructor</span>
 
-    public Response request(Order order)
-    {
-        String json = this.orderToJson(order);
+    <span class="kd">public</span> <span class="nc">Response</span> <span class="nf">request</span><span class="o">(</span><span class="nc">Order</span> <span class="n">order</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">json</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">orderToJson</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
 
-        return this.adaptee.request(json);
-    }
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">adaptee</span><span class="o">.</span><span class="na">request</span><span class="o">(</span><span class="n">json</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    private String orderToJson(Order order)
-    {
-        //... Adapts / translates Order object to JSON string
-    }
-}
+    <span class="kd">private</span> <span class="nc">String</span> <span class="nf">orderToJson</span><span class="o">(</span><span class="nc">Order</span> <span class="n">order</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">//... Adapts / translates Order object to JSON string</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-// This is the "Client"
-public class WsClient
-{
-    private IWsRequest requester;
+<span class="c1">// This is the "Client"</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WsClient</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">IWsRequest</span> <span class="n">requester</span><span class="o">;</span>
 
-    //...constructor
+    <span class="c1">//...constructor</span>
 
-    public void dispatchOrder(String orderNumber)
-    {
-        Order order = this.orderRepository.getOrder(orderNumber);
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dispatchOrder</span><span class="o">(</span><span class="nc">String</span> <span class="n">orderNumber</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="nc">Order</span> <span class="n">order</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">orderRepository</span><span class="o">.</span><span class="na">getOrder</span><span class="o">(</span><span class="n">orderNumber</span><span class="o">);</span>
 
-        Response response = this.requester.request(order);
+        <span class="nc">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">requester</span><span class="o">.</span><span class="na">request</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
 
-        if (response.code === 200) {
-            System.out.println('Success!');
-        } else {
-            System.out.println('Error!');
-        }
-    }
-}
+        <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">code</span> <span class="o">===</span> <span class="mi">200</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">'</span><span class="nc">Success</span><span class="o">!</span><span class="err">'</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">'</span><span class="nc">Error</span><span class="o">!</span><span class="err">'</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-public class Main
-{
-    public static void main(String args[])
-    {
-        WebService adaptee = new WebService("http://external-system-url");
-        WsAdapter adapter = new WsAdapter(adaptee);
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[])</span>
+    <span class="o">{</span>
+        <span class="nc">WebService</span> <span class="n">adaptee</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WebService</span><span class="o">(</span><span class="s">"http://external-system-url"</span><span class="o">);</span>
+        <span class="nc">WsAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WsAdapter</span><span class="o">(</span><span class="n">adaptee</span><span class="o">);</span>
 
-        WsClient client = new WsClient(adapter);
+        <span class="nc">WsClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WsClient</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
 
-        //Note that the client does not need to be aware of the "adapteeo" interface thanks to the adapter...
-        client.dispatchOrder(args[0]);
-    }
-}
-</code></pre>
+        <span class="c1">//Note that the client does not need to be aware of the "adapteeo" interface thanks to the adapter...</span>
+        <span class="n">client</span><span class="o">.</span><span class="na">dispatchOrder</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h2 id="composite">Composite</h2>
 
