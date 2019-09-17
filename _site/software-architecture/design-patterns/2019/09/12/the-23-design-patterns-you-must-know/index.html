@@ -814,6 +814,86 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 <span class="p">}</span>
 </code></pre></div></div>
 
+<h2 id="decorator">Decorator</h2>
+
+<p>Sometimes we need to add some extra feature or behavior for a class, but we do not want to change the original class in order to preserve its individual purpose. The Decorator pattern uses aggregation to combine behaviors to a class at runtime!</p>
+
+<ul>
+  <li>Aggregates other types of components forming an “stack” of components on top of each other.</li>
+  <li>Serves as an <strong>Abstract superclass</strong> for concrete decorator classes where each one of them will increment behavior.</li>
+</ul>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/decorator-pattern.png" alt="UML decorator pattern" width="" height="">
+  <figcaption class="caption">UML decorator pattern</figcaption>
+</figure>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The component interface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IWebPage</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// The concrete component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicWebPage</span> <span class="kd">implements</span> <span class="nc">IWebPage</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">// Output page content...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// The abstract Decorator</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">WebPageDecorator</span> <span class="kd">implements</span> <span class="nc">IWebPage</span>
+<span class="o">{</span>
+    <span class="kd">protected</span> <span class="nc">IWebPage</span> <span class="n">webPage</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">WebPageDecorator</span><span class="o">(</span><span class="nc">IWebPage</span> <span class="n">webPage</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">webPage</span> <span class="o">=</span> <span class="n">webPage</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">webPage</span><span class="o">.</span><span class="na">display</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// A concrete decorator. It does not aggregate any other IWebPage component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AuthenticationWebPage</span> <span class="kd">extends</span> <span class="nc">WebPageDecorator</span>
+<span class="o">{</span>
+    <span class="c1">//constructor...</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">display</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">authenticateUser</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">authenticateUser</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">//Display authentication form</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// A concrete decorator. It does not aggregate any other IWebPage component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AuthorizationWebPage</span> <span class="kd">extends</span> <span class="nc">WebPageDecorator</span>
+<span class="o">{</span>
+    <span class="c1">//constructor...</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">display</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">authorizeUser</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">authorizeUser</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="c1">//Display authorized user content</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
 <h1 id="behavioral-patterns">Behavioral Patterns</h1>
 
 <p>Define how <strong>independent</strong> object work towards a common goal.</p>

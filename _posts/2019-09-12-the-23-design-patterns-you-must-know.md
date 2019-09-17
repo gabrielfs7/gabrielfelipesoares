@@ -563,6 +563,82 @@ class DistributionCenterProxy implements StockInterface
 }
 ```
 
+## Decorator
+
+Sometimes we need to add some extra feature or behavior for a class, but we do not want to change the original class in order to preserve its individual purpose. The Decorator pattern uses aggregation to combine behaviors to a class at runtime!
+
+- Aggregates other types of components forming an "stack" of components on top of each other.
+- Serves as an **Abstract superclass** for concrete decorator classes where each one of them will increment behavior.
+
+{% include post-figure.html image="decorator-pattern.png" caption="UML decorator pattern" %}
+
+``` java
+// The component interface
+public interface IWebPage
+{
+    public void display();
+}
+
+// The concrete component
+public class BasicWebPage implements IWebPage
+{
+    public void display()
+    {
+        // Output page content...
+    }
+}
+
+// The abstract Decorator
+public abstract class WebPageDecorator implements IWebPage
+{
+    protected IWebPage webPage;
+
+    public WebPageDecorator(IWebPage webPage)
+    {
+        this.webPage = webPage;
+    }
+
+    public void display()
+    {
+        this.webPage.display();
+    }
+}
+
+// A concrete decorator. It does not aggregate any other IWebPage component
+public class AuthenticationWebPage extends WebPageDecorator
+{
+    //constructor...
+
+    public void display()
+    {
+        super.display();
+        this.authenticateUser();
+    }
+
+    private void authenticateUser()
+    {
+        //Display authentication form
+    }
+}
+
+// A concrete decorator. It does not aggregate any other IWebPage component
+public class AuthorizationWebPage extends WebPageDecorator
+{
+    //constructor...
+
+    public void display()
+    {
+        super.display();
+        this.authorizeUser();
+    }
+
+    private void authorizeUser()
+    {
+        //Display authorized user content
+    }
+}
+```
+
 # Behavioral Patterns
 
 Define how **independent** object work towards a common goal.
