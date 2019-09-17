@@ -487,6 +487,82 @@ public class Song implements IComponent
 }
 ```
 
+## Proxy 
+
+Why to use a proxy?
+
+- To act as a **Virtual** Proxy: If the resource is too big (i.e and image file) or we do not need all the resource we can access part of this resource through a Virtual Proxy.
+- To act as a **Protection** Proxy: Useful to control access to the real subject class.
+- To act as a **Remote** Proxy: When the proxy class is instantiated locally, but the subject classes are located remotely (I.e Google files stored locally in the Browser, but actual files are in the server).
+
+{% include post-figure.html image="proxy-pattern.png" caption="UML proxy pattern" %}
+
+``` php
+<?php
+
+// The Subject interface
+interface StockInterface
+{
+    public function processOrder(Order $order): void
+}
+
+// The class that will be Proxied. It does not check stock quantity...
+class DistributionCenter implements StockInterface
+{
+    /** @var Stock[] **/
+    private $stocks;
+
+    public function processOrder(Order $order): void
+    {
+        foreach ($order->getItems() as $item) {
+            $stock = $this->getStock($item->getProduct());
+            $stock->decrease($item->getQuantity());
+        }
+    }
+
+    public function getStock(Product $product): Stock
+    {
+        foreach ($this->stocks as $stock) {
+            if ($stock->belongsTo($product)) {
+                return $stock;
+            }
+        }
+    }
+}
+
+// The proxy checks all distribution centers for a stock, otherwise raise an exception
+class DistributionCenterProxy implements StockInterface
+{
+    /** @var DistributionCenter **/
+    private $distributionCenters;
+
+    public function processOrder(Order $order): void
+    {
+        foreach ($this->distributionCenters as $distributionCenter) {
+            $hasStock = true;
+
+            foreach ($order->getItems() as $item) {
+                $stock = $distributionCenter->getStock($item->getProduct());
+
+                if (!$stock->hasStock($item->getQuantity())) {
+                    $hasStock = false;
+
+                    break;
+                }
+            }
+
+            if ($hasStock) {
+                $distributionCenter->processOrder($order);
+
+                return;
+            }
+        }
+
+        throw new Exception('Insufficient stock');
+    }
+}
+```
+
 # Behavioral Patterns
 
 Define how **independent** object work towards a common goal.
