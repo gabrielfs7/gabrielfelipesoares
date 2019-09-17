@@ -818,9 +818,13 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 <p>Sometimes we need to add some extra feature or behavior for a class, but we do not want to change the original class in order to preserve its individual purpose. The Decorator pattern uses aggregation to combine behaviors to a class at runtime!</p>
 
+<p>Goals:</p>
+
 <ul>
   <li>Aggregates other types of components forming an “stack” of components on top of each other.</li>
   <li>Serves as an <strong>Abstract superclass</strong> for concrete decorator classes where each one of them will increment behavior.</li>
+  <li>Allow add at runtime any number of behaviors using <strong>aggregation instead of inheritance</strong>.</li>
+  <li>The aggregation is always a <strong>one-to-one relationship</strong> with the object below in the stack.</li>
 </ul>
 
 <figure class="figure  figure--center">

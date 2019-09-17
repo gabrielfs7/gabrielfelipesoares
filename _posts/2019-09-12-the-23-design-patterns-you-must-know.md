@@ -567,8 +567,12 @@ class DistributionCenterProxy implements StockInterface
 
 Sometimes we need to add some extra feature or behavior for a class, but we do not want to change the original class in order to preserve its individual purpose. The Decorator pattern uses aggregation to combine behaviors to a class at runtime!
 
+Goals:
+
 - Aggregates other types of components forming an "stack" of components on top of each other.
 - Serves as an **Abstract superclass** for concrete decorator classes where each one of them will increment behavior.
+- Allow add at runtime any number of behaviors using **aggregation instead of inheritance**.
+- The aggregation is always a **one-to-one relationship** with the object below in the stack.
 
 {% include post-figure.html image="decorator-pattern.png" caption="UML decorator pattern" %}
 
