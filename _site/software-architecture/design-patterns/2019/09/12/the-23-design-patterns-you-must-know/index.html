@@ -892,6 +892,19 @@ Even nowadays the Book is still handy and we realize how timeless is its content
         <span class="c1">//Display authorized user content</span>
     <span class="o">}</span>
 <span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">// Here is we can check the decorator adding behavior in stack</span>
+        <span class="nc">IWebPage</span> <span class="n">basicPage</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicWebPage</span><span class="o">();</span>
+        <span class="nc">IWebPage</span> <span class="n">authorizationPage</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AuthorizationWebPage</span><span class="o">(</span><span class="n">basicPage</span><span class="o">);</span>
+        <span class="nc">IWebPage</span> <span class="n">authenticationPage</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AuthenticationWebPage</span><span class="o">(</span><span class="n">authorizationPage</span><span class="o">);</span>
+        
+        <span class="n">authenticationPage</span><span class="o">.</span><span class="na">display</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <h1 id="behavioral-patterns">Behavioral Patterns</h1>

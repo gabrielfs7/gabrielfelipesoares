@@ -637,6 +637,19 @@ public class AuthorizationWebPage extends WebPageDecorator
         //Display authorized user content
     }
 }
+
+public class Main
+{
+    public static void main(String args)
+    {
+        // Here is we can check the decorator adding behavior in stack
+        IWebPage basicPage = new BasicWebPage();
+        IWebPage authorizationPage = new AuthorizationWebPage(basicPage);
+        IWebPage authenticationPage = new AuthenticationWebPage(authorizationPage);
+        
+        authenticationPage.display();
+    }
+}
 ```
 
 # Behavioral Patterns
