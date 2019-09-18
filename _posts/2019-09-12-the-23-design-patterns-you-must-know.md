@@ -660,3 +660,61 @@ public class Main
 
 Define how **independent** object work towards a common goal.
 
+## Template Method
+
+When you want to establish the **steps or behavior** of some algorithm and allow **customization** only for part of it, we call it **Template Method**.
+
+- The template method defines the behavior in a **Abstract** superclass.
+- The superclass has an **abstract method**, that must be implemented by subclasses.
+
+{% include post-figure.html image="template-method-pattern.png" caption="UML template method pattern" %}
+
+Example in PHP:
+
+``` php
+<?php
+
+abstract class Pizza
+{
+    public function prepare(): void
+    {
+        $this->addCover();
+        $this->addSauce();
+        $this->bake();
+    }
+
+    private abstract bake(): void
+    {
+        // Common Baking logic
+    }
+
+    public abstract addCover(): void;
+    public abstract addSauce(): void;    
+}
+
+class PizzaMozzarella extends Pizza
+{
+    public addCover(): void
+    {
+        // Add mozzarella cheese
+    }
+
+    public abstract addSauce()
+    {
+        // add olives and oregano
+    }
+}
+
+class PizzaCarbonara extends Pizza
+{
+    public addCover(): void
+    {
+        // Add parmesan, mozzarella, eggs and bacon
+    }
+
+    public abstract addSauce()
+    {
+        // add oregano
+    }    
+}
+```

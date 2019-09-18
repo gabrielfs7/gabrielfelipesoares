@@ -915,6 +915,69 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 <p>Define how <strong>independent</strong> object work towards a common goal.</p>
 
+<h2 id="template-method">Template Method</h2>
+
+<p>When you want to establish the <strong>steps or behavior</strong> of some algorithm and allow <strong>customization</strong> only for part of it, we call it <strong>Template Method</strong>.</p>
+
+<ul>
+  <li>The template method defines the behavior in a <strong>Abstract</strong> superclass.</li>
+  <li>The superclass has an <strong>abstract method</strong>, that must be implemented by subclasses.</li>
+</ul>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/template-method-pattern.png" alt="UML template method pattern" width="" height="">
+  <figcaption class="caption">UML template method pattern</figcaption>
+</figure>
+
+<p>Example in PHP:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">Pizza</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">prepare</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addCover</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addSauce</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bake</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">abstract</span> <span class="nx">bake</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Common Baking logic</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">abstract</span> <span class="nx">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">abstract</span> <span class="nx">addSauce</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>    
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">PizzaMozzarella</span> <span class="k">extends</span> <span class="nx">Pizza</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nx">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Add cheese</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">abstract</span> <span class="nx">addSauce</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// add olives and oregano</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">PizzaMozzarella</span> <span class="k">extends</span> <span class="nx">Pizza</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nx">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Add cheese</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">abstract</span> <span class="nx">addSauce</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// add olives and oregano</span>
+    <span class="p">}</span>    
+<span class="p">}</span>
+
+</code></pre></div></div>
 
 
     <div class="share">
