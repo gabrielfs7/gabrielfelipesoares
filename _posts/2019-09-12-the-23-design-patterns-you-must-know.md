@@ -683,23 +683,23 @@ abstract class Pizza
         $this->bake();
     }
 
-    private abstract bake(): void
+    private function bake(): void
     {
         // Common Baking logic
     }
 
-    public abstract addCover(): void;
-    public abstract addSauce(): void;    
+    public abstract function addCover(): void;
+    public abstract function addSauce(): void;    
 }
 
 class PizzaMozzarella extends Pizza
 {
-    public addCover(): void
+    public function addCover(): void
     {
         // Add mozzarella cheese
     }
 
-    public abstract addSauce()
+    public function addSauce()
     {
         // add olives and oregano
     }
@@ -707,14 +707,107 @@ class PizzaMozzarella extends Pizza
 
 class PizzaCarbonara extends Pizza
 {
-    public addCover(): void
+    public function addCover(): void
     {
         // Add parmesan, mozzarella, eggs and bacon
     }
 
-    public abstract addSauce()
+    public function addSauce()
     {
         // add oregano
     }    
 }
+```
+
+## Chain of Responsibility
+
+When we crate a chain of objects working together to handle requests, we call it a **Chain of Responsibility**.
+
+Generally they are a series of **Handlers** objects, each one specialized on handle some part of the requests.
+
+While the request **is not satisfied** by a handler, they will forward the request to the next handler in the chain.
+
+{% include post-figure.html image="chain-off-responsibility-pattern.png" caption="UML Chain of responsibility pattern" %}
+
+``` php
+<?php
+
+abstract class RequestHandler
+{
+    /**
+     * @var Handler
+     */
+    protected $nextHandler;
+
+    public function setNextHandler(Handler $nextHandler): self
+    {
+        $this->nextHandler = $nextHandler;
+
+        return $this;
+    }
+
+    public abstract function handle(Request $request): Response;
+}
+
+class UserAuthorizerHandler extends RequestHandler
+{
+    public function handle(Request $request): Response
+    {
+        if (!$request->getAttribute('authorized')) {
+            // Sends user to authorization...
+            return new Response();
+        }
+
+        return $next->handle($request, $response);
+    }
+}
+
+class UrlRedirectHandler extends RequestHandler
+{
+    public function handle(Request $request): Response
+    {
+        if ($request->getUrl() === 'redirect') {
+            // Validate url and create redirect response...
+            return new Response();
+        }
+
+        return $next->handle($request, $response);
+    }
+}
+
+class XssValidationHandler extends RequestHandler
+{
+    public function handle(Request $request): Response
+    {
+        if ($request->getQueryParam('search')) {
+            // If the parameter values corresponds to a XSS attack, block user...
+            return new Response();
+        }
+
+        return $next->handle($request, $response);
+    }
+}
+
+// Last handler, if everything went fine...
+class LoadViewHandler extends RequestHandler
+{
+    public function handle(Request $request): Response
+    {
+        // Loads HTML page by request...
+        return new Response();
+    }
+}
+
+// ...request handling on index.php
+
+$handler1 = new UserAuthorizerHandler();
+$handler2 = new UrlRedirectHandler();
+$handler3 = new XssValidationHandler();
+$handler4 = new LoadViewHandler();
+
+$handler1->setNextHandler($handler2)
+    ->setNextHandler($handler3)
+    ->setNextHandler($handler4);
+
+return $handler1->handle($request);
 ```

@@ -942,41 +942,135 @@ Even nowadays the Book is still handy and we realize how timeless is its content
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bake</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="k">private</span> <span class="k">abstract</span> <span class="nx">bake</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">bake</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
         <span class="c1">// Common Baking logic</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">abstract</span> <span class="nx">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
-    <span class="k">public</span> <span class="k">abstract</span> <span class="nx">addSauce</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>    
+    <span class="k">public</span> <span class="k">abstract</span> <span class="k">function</span> <span class="nf">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">abstract</span> <span class="k">function</span> <span class="nf">addSauce</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>    
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nc">PizzaMozzarella</span> <span class="k">extends</span> <span class="nx">Pizza</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="nx">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="c1">// Add cheese</span>
+        <span class="c1">// Add mozzarella cheese</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">abstract</span> <span class="nx">addSauce</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addSauce</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// add olives and oregano</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">class</span> <span class="nc">PizzaMozzarella</span> <span class="k">extends</span> <span class="nx">Pizza</span>
+<span class="kd">class</span> <span class="nc">PizzaCarbonara</span> <span class="k">extends</span> <span class="nx">Pizza</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="nx">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addCover</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="c1">// Add cheese</span>
+        <span class="c1">// Add parmesan, mozzarella, eggs and bacon</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">abstract</span> <span class="nx">addSauce</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">addSauce</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="c1">// add olives and oregano</span>
+        <span class="c1">// add oregano</span>
     <span class="p">}</span>    
 <span class="p">}</span>
+</code></pre></div></div>
 
+<h2 id="chain-of-responsibility">Chain of Responsibility</h2>
+
+<p>When we crate a chain of objects working together to handle requests, we call it a <strong>Chain of Responsibility</strong>.</p>
+
+<p>Generally they are a series of <strong>Handlers</strong> objects, each one specialized on handle some part of the requests.</p>
+
+<p>While the request <strong>is not satisfied</strong> by a handler, they will forward the request to the next handler in the chain.</p>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/chain-off-responsibility-pattern.png" alt="UML Chain of responsibility pattern" width="" height="">
+  <figcaption class="caption">UML Chain of responsibility pattern</figcaption>
+</figure>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">RequestHandler</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var Handler
+     */</span>
+    <span class="k">protected</span> <span class="nv">$nextHandler</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setNextHandler</span><span class="p">(</span><span class="nx">Handler</span> <span class="nv">$nextHandler</span><span class="p">)</span><span class="o">:</span> <span class="nx">self</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">nextHandler</span> <span class="o">=</span> <span class="nv">$nextHandler</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">abstract</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">Response</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">UserAuthorizerHandler</span> <span class="k">extends</span> <span class="nx">RequestHandler</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">Response</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getAttribute</span><span class="p">(</span><span class="s1">'authorized'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="c1">// Sends user to authorization...</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$next</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$response</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">UrlRedirectHandler</span> <span class="k">extends</span> <span class="nx">RequestHandler</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">Response</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">()</span> <span class="o">===</span> <span class="s1">'redirect'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Validate url and create redirect response...</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$next</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$response</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">XssValidationHandler</span> <span class="k">extends</span> <span class="nx">RequestHandler</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">Response</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getQueryParam</span><span class="p">(</span><span class="s1">'search'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="c1">// If the parameter values corresponds to a XSS attack, block user...</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$next</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$response</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Last handler, if everything went fine...</span>
+<span class="kd">class</span> <span class="nc">LoadViewHandler</span> <span class="k">extends</span> <span class="nx">RequestHandler</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">Response</span>
+    <span class="p">{</span>
+        <span class="c1">// Loads HTML page by request...</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// ...request handling on index.php</span>
+
+<span class="nv">$handler1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserAuthorizerHandler</span><span class="p">();</span>
+<span class="nv">$handler2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UrlRedirectHandler</span><span class="p">();</span>
+<span class="nv">$handler3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XssValidationHandler</span><span class="p">();</span>
+<span class="nv">$handler4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LoadViewHandler</span><span class="p">();</span>
+
+<span class="nv">$handler1</span><span class="o">-&gt;</span><span class="na">setNextHandler</span><span class="p">(</span><span class="nv">$handler2</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setNextHandler</span><span class="p">(</span><span class="nv">$handler3</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setNextHandler</span><span class="p">(</span><span class="nv">$handler4</span><span class="p">);</span>
+
+<span class="k">return</span> <span class="nv">$handler1</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
 </code></pre></div></div>
 
 
