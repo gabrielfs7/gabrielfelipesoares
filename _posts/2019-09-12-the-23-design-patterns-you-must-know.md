@@ -811,3 +811,145 @@ $handler1->setNextHandler($handler2)
 
 return $handler1->handle($request);
 ```
+
+## State pattern
+
+The state pattern is used when you want to **change the behavior off an object depending on its current state** at run-time.
+
+Lets see the example in Java. Instead of have lots of conditions inside the **ATM** class, we **distribute the responsibilities to each possible "state"** of the ATM machine.
+
+``` java
+class Atm
+{
+    private float balance;
+    private AtmState currentState;
+    private NoFundsState noFundsState;
+    private HasFundsState hasFundsState;
+    private IdleState idleState;
+
+    public Atm()
+    {
+        idleState = new IdleState(this);
+        noFundsState = new NoFundsState(this);
+        hasFundsState = new HasFundsState(this);
+        currentState = idleState;
+    }
+
+    public void withdraw(float amount)
+    {
+        currentState.withdraw(amount);
+    }
+
+    public void deposit(float amount)
+    {
+        currentState.deposit(amount);
+    }
+
+    public float getBalance()
+    {
+        return balance;
+    }
+
+    public void addMoney(float money)
+    {
+        this.balance += money;
+    }
+
+    public void removeMoney(float money)
+    {
+        this.balance -= money;
+    }
+
+    public void setCurrentState(AtmState currentState)
+    {
+        this.currentState = currentState;
+    }
+
+    public HasFundsState getHasFundsState()
+    {
+        return this.hasFundsState;
+    }
+
+    public NoFundsState getNoFundsState()
+    {
+        return this.noFundsState;
+    }
+
+    public IdleState getIdleState()
+    {
+        return this.idleState;
+    }
+}
+
+abstract class AtmState
+{
+    protected Atm atm;
+
+    public AtmState(Atm atm)
+    {
+        this.atm = atm;
+    }
+
+    public abstract void withdraw(float amount);
+    public abstract void deposit(float amount);
+}
+
+class NoFundsState extends AtmState
+{
+    public void withdraw(float amount)
+    {
+        throw new NoFundsException("No funds");
+    }
+
+    public void deposit(float amount)
+    {
+        super.atm.addMoney(amount);
+        super.atm.setState(super.atm.getHasFundsState());
+    }
+}
+
+class HasFundsState extends AtmState
+{
+    public void withdraw(float amount)
+    {
+        if (super.atm.getBalance() < amount) {
+            throw new NoFundsException("No funds");
+        }
+
+        super.atm.removeMoney(amount);
+
+        if (super.atm.getBalance() <= 0) {
+            super.atm.setState(super.atm.getNoFundsState());
+        }
+    }
+
+    public void deposit(float amount)
+    {
+        super.atm.addMoney(amount);
+    }
+}
+
+class IdleState extends AtmState
+{
+    public void withdraw(float amount)
+    {
+        if (super.atm.getBalance() < amount) {
+            throw new NoFundsException("No funds");
+        }
+            
+        super.atm.removeMoney(amount);
+
+        if (super.atm.getBalance() <= 0) {
+            super.atm.setState(super.atm.getNoFundsState());
+        } else {
+            super.atm.setState(super.atm.getHasFundsState());
+        }
+    }
+
+    public void deposit(float amount)
+    {
+        super.atm.addMoney(amount);
+        super.atm.setState(super.atm.getHasFundsState());
+    }
+}
+```

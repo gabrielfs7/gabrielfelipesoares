@@ -1073,6 +1073,147 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 <span class="k">return</span> <span class="nv">$handler1</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
 </code></pre></div></div>
 
+<h2 id="state-pattern">State pattern</h2>
+
+<p>The state pattern is used when you want to change the behavior off an object depending on its current state in run-time.</p>
+
+<p>Lets see the example in Java. Instead of have lots of conditions inside the <strong>ATM</strong> class, we <strong>distribute the responsibilities to each possible “state”</strong> of the ATM machine.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Atm</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">balance</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">AtmState</span> <span class="n">currentState</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">NoFundsState</span> <span class="n">noFundsState</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">HasFundsState</span> <span class="n">hasFundsState</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">IdleState</span> <span class="n">idleState</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Atm</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="n">idleState</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IdleState</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">noFundsState</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">NoFundsState</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">hasFundsState</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HasFundsState</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">currentState</span> <span class="o">=</span> <span class="n">idleState</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">currentState</span><span class="o">.</span><span class="na">withdraw</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deposit</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">currentState</span><span class="o">.</span><span class="na">deposit</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getBalance</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">balance</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMoney</span><span class="o">(</span><span class="kt">float</span> <span class="n">money</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">balance</span> <span class="o">+=</span> <span class="n">money</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeMoney</span><span class="o">(</span><span class="kt">float</span> <span class="n">money</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">balance</span> <span class="o">-=</span> <span class="n">money</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCurrentState</span><span class="o">(</span><span class="nc">AtmState</span> <span class="n">currentState</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">currentState</span> <span class="o">=</span> <span class="n">currentState</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">HasFundsState</span> <span class="nf">getHasFundsState</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">hasFundsState</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">NoFundsState</span> <span class="nf">getNoFundsState</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">noFundsState</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">IdleState</span> <span class="nf">getIdleState</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">idleState</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AtmState</span>
+<span class="o">{</span>
+    <span class="kd">protected</span> <span class="nc">Atm</span> <span class="n">atm</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">AtmState</span><span class="o">(</span><span class="nc">Atm</span> <span class="n">atm</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">atm</span> <span class="o">=</span> <span class="n">atm</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">deposit</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">NoFundsState</span> <span class="kd">extends</span> <span class="nc">AtmState</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">NoFundsException</span><span class="o">(</span><span class="s">"No funds"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deposit</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">addMoney</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getHasFundsState</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">HasFundsState</span> <span class="kd">extends</span> <span class="nc">AtmState</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">NoFundsException</span><span class="o">(</span><span class="s">"No funds"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">removeMoney</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getNoFundsState</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deposit</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">addMoney</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">IdleState</span> <span class="kd">extends</span> <span class="nc">AtmState</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">withdraw</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">NoFundsException</span><span class="o">(</span><span class="s">"No funds"</span><span class="o">);</span>
+        <span class="o">}</span>
+            
+        <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">removeMoney</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getNoFundsState</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getHasFundsState</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deposit</span><span class="o">(</span><span class="kt">float</span> <span class="n">amount</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">addMoney</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getHasFundsState</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
 
     <div class="share">
   
