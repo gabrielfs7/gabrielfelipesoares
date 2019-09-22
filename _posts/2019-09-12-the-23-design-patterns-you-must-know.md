@@ -1185,3 +1185,13 @@ class Invoker
     }
 }
 ```
+
+## Mediator
+
+When we need some objects to interact each other based on some events, sometimes create an direct relation could be difficult to maintain. As these objects can grow in different directions, we do not want them to being coupled.
+
+Imagine that you have a **Smart House** where you object can take different actions based on some events or other objects states. For instance, when your house temperature is too cold, the Air Conditioning should increase temperature. Or when you enter at home after a day of work, a coffee should be prepared. If it is Sunday morning 9AM, turn on the TV with the News.
+
+It would be really difficult to maintain those objects aware about each other states. There comes handy the **Mediator** to do the job.
+
+{% include post-figure.html image="mediator-pattern.png" caption="UML Mediator pattern" %}
