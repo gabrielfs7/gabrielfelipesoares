@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-20T22:15:40+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">The 23 Design Patterns you must know</title><link href="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" rel="alternate" type="text/html" title="The 23 Design Patterns you must know" /><published>2019-09-12T00:00:00+01:00</published><updated>2019-09-12T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/">&lt;p&gt;Based on a famous book I will try to simplify and give examples of the 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-22T12:27:01+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">The 23 Design Patterns you must know</title><link href="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" rel="alternate" type="text/html" title="The 23 Design Patterns you must know" /><published>2019-09-12T00:00:00+01:00</published><updated>2019-09-12T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/">&lt;p&gt;Based on a famous book I will try to simplify and give examples of the 
 23 famous design patterns that can help your daily work as developer.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -840,7 +840,7 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 &lt;h2 id=&quot;state-pattern&quot;&gt;State pattern&lt;/h2&gt;
 
-&lt;p&gt;The state pattern is used when you want to change the behavior off an object depending on its current state in run-time.&lt;/p&gt;
+&lt;p&gt;The state pattern is used when you want to &lt;strong&gt;change the behavior off an object depending on its current state&lt;/strong&gt; at run-time.&lt;/p&gt;
 
 &lt;p&gt;Lets see the example in Java. Instead of have lots of conditions inside the &lt;strong&gt;ATM&lt;/strong&gt; class, we &lt;strong&gt;distribute the responsibilities to each possible “state”&lt;/strong&gt; of the ATM machine.&lt;/p&gt;
 
@@ -977,6 +977,236 @@ Even nowadays the Book is still handy and we realize how timeless is its content
         &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;atm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;atm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHasFundsState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;command&quot;&gt;Command&lt;/h2&gt;
+
+&lt;p&gt;The command &lt;strong&gt;encapsulates a request in an object&lt;/strong&gt; its own. So this command must be forward to a &lt;strong&gt;Worker&lt;/strong&gt; which knows how to execute this command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(Sender) -Creates-&amp;gt; (Command) -Calls_Method-&amp;gt; (Receiver);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Objects involved in the Command pattern.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Sender&lt;/strong&gt;: The object that needs some request to be done.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Command&lt;/strong&gt;: The encapsulated request in a way that the Receiver knows how process it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Receiver&lt;/strong&gt;: The object that knows how to execute an specific Command.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Invoker&lt;/strong&gt;: The object that invokes Command object to complete whatever tasks it does.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Command Manager&lt;/strong&gt;: A object to keep track of the commands to be executed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;undoredo-or-memento-using-command-pattern&quot;&gt;Undo/Redo or Memento using Command pattern&lt;/h3&gt;
+
+&lt;p&gt;Sometimes you need to keep track of all the state changes of an object, so you can easily move back and forth to a program state. A real world example is the &lt;strong&gt;undo/redo of text editors&lt;/strong&gt;. So every time you do a change in the editor you put a command at the top of a stack.&lt;/p&gt;
+
+&lt;p&gt;This pattern can be used in conjunction with the &lt;strong&gt;Command pattern&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Se the example in PHP &lt;strong&gt;integrating Memento with Command&lt;/strong&gt; pattern:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; 
+&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Receiver&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EraseTextReceiver&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Receiver&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//Erase from file: $data['file'], strlen($data['text']), $data['position'];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WriteTextReceiver&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Receiver&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+        &lt;span class=&quot;c1&quot;&gt;//Write in the file: $data['file'], $data['text'], $data['position'];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SaveFileReceiver&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Receiver&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//Save file contents from $data['file']&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Command&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;undo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isReversible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WriteCommand&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Command&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$writeReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$eraseFileReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;WriteFileReceiver&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$writeReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;nx&quot;&gt;EraseFileReceiver&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$eraseFileReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;writeReceiver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$writeReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;eraseReceiver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$eraseFileReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;writeReceiver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;undo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;eraseReceiver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isReversible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bool&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SaveCommand&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Command&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Save file: $this-&amp;gt;data['file'];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;undo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;// cannot undo save&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isReversible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bool&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cd&quot;&gt;/**
+ * Manage command execution, queue, etc
+ * 
+ * Here we are using &quot;Memento pattern&quot; where we have two queues &quot;history&quot; and &quot;undoHistory&quot;.
+ */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CommandManager&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$history&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Queue for doing commands&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$undoHistory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Queue for undoing commands&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Command&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;undoCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$last&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$lastCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+        &lt;span class=&quot;nb&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoHistory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$lastCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$lastCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isReversible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$lastCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;redoCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$last&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoHistory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoHistory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$lastCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoHistory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+        &lt;span class=&quot;nb&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoHistory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$lastCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$lastCommand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Interacts with command manager and commands&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Invoker&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cd&quot;&gt;/**
+     * @var CommandManager
+     */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$commandManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;invoke&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$writeTextReceiver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WriteTextReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$eraseTextReceiver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;EraseTextReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$saveReceiver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SaveFileReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$command1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WriteCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$writeTextReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+            &lt;span class=&quot;nv&quot;&gt;$eraseTextReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'file'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Hello Word'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                &lt;span class=&quot;s1&quot;&gt;'position'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            
+        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$command2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WriteCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$writeTextReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+            &lt;span class=&quot;nv&quot;&gt;$eraseTextReceiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'file'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Another text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                &lt;span class=&quot;s1&quot;&gt;'position'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$command3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SaveCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'file'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;cd&quot;&gt;/**
+         * Here we can check memento working with Command pattern
+         */&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commandManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$command1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commandManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$command2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commandManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$command3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commandManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Cannot undo save&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commandManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Will remove &quot;Another text&quot; from file&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commandManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;redoCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Will add again &quot;Another text&quot; to file&lt;/span&gt;
+
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commandManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Will remove &quot;Another text&quot; from file&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;commandManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;undoCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Will remove &quot;Hello World&quot; from file&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Based on a famous book I will try to simplify and give examples of the 23 famous design patterns that can help your daily work as developer.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">A brief overview about Software Design and Software architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/" rel="alternate" type="text/html" title="A brief overview about Software Design and Software architecture" /><published>2019-09-11T00:00:00+01:00</published><updated>2019-09-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/11/software-design-architecuture/">&lt;p&gt;What is Software Design and Architecture? How they relate and differ each other?&lt;/p&gt;
 
 &lt;!-- more --&gt;

@@ -953,3 +953,233 @@ class IdleState extends AtmState
     }
 }
 ```
+
+## Command
+
+The command **encapsulates a request in an object** its own. So this command must be forward to a **Worker** which knows how to execute this command.
+
+```
+(Sender) -Creates-> (Command) -Calls_Method-> (Receiver);
+```
+
+Objects involved in the Command pattern.
+
+- **Sender**: The object that needs some request to be done.
+- **Command**: The encapsulated request in a way that the Receiver knows how process it.
+- **Receiver**: The object that knows how to execute an specific Command.
+- **Invoker**: The object that invokes Command object to complete whatever tasks it does.
+- **Command Manager**: A object to keep track of the commands to be executed.
+
+### Undo/Redo or Memento using Command pattern
+
+Sometimes you need to keep track of all the state changes of an object, so you can easily move back and forth to a program state. A real world example is the **undo/redo of text editors**. So every time you do a change in the editor you put a command at the top of a stack.
+
+This pattern can be used in conjunction with the **Command pattern**
+
+Se the example in PHP **integrating Memento with Command** pattern:
+
+``` php
+<?php 
+interface Receiver
+{
+    public function execute(array $data);
+}
+
+class EraseTextReceiver implements Receiver
+{
+    public function execute(array $data): void
+    {
+        //Erase from file: $data['file'], strlen($data['text']), $data['position'];
+    }
+}
+
+class WriteTextReceiver implements Receiver
+{
+    public function execute(array $data): void
+    { 
+        //Write in the file: $data['file'], $data['text'], $data['position'];
+    }
+}
+
+class SaveFileReceiver implements Receiver
+{
+    public function execute(array $data): void
+    {
+        //Save file contents from $data['file']
+    }
+}
+
+abstract class Command
+{
+    abstract public function do(): void;
+    abstract public function undo(): void;
+    abstract public function isReversible(): bool;
+}
+
+class WriteCommand extends Command
+{
+    private $writeReceiver;
+    private $eraseFileReceiver;
+    private $data;
+
+    public function __construct(
+        WriteFileReceiver $writeReceiver, 
+        EraseFileReceiver $eraseFileReceiver,
+        array $data
+    ) {
+        $this->writeReceiver = $writeReceiver;
+        $this->eraseReceiver = $eraseFileReceiver;
+        $this->data = $data;
+    }
+
+    public function do(): void
+    {
+        $this->writeReceiver->execute($this->data);
+    }
+    
+    public function undo(): void
+    {
+        $this->eraseReceiver->execute($this->data);
+    }
+
+    public function isReversible(): bool
+    {
+        return true;
+    }
+}
+
+class SaveCommand extends Command
+{
+    private $data;
+
+    public function __construct(array $data) 
+    {
+        $this->data = $data;
+    }
+
+    public function do(array $data): void
+    {
+        // Save file: $this->data['file'];
+    }
+    public function undo(array $data): void
+    {
+         // cannot undo save
+    }
+
+    public function isReversible(): bool
+    {
+        return false;
+    }
+}
+
+/**
+ * Manage command execution, queue, etc
+ * 
+ * Here we are using "Memento pattern" where we have two queues "history" and "undoHistory".
+ */
+class CommandManager
+{
+    private $history = []; //Queue for doing commands
+    private $undoHistory = []; //Queue for undoing commands
+
+    public function doCommand(Command $command)
+    {
+        $this->history[] = $command;
+
+        $command->do();
+    }
+
+    public function undoCommand()
+    {
+        $last = count($this->history) - 1;
+
+        if (!isset($this->history[$last])) {
+            return;
+        }
+
+        $lastCommand = $this->history[$last];
+
+        unset($this->history[$last]);
+
+        $this->undoHistory[] = $lastCommand;
+
+        if ($lastCommand->isReversible()) {
+            $lastCommand->undo();
+        }
+    }
+
+    public function redoCommand()
+    {
+        $last = count($this->undoHistory) - 1;
+
+        if (!isset($this->undoHistory[$last])) {
+            return;
+        }
+
+        $lastCommand = $this->undoHistory[$last];
+
+        unset($this->undoHistory[$last]);
+
+        $this->history[] = $lastCommand;
+
+        $lastCommand->do();
+    }
+}
+
+// Interacts with command manager and commands
+class Invoker
+{
+    /**
+     * @var CommandManager
+     */
+    private $commandManager;
+
+    public function invoke()
+    {
+        $file = new File();
+        $writeTextReceiver = new WriteTextReceiver();
+        $eraseTextReceiver = new EraseTextReceiver();
+        $saveReceiver = new SaveFileReceiver();
+
+        $command1 = new WriteCommand(
+            $writeTextReceiver, 
+            $eraseTextReceiver, 
+            [
+                'file' => $file,
+                'text' => 'Hello Word', 
+                'position' => 0,
+            ]
+            
+        );
+        $command2 = new WriteCommand(
+            $writeTextReceiver, 
+            $eraseTextReceiver, 
+            [
+                'file' => $file,
+                'text' => 'Another text', 
+                'position' => 9,
+            ]
+        );
+        $command3 = new SaveCommand(
+            [
+                'file' => $file,
+            ]
+        );
+
+        /**
+         * Here we can check memento working with Command pattern
+         */
+        $this->commandManager->doCommand($command1);
+        $this->commandManager->doCommand($command2);
+        $this->commandManager->doCommand($command3);
+
+        $this->commandManager->undoCommand(); // Cannot undo save
+        $this->commandManager->undoCommand(); // Will remove "Another text" from file
+
+        $this->commandManager->redoCommand(); // Will add again "Another text" to file
+
+        $this->commandManager->undoCommand(); // Will remove "Another text" from file
+        $this->commandManager->undoCommand(); // Will remove "Hello World" from file
+    }
+}
+```

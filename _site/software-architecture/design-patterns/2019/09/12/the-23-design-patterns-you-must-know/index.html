@@ -1075,7 +1075,7 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 <h2 id="state-pattern">State pattern</h2>
 
-<p>The state pattern is used when you want to change the behavior off an object depending on its current state in run-time.</p>
+<p>The state pattern is used when you want to <strong>change the behavior off an object depending on its current state</strong> at run-time.</p>
 
 <p>Lets see the example in Java. Instead of have lots of conditions inside the <strong>ATM</strong> class, we <strong>distribute the responsibilities to each possible “state”</strong> of the ATM machine.</p>
 
@@ -1212,6 +1212,241 @@ Even nowadays the Book is still handy and we realize how timeless is its content
         <span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="kd">super</span><span class="o">.</span><span class="na">atm</span><span class="o">.</span><span class="na">getHasFundsState</span><span class="o">());</span>
     <span class="o">}</span>
 <span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="command">Command</h2>
+
+<p>The command <strong>encapsulates a request in an object</strong> its own. So this command must be forward to a <strong>Worker</strong> which knows how to execute this command.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(Sender) -Creates-&gt; (Command) -Calls_Method-&gt; (Receiver);
+</code></pre></div></div>
+
+<p>Objects involved in the Command pattern.</p>
+
+<ul>
+  <li>
+<strong>Sender</strong>: The object that needs some request to be done.</li>
+  <li>
+<strong>Command</strong>: The encapsulated request in a way that the Receiver knows how process it.</li>
+  <li>
+<strong>Receiver</strong>: The object that knows how to execute an specific Command.</li>
+  <li>
+<strong>Invoker</strong>: The object that invokes Command object to complete whatever tasks it does.</li>
+  <li>
+<strong>Command Manager</strong>: A object to keep track of the commands to be executed.</li>
+</ul>
+
+<h3 id="undoredo-or-memento-using-command-pattern">Undo/Redo or Memento using Command pattern</h3>
+
+<p>Sometimes you need to keep track of all the state changes of an object, so you can easily move back and forth to a program state. A real world example is the <strong>undo/redo of text editors</strong>. So every time you do a change in the editor you put a command at the top of a stack.</p>
+
+<p>This pattern can be used in conjunction with the <strong>Command pattern</strong></p>
+
+<p>Se the example in PHP <strong>integrating Memento with Command</strong> pattern:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+<span class="kd">interface</span> <span class="nc">Receiver</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">EraseTextReceiver</span> <span class="k">implements</span> <span class="nx">Receiver</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">//Erase from file: $data['file'], strlen($data['text']), $data['position'];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">WriteTextReceiver</span> <span class="k">implements</span> <span class="nx">Receiver</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span> 
+        <span class="c1">//Write in the file: $data['file'], $data['text'], $data['position'];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">SaveFileReceiver</span> <span class="k">implements</span> <span class="nx">Receiver</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">//Save file contents from $data['file']</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">Command</span>
+<span class="p">{</span>
+    <span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">do</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
+    <span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">undo</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
+    <span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">isReversible</span><span class="p">()</span><span class="o">:</span> <span class="nx">bool</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">WriteCommand</span> <span class="k">extends</span> <span class="nx">Command</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$writeReceiver</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$eraseFileReceiver</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">WriteFileReceiver</span> <span class="nv">$writeReceiver</span><span class="p">,</span> 
+        <span class="nx">EraseFileReceiver</span> <span class="nv">$eraseFileReceiver</span><span class="p">,</span>
+        <span class="k">array</span> <span class="nv">$data</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">writeReceiver</span> <span class="o">=</span> <span class="nv">$writeReceiver</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eraseReceiver</span> <span class="o">=</span> <span class="nv">$eraseFileReceiver</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">do</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">writeReceiver</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">undo</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eraseReceiver</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">isReversible</span><span class="p">()</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">SaveCommand</span> <span class="k">extends</span> <span class="nx">Command</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">do</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Save file: $this-&gt;data['file'];</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">undo</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+         <span class="c1">// cannot undo save</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">isReversible</span><span class="p">()</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cd">/**
+ * Manage command execution, queue, etc
+ * 
+ * Here we are using "Memento pattern" where we have two queues "history" and "undoHistory".
+ */</span>
+<span class="kd">class</span> <span class="nc">CommandManager</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$history</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">//Queue for doing commands</span>
+    <span class="k">private</span> <span class="nv">$undoHistory</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">//Queue for undoing commands</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">doCommand</span><span class="p">(</span><span class="nx">Command</span> <span class="nv">$command</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">history</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$command</span><span class="p">;</span>
+
+        <span class="nv">$command</span><span class="o">-&gt;</span><span class="na">do</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">undoCommand</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$last</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">history</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">history</span><span class="p">[</span><span class="nv">$last</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nv">$lastCommand</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">history</span><span class="p">[</span><span class="nv">$last</span><span class="p">];</span>
+
+        <span class="nb">unset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">history</span><span class="p">[</span><span class="nv">$last</span><span class="p">]);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">undoHistory</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$lastCommand</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$lastCommand</span><span class="o">-&gt;</span><span class="na">isReversible</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$lastCommand</span><span class="o">-&gt;</span><span class="na">undo</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">redoCommand</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$last</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">undoHistory</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">undoHistory</span><span class="p">[</span><span class="nv">$last</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nv">$lastCommand</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">undoHistory</span><span class="p">[</span><span class="nv">$last</span><span class="p">];</span>
+
+        <span class="nb">unset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">undoHistory</span><span class="p">[</span><span class="nv">$last</span><span class="p">]);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">history</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$lastCommand</span><span class="p">;</span>
+
+        <span class="nv">$lastCommand</span><span class="o">-&gt;</span><span class="na">do</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Interacts with command manager and commands</span>
+<span class="kd">class</span> <span class="nc">Invoker</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var CommandManager
+     */</span>
+    <span class="k">private</span> <span class="nv">$commandManager</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">invoke</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$file</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">File</span><span class="p">();</span>
+        <span class="nv">$writeTextReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WriteTextReceiver</span><span class="p">();</span>
+        <span class="nv">$eraseTextReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EraseTextReceiver</span><span class="p">();</span>
+        <span class="nv">$saveReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SaveFileReceiver</span><span class="p">();</span>
+
+        <span class="nv">$command1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WriteCommand</span><span class="p">(</span>
+            <span class="nv">$writeTextReceiver</span><span class="p">,</span> 
+            <span class="nv">$eraseTextReceiver</span><span class="p">,</span> 
+            <span class="p">[</span>
+                <span class="s1">'file'</span> <span class="o">=&gt;</span> <span class="nv">$file</span><span class="p">,</span>
+                <span class="s1">'text'</span> <span class="o">=&gt;</span> <span class="s1">'Hello Word'</span><span class="p">,</span> 
+                <span class="s1">'position'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="p">]</span>
+            
+        <span class="p">);</span>
+        <span class="nv">$command2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WriteCommand</span><span class="p">(</span>
+            <span class="nv">$writeTextReceiver</span><span class="p">,</span> 
+            <span class="nv">$eraseTextReceiver</span><span class="p">,</span> 
+            <span class="p">[</span>
+                <span class="s1">'file'</span> <span class="o">=&gt;</span> <span class="nv">$file</span><span class="p">,</span>
+                <span class="s1">'text'</span> <span class="o">=&gt;</span> <span class="s1">'Another text'</span><span class="p">,</span> 
+                <span class="s1">'position'</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
+        <span class="nv">$command3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SaveCommand</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="s1">'file'</span> <span class="o">=&gt;</span> <span class="nv">$file</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
+
+        <span class="cd">/**
+         * Here we can check memento working with Command pattern
+         */</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">commandManager</span><span class="o">-&gt;</span><span class="na">doCommand</span><span class="p">(</span><span class="nv">$command1</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">commandManager</span><span class="o">-&gt;</span><span class="na">doCommand</span><span class="p">(</span><span class="nv">$command2</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">commandManager</span><span class="o">-&gt;</span><span class="na">doCommand</span><span class="p">(</span><span class="nv">$command3</span><span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">commandManager</span><span class="o">-&gt;</span><span class="na">undoCommand</span><span class="p">();</span> <span class="c1">// Cannot undo save</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">commandManager</span><span class="o">-&gt;</span><span class="na">undoCommand</span><span class="p">();</span> <span class="c1">// Will remove "Another text" from file</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">commandManager</span><span class="o">-&gt;</span><span class="na">redoCommand</span><span class="p">();</span> <span class="c1">// Will add again "Another text" to file</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">commandManager</span><span class="o">-&gt;</span><span class="na">undoCommand</span><span class="p">();</span> <span class="c1">// Will remove "Another text" from file</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">commandManager</span><span class="o">-&gt;</span><span class="na">undoCommand</span><span class="p">();</span> <span class="c1">// Will remove "Hello World" from file</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 
