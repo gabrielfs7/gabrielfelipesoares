@@ -1521,6 +1521,100 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 <span class="p">}</span>
 </code></pre></div></div>
 
+<h2 id="observer">Observer</h2>
+
+<p>When we need to keep objects “observing” changes on other objects (subjects) we use the <strong>Observer</strong> pattern. This pattern contains main classes:</p>
+
+<ul>
+  <li>
+<strong>Observer</strong>: The objects that wants to be notified when something occurs with the Subject.</li>
+  <li>
+<strong>Subject</strong>: The object containing one or more observers related and responsible to notify than when something occurs.</li>
+</ul>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/observer-class-diagram.png" alt="Observer UML class diagram" width="" height="">
+  <figcaption class="caption">Observer UML class diagram</figcaption>
+</figure>
+
+<p>Example in Java:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Subject</span> 
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addObserver</span><span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeObserver</span><span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">notifyObservers</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Observer</span> 
+<span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Subject</span> <span class="n">subject</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shipping</span> <span class="kd">implements</span> <span class="nc">Subject</span> 
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Observer</span><span class="o">&gt;</span> <span class="n">observers</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">productId</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">status</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changeShippingStatus</span><span class="o">(</span><span class="nc">String</span> <span class="n">productId</span><span class="o">,</span> <span class="nc">String</span> <span class="n">status</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">productId</span> <span class="o">=</span> <span class="n">productId</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="o">;</span>
+
+        <span class="k">this</span><span class="o">.</span><span class="na">notifyObservers</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getProductId</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">productId</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getStatus</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">status</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addObserver</span><span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="na">observers</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">observer</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">observers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">observer</span><span class="o">);</span>    
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeObserver</span><span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">observers</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">observer</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">observers</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">observer</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">notifyObservers</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Observer</span> <span class="n">observer</span> <span class="o">:</span> <span class="k">this</span><span class="o">.</span><span class="na">observers</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">observer</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Customer</span> <span class="kd">implements</span> <span class="nc">Observer</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Customer</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Subject</span> <span class="n">subject</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">status</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"live"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Product "</span> <span class="o">+</span> <span class="n">subject</span><span class="o">.</span><span class="na">getProductId</span><span class="o">()</span> <span class="o">+</span> <span class="s">" shipping status is now "</span> <span class="o">+</span> <span class="n">subject</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()</span> <span class="o">+</span> <span class="s">"!"</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
 
     <div class="share">
   

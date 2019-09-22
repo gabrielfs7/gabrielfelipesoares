@@ -1247,3 +1247,91 @@ class AirConditioning extends Colleague
     }
 }
 ```
+
+## Observer
+
+When we need to keep objects "observing" changes on other objects (subjects) we use the **Observer** pattern. This pattern contains main classes:
+
+- **Observer**: The objects that wants to be notified when something occurs with the Subject.
+- **Subject**: The object containing one or more observers related and responsible to notify than when something occurs.
+
+{% include post-figure.html image="observer-class-diagram.png" caption="Observer UML class diagram" %}
+
+Example in Java:
+
+``` java
+public interface Subject 
+{
+    public void addObserver(Observer observer);
+    public void removeObserver(Observer observer);
+    public void notifyObservers();
+}
+
+public interface Observer 
+{
+	public void update(Subject subject);
+}
+
+public class Shipping implements Subject 
+{
+    private ArrayList<Observer> observers;
+    private String productId;
+    private String status;
+
+    public void changeShippingStatus(String productId, String status)
+    {
+        this.productId = productId;
+        this.status = status;
+
+        this.notifyObservers();
+    }
+
+    public String getProductId()
+    {
+        return this.productId;
+    }
+
+    public String getStatus()
+    {
+        return this.status;
+    }
+    
+    public void addObserver(Observer observer)
+    {
+        if (!this.observers.contains(observer)) {
+            this.observers.add(observer);    
+        }
+    }
+    
+    public void removeObserver(Observer observer)
+    {
+        if (this.observers.contains(observer)) {
+            this.observers.remove(observer);
+        }
+    }
+    
+    public void notifyObservers()
+    {
+        for (Observer observer : this.observers) {
+            observer.update(this);
+        }
+    }
+}
+
+public class Customer implements Observer
+{
+    private String name;
+    
+    public Customer(String name)
+    {
+        this.name = name;
+    }
+    
+    public void update(Subject subject)
+    {
+        if (status.equals("live")) {
+            System.out.println("Product " + subject.getProductId() + " shipping status is now " + subject.getStatus() + "!");
+        }
+    }
+}
+```
