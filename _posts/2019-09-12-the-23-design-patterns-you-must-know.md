@@ -976,6 +976,8 @@ Sometimes you need to keep track of all the state changes of an object, so you c
 
 This pattern can be used in conjunction with the **Command pattern**
 
+{% include post-figure.html image="command-memento-pattern.png" caption="UML Command and Memento pattern" %}
+
 Se the example in PHP **integrating Memento with Command** pattern:
 
 ``` php
