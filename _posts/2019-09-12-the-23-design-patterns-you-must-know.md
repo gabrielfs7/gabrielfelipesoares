@@ -1329,9 +1329,7 @@ public class Customer implements Observer
     
     public void update(Subject subject)
     {
-        if (status.equals("live")) {
-            System.out.println("Product " + subject.getProductId() + " shipping status is now " + subject.getStatus() + "!");
-        }
+        System.out.println("Product " + subject.getProductId() + " shipping status is now " + subject.getStatus() + "!");
     }
 }
 ```
