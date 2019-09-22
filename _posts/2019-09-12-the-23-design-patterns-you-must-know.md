@@ -1195,3 +1195,55 @@ Imagine that you have a **Smart House** where you object can take different acti
 It would be really difficult to maintain those objects aware about each other states. There comes handy the **Mediator** to do the job.
 
 {% include post-figure.html image="mediator-pattern.png" caption="UML Mediator pattern" %}
+
+In this pattern we call these objects that talk to the Mediator, **Colleagues**. The Colleagues can notify the Mediator through the **Observer Pattern**. So, for instance when some relevant event happens with the **Thermostat**, like "Temperature changed", the Mediator is notified.
+
+{% include post-figure.html image="mediator-class-diagram.png" caption="Mediator UML class diagram" %}
+
+``` php
+<?php
+abstract class Mediator implements SplObserver {}
+
+abstract class Colleague implements SplSubject
+{
+    public function attach(SplObserver $observer)
+    {
+        // Attach Mediator
+    }
+
+    public function detach(SplObserver $observer)
+    {
+        // Detach Mediator
+    }
+
+    public function notify()
+    {
+        //Call Mediator::update
+    }
+}
+
+class HouseMediator extends Mediator
+{  
+    public function update(SplSubject $publisher)
+    {
+        // Check the subject. If is Temperature update by thermostat, change the air conditioning
+    }
+}
+
+class Thermostat extends Colleague
+{
+    public function updateCurrentTemperature(float $temperature): void
+    {
+        // Notify mediator
+        $this->notify();
+    }
+}
+
+class AirConditioning extends Colleague
+{
+    public function changeTemperature(float $temperature): void
+    {
+        // Change air conditioning temperature accordingly
+    }
+}
+```

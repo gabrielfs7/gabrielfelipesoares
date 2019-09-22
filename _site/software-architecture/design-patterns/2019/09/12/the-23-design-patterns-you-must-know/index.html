@@ -1458,12 +1458,68 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 <p>When we need some objects to interact each other based on some events, sometimes create an direct relation could be difficult to maintain. As these objects can grow in different directions, we do not want them to being coupled.</p>
 
-<p>Imaging that you have a <strong>Smart House</strong> where you object can take different actions based on some events or other objects states. We could use a <strong>Mediator</strong> to do the job.</p>
+<p>Imagine that you have a <strong>Smart House</strong> where you object can take different actions based on some events or other objects states. For instance, when your house temperature is too cold, the Air Conditioning should increase temperature. Or when you enter at home after a day of work, a coffee should be prepared. If it is Sunday morning 9AM, turn on the TV with the News.</p>
+
+<p>It would be really difficult to maintain those objects aware about each other states. There comes handy the <strong>Mediator</strong> to do the job.</p>
 
 <figure class="figure  figure--center">
   <img class="image" src="/assets/post_images/mediator-pattern.png" alt="UML Mediator pattern" width="" height="">
   <figcaption class="caption">UML Mediator pattern</figcaption>
 </figure>
+
+<p>In this pattern we call these objects that talk to the Mediator, <strong>Colleagues</strong>. The Colleagues can notify the Mediator through the <strong>Observer Pattern</strong>. So, for instance when some relevant event happens with the <strong>Thermostat</strong>, like “Temperature changed”, the Mediator is notified.</p>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/mediator-class-diagram.png" alt="Mediator UML class diagram" width="" height="">
+  <figcaption class="caption">Mediator UML class diagram</figcaption>
+</figure>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">Mediator</span> <span class="k">implements</span> <span class="nx">SplObserver</span> <span class="p">{}</span>
+
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">Colleague</span> <span class="k">implements</span> <span class="nx">SplSubject</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">attach</span><span class="p">(</span><span class="nx">SplObserver</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Attach Mediator</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">detach</span><span class="p">(</span><span class="nx">SplObserver</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Detach Mediator</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">notify</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//Call Mediator::update</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">HouseMediator</span> <span class="k">extends</span> <span class="nx">Mediator</span>
+<span class="p">{</span>  
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nx">SplSubject</span> <span class="nv">$publisher</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Check the subject. If is Temperature update by thermostat, change the air conditioning</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Thermostat</span> <span class="k">extends</span> <span class="nx">Colleague</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">updateCurrentTemperature</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$temperature</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Notify mediator</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">AirConditioning</span> <span class="k">extends</span> <span class="nx">Colleague</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">changeTemperature</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$temperature</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Change air conditioning temperature accordingly</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 
     <div class="share">
