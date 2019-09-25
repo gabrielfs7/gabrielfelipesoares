@@ -1613,6 +1613,46 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 <span class="o">}</span>
 </code></pre></div></div>
 
+<h1 id="other-patterns">Other patterns</h1>
+
+<h2 id="model-view-controller-mvc">Model View Controller (MVC)</h2>
+
+<ul>
+  <li>
+<strong>Model</strong>: It is part of the <strong>Business Layer</strong>. A self contained object which is totally independent from View and Controller. Generally is responsible to manage business rules, entities, persistence, etc. It provider data to controller, so they can be forward to the view.</li>
+  <li>
+<strong>View</strong>: It is part of the <strong>Presentation layer</strong>. It receives data from controller and renders the visualization for user. (I.e HTML content, JSON response, etc). It also receives data from user and forward to the <strong>Model</strong>.</li>
+  <li>
+<strong>Controller</strong>: It is an intermediary object it does the connection between View and Model making the Model loosely coupled to the View.</li>
+</ul>
+
+<p>Example:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Controller</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$model</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$view</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">ProductModel</span> <span class="nv">$model</span><span class="p">,</span> <span class="nx">ProductView</span> <span class="nv">$view</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">model</span> <span class="o">=</span> <span class="nv">$model</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span>  <span class="o">=</span> <span class="nv">$view</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">listProducts</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$products</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">model</span><span class="o">-&gt;</span><span class="na">getProducts</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="s1">'searchTerm'</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getQueryParam</span><span class="p">(</span><span class="s1">'term'</span><span class="p">)</span>
+            <span class="p">]</span>
+            
+        <span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="nv">$products</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 
     <div class="share">
   

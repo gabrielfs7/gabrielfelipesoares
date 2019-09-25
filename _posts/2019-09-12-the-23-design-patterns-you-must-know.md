@@ -1333,3 +1333,40 @@ public class Customer implements Observer
     }
 }
 ```
+
+
+# Other patterns
+
+## Model View Controller (MVC)
+
+- **Model**: It is part of the __Business Layer__. A self contained object which is totally independent from View and Controller. Generally is responsible to manage business rules, entities, persistence, etc. It provider data to controller, so they can be forward to the view.
+- **View**: It is part of the __Presentation layer__. It receives data from controller and renders the visualization for user. (I.e HTML content, JSON response, etc). It also receives data from user and forward to the __Model__.
+- **Controller**: It is an intermediary object it does the connection between View and Model making the Model loosely coupled to the View.
+
+Example:
+
+``` php
+class Controller
+{
+    private $model;
+    private $view;
+
+    public function __construct(ProductModel $model, ProductView $view)
+    {
+        $this->model = $model;
+        $this->view  = $view;
+    }
+
+    public function listProducts(Request $request)
+    {
+        $products = $this->model->getProducts(
+            [
+                'searchTerm' => $request->getQueryParam('term')
+            ]
+            
+        );
+
+        $this->view->render($products);
+    }
+}
+```
