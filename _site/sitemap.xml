@@ -25,6 +25,10 @@
 <lastmod>2019-09-12T00:00:00+01:00</lastmod>
 </url>
 <url>
+<loc>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/</loc>
+<lastmod>2019-09-29T00:00:00+01:00</lastmod>
+</url>
+<url>
 <loc>http://0.0.0.0:4000/categories/</loc>
 </url>
 <url>
@@ -41,5 +45,8 @@
 </url>
 <url>
 <loc>http://0.0.0.0:4000/blog/page3/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/blog/page4/</loc>
 </url>
 </urlset>
