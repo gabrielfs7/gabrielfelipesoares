@@ -33,6 +33,10 @@
 <lastmod>2019-09-28T00:00:00+01:00</lastmod>
 </url>
 <url>
+<loc>http://0.0.0.0:4000/design-principles/2019/09/28/law-of-demeter/</loc>
+<lastmod>2019-09-28T00:00:00+01:00</lastmod>
+</url>
+<url>
 <loc>http://0.0.0.0:4000/design-principles/solid/2019/09/28/open-closed-principle/</loc>
 <lastmod>2019-09-28T00:00:00+01:00</lastmod>
 </url>
@@ -63,5 +67,8 @@
 </url>
 <url>
 <loc>http://0.0.0.0:4000/blog/page5/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/blog/page6/</loc>
 </url>
 </urlset>

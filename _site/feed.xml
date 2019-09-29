@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-29T07:29:14+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - SOLID</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - SOLID" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-29T07:53:00+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - SOLID</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - SOLID" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -131,7 +131,7 @@
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Interface Segregation Principle - ISP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/28/interface-segregation-principle/" rel="alternate" type="text/html" title="Interface Segregation Principle - ISP" /><published>2019-09-28T00:00:00+01:00</published><updated>2019-09-28T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/28/interface-segregation-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/28/interface-segregation-principle/">&lt;p&gt;A class should not be forced to do what it does not do. What? Yes, the way you built interfaces can cause this side effect.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Law of Demeter - Least Knowledge Principle</title><link href="http://0.0.0.0:4000/design-principles/2019/09/28/law-of-demeter/" rel="alternate" type="text/html" title="Law of Demeter - Least Knowledge Principle" /><published>2019-09-28T00:00:00+01:00</published><updated>2019-09-28T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/2019/09/28/law-of-demeter</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/2019/09/28/law-of-demeter/">&lt;p&gt;A class should know as least as possible about other class implementation. There is a law for it!&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -139,11 +139,96 @@
 
 &lt;p&gt;To table this, segregate a interfaces in more and specialized ones.&lt;/p&gt;
 
-&lt;p&gt;Example:&lt;/p&gt;
+&lt;h1 id=&quot;example&quot;&gt;Example:&lt;/h1&gt;
+
+&lt;p&gt;Let’s check the allowed usages:&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Allowed!&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Allowed!&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Allowed!&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And not allowed!&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doAgain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed!&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doAgain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed!&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doAgain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed!&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;C2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed, cause C2 is a base class of C and A only knows C!&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A class should know as least as possible about other class implementation. There is a law for it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Open / Closed Principle - OCP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/28/open-closed-principle/" rel="alternate" type="text/html" title="Open / Closed Principle - OCP" /><published>2019-09-28T00:00:00+01:00</published><updated>2019-09-28T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/28/open-closed-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/28/open-closed-principle/">&lt;p&gt;The Open/Close Principle says that a class must be open for extension, but closed to change. Let’s take a look on it.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;If classes are tested, stable and the system is proven to be working with those, probably you do not want (need) to change then to add more features. So the classes will be open for extension, but closed to changes.&lt;/p&gt;
+
+&lt;p&gt;To overcome this you can use polymorphism to add new features by inheritance or implementing same interfaces.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">The Open/Close Principle says that a class must be open for extension, but closed to change. Let’s take a look on it.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Interface Segregation Principle - ISP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/28/interface-segregation-principle/" rel="alternate" type="text/html" title="Interface Segregation Principle - ISP" /><published>2019-09-28T00:00:00+01:00</published><updated>2019-09-28T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/28/interface-segregation-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/28/interface-segregation-principle/">&lt;p&gt;A class should not be forced to do what it does not do. What? Yes, the way you built interfaces can cause this side effect.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;The Interface Segregation Principle (ISP) says says that class should not be forced to depend on method it does not use.&lt;/p&gt;
+
+&lt;p&gt;To table this, segregate a interfaces in more and specialized ones.&lt;/p&gt;
+
+&lt;h1 id=&quot;example&quot;&gt;Example:&lt;/h1&gt;
+
+&lt;p&gt;Imagine that you want to extract Bird behaviors for an interface.&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bird&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;putEggs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;peck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;land&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Seems good, right? But what about penguins, chickens or other birds that does not fly? To solve this we can segregate the Bird interfaces in more specialized ones:&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bird&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;putEggs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;peck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Flying&lt;/span&gt;
@@ -162,19 +247,11 @@
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Chicken&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bird&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Falcon&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bird&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Flying&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A class should not be forced to do what it does not do. What? Yes, the way you built interfaces can cause this side effect.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Open / Closed Principle - OCP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/28/open-closed-principle/" rel="alternate" type="text/html" title="Open / Closed Principle - OCP" /><published>2019-09-28T00:00:00+01:00</published><updated>2019-09-28T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/28/open-closed-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/28/open-closed-principle/">&lt;p&gt;The Open/Close Principle says that a class must be open for extension, but closed to change. Let’s take a look on it.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;If classes are tested, stable and the system is proven to be working with those, probably you do not want (need) to change then to add more features. So the classes will be open for extension, but closed to changes.&lt;/p&gt;
-
-&lt;p&gt;To overcome this you can use polymorphism to add new features by inheritance or implementing same interfaces.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">The Open/Close Principle says that a class must be open for extension, but closed to change. Let’s take a look on it.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Dependency Inversion Principle - DIP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/28/dependency-inversion-principle/" rel="alternate" type="text/html" title="Dependency Inversion Principle - DIP" /><published>2019-09-28T00:00:00+01:00</published><updated>2019-09-28T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/28/dependency-inversion-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/28/dependency-inversion-principle/">&lt;p&gt;Avoid making classes depending on concrete class to reduce coupling. Reduce the maintenance effort and risk of your system.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A class should not be forced to do what it does not do. What? Yes, the way you built interfaces can cause this side effect.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Dependency Inversion Principle - DIP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/28/dependency-inversion-principle/" rel="alternate" type="text/html" title="Dependency Inversion Principle - DIP" /><published>2019-09-28T00:00:00+01:00</published><updated>2019-09-28T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/28/dependency-inversion-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/28/dependency-inversion-principle/">&lt;p&gt;Avoid making classes depending on concrete class to reduce coupling. Reduce the maintenance effort and risk of your system.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -1837,158 +1914,4 @@ should only know what he needs to know to fill his purpose and also only expose 
   &lt;li&gt;Training and adjust knowledge levels of the individuals to be as similar as possible.&lt;/li&gt;
   &lt;li&gt;Do Code Reviews to reinforce the standards are being applied.&lt;/li&gt;
   &lt;li&gt;Have a well defined, accepted and execute SDLC (Software Development Life Cycle). Does not matter if you use Scrum, Kanban, water fall or whatever. If it is accepted and used by the individuals, this is what matters.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">There are 4 important Design Principles to guide architects when modeling software. They are the CoSICi principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Object Modeling Principles</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/06/object-modeling-principles/" rel="alternate" type="text/html" title="Object Modeling Principles" /><published>2019-09-06T00:00:00+01:00</published><updated>2019-09-06T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/06/object-modeling-principles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/06/object-modeling-principles/">&lt;p&gt;There are 4 important &lt;em&gt;Principles&lt;/em&gt; when modeling objects! They are the &lt;strong&gt;ADEG&lt;/strong&gt;. Yes, as always I have invented a word to memorize them! Lets talk about them.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;&lt;small&gt;
-&lt;em&gt;WIP:&lt;/em&gt; This article is a working in progress. There could be some errors. I will also add some images to help the understanding :)
-&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;An brief history review, first:&lt;/p&gt;
-
-&lt;h1 id=&quot;1960s&quot;&gt;1960’s&lt;/h1&gt;
-
-&lt;p&gt;During the 1960’s there was the &lt;strong&gt;Imperative Paradigm&lt;/strong&gt; where programs basically were composed of routines that interact with other small routines and shared the same &lt;strong&gt;Global Variables&lt;/strong&gt;. The processing were really expensive and the focus were most about hardware capacity than in the solution itself.&lt;/p&gt;
-
-&lt;p&gt;This was the age of &lt;a href=&quot;https://en.wikipedia.org/wiki/COBOL&quot;&gt;Cobol&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Fortran&quot;&gt;Fortran&lt;/a&gt; and others &lt;strong&gt;Imperative Programing&lt;/strong&gt; languages.&lt;/p&gt;
-
-&lt;h1 id=&quot;1970s&quot;&gt;1970’s&lt;/h1&gt;
-
-&lt;p&gt;In this period of time we had a huge progress and now developers could use &lt;strong&gt;local variables&lt;/strong&gt; without being worried about mess up the system by trusting in shared global variables.&lt;/p&gt;
-
-&lt;p&gt;Also the first scratch of what would become an “object” in the future was created, the &lt;strong&gt;Abstract Type&lt;/strong&gt; or Structs.&lt;/p&gt;
-
-&lt;p&gt;In this time, programs started being divided in multiple files and C header file was introduced.&lt;/p&gt;
-
-&lt;p&gt;This was the age of &lt;a href=&quot;https://www.computerhope.com/jargon/a/algol.htm&quot;&gt;Algol&lt;/a&gt;, &lt;a href=&quot;https://www.learn-c.org/&quot;&gt;C&lt;/a&gt;, &lt;a href=&quot;https://www.freepascal.org/advantage.var&quot;&gt;Pascal&lt;/a&gt; and other programing languages that allowed developers to use Abstract Types and local variables.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;C Struct example:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;citNo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;1980s-to-now&quot;&gt;1980’s to now&lt;/h1&gt;
-
-&lt;p&gt;Finally the concept of object was applied to program languages and became possible split the problem and classes and methods and became easier to use business language in the code.&lt;/p&gt;
-
-&lt;p&gt;As examples of languages we can mention &lt;a href=&quot;https://en.wikipedia.org/wiki/Java_(programming_language)&quot;&gt;Java&lt;/a&gt;, C++, C# among many others object oriented languages.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Java class example&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getBrand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setBrand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;1-abstraction&quot;&gt;1. Abstraction&lt;/h2&gt;
-
-&lt;p&gt;The abstraction principle consists in “abstract” the general business needs into classes and methods without concert too much about details.&lt;/p&gt;
-
-&lt;p&gt;At this point the idea is not mature yet and the goal is to translate the initial problem to a high level code base.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-decomposition&quot;&gt;2. Decomposition&lt;/h2&gt;
-
-&lt;p&gt;As we start digging we find more business needs we did not think before the problem becomes bigger and bigger.&lt;/p&gt;
-
-&lt;p&gt;Instead of get crazy, we start breaking down (or decomposing) the previous classes in more and specialized ones. We create abstractions, interfaces, new entities are discovered and so on.&lt;/p&gt;
-
-&lt;p&gt;The goal here is to go deep in the details by decomposing the big problem in smaller and controlled solutions.&lt;/p&gt;
-
-&lt;h3 id=&quot;types-of-decomposition-relations&quot;&gt;Types of Decomposition relations&lt;/h3&gt;
-
-&lt;h4 id=&quot;association&quot;&gt;Association&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Relationship is optional&lt;/li&gt;
-  &lt;li&gt;Associated classes are completely independent.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;figure  figure--center&quot;&gt;
-  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/uml-class-diagram-association.png&quot; alt=&quot;UML class diagram Association example&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
-  &lt;figcaption class=&quot;caption&quot;&gt;UML class diagram Association example&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h4 id=&quot;aggregation&quot;&gt;Aggregation&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Weak &lt;strong&gt;has-a&lt;/strong&gt; relationship.&lt;/li&gt;
-  &lt;li&gt;One object does not need to have the other to exist.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;figure  figure--center&quot;&gt;
-  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/uml-class-diagram-aggregation.png&quot; alt=&quot;UML class diagram aggregation example&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
-  &lt;figcaption class=&quot;caption&quot;&gt;UML class diagram aggregation example&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h4 id=&quot;composition&quot;&gt;Composition&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Strong &lt;strong&gt;has-a&lt;/strong&gt; relationship&lt;/li&gt;
-  &lt;li&gt;Associated classes are &lt;strong&gt;completely dependent&lt;/strong&gt;. Example, an object &lt;strong&gt;Human&lt;/strong&gt; always has an object &lt;strong&gt;Brain&lt;/strong&gt; associated, otherwise it cannot exist.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;figure  figure--center&quot;&gt;
-  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/uml-class-diagram-composition.png&quot; alt=&quot;UML class diagram composition example&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
-  &lt;figcaption class=&quot;caption&quot;&gt;UML class diagram composition example&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;3-encapsulation&quot;&gt;3. Encapsulation&lt;/h2&gt;
-
-&lt;p&gt;When decomposing the classes we start creating new methods and attributes that concern only for those classes. It is time to use inheritance, abstraction and access modifiers to to restrict for them.&lt;/p&gt;
-
-&lt;p&gt;We have some conventions for this like “getters” and “setter” methods, besides today they are controversial in some cases after the surge of Object Calisthenics.&lt;/p&gt;
-
-&lt;h2 id=&quot;4-generalization&quot;&gt;4. Generalization&lt;/h2&gt;
-
-&lt;p&gt;When a class inherits behavior or interface from a superior (super) class we call it &lt;strong&gt;Generalization&lt;/strong&gt;. It can happen in two ways:&lt;/p&gt;
-
-&lt;figure class=&quot;figure  figure--center&quot;&gt;
-  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/uml-class-diagram-generalization.png&quot; alt=&quot;UML class diagram Generalization example&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
-  &lt;figcaption class=&quot;caption&quot;&gt;UML class diagram Generalization example&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;by-abstraction&quot;&gt;By Abstraction&lt;/h3&gt;
-
-&lt;p&gt;An abstract class (cannot be instantiated) has some methods (behavior) or properties that can be shared with the &lt;strong&gt;child classes&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;by-interface&quot;&gt;By Interface&lt;/h3&gt;
-
-&lt;p&gt;An interface (or Contract) is created, so the classes that implement this interface can entirely manage the internal implementation of the interface’s expected behavior.&lt;/p&gt;
-
-&lt;p&gt;Then comes in place the &lt;strong&gt;Polymorphism&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">There are 4 important Principles when modeling objects! They are the ADEG. Yes, as always I have invented a word to memorize them! Lets talk about them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">There are 4 important Design Principles to guide architects when modeling software. They are the CoSICi principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>

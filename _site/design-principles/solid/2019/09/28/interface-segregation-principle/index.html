@@ -229,11 +229,25 @@
 
 <p>To table this, segregate a interfaces in more and specialized ones.</p>
 
-<p>Example:</p>
+<h1 id="example">Example:</h1>
+
+<p>Imagine that you want to extract Bird behaviors for an interface.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Bird</span>
 <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">putEggs</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">peck</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">land</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Seems good, right? But what about penguins, chickens or other birds that does not fly? To solve this we can segregate the Bird interfaces in more specialized ones:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Bird</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">putEggs</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">peck</span><span class="o">();</span>
 <span class="o">}</span>
 
 <span class="kd">interface</span> <span class="nc">Flying</span>
@@ -252,12 +266,10 @@
     <span class="c1">//...</span>
 <span class="o">}</span>
 
-<span class="kd">class</span> <span class="nc">Chicken</span> <span class="kd">implements</span> <span class="nc">Bird</span>
+<span class="kd">class</span> <span class="nc">Falcon</span> <span class="kd">implements</span> <span class="nc">Bird</span><span class="o">,</span> <span class="nc">Flying</span>
 <span class="o">{</span>
     <span class="c1">//...</span>
 <span class="o">}</span>
-
-
 </code></pre></div></div>
 
 
