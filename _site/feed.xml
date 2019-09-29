@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-29T11:33:41+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - LSP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - LSP" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-29T13:23:10+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - LSP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - LSP" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -265,11 +265,19 @@
 
 &lt;p&gt;&lt;strong&gt;How to get ride of comments?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Avoid comments and prefer separations of concerns, smaller and specialized classes with self-explainable names. A class and method’s purpose should be clear just by reading its name. Avoid creating to generic classes like “CustomerService” that does everything. Instead use specialized classes like: &lt;strong&gt;UpdateCustomerService, NotifyCustomerOderService,&lt;/strong&gt; etc. By reading the name is really easy to know what is the class purpose.&lt;/p&gt;
+&lt;p&gt;Avoid comments and prefer separations of concerns, smaller and specialized classes with self-explainable names. A class and method’s purpose should be clear just by reading its name. Avoid creating to generic classes like “CustomerService” that does everything. Instead use specialized classes like: &lt;strong&gt;UpdateCustomerService, SendCustomerInvoiceService,&lt;/strong&gt; etc. By reading the name is really easy to know what is the class purpose.&lt;/p&gt;
 
 &lt;h1 id=&quot;long-methods&quot;&gt;Long methods&lt;/h1&gt;
 
-&lt;p&gt;The name is self-explainable. A long method most probably is doing more than what should and it is hard to understand. But what could be considered long? There is no magic number. Depending on the language you are using and what is being done.&lt;/p&gt;
+&lt;p&gt;The name is self-explainable. A long method most probably is doing more than what should and it is hard to understand. But what could be considered long? There is no magic number, i will depend on the language you are using and what is being done.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid long methods&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use separation of concerns.&lt;/li&gt;
+  &lt;li&gt;Split the code in sub-methods with meaningful names.&lt;/li&gt;
+  &lt;li&gt;Split class in multiple classes.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;long-parameters-list&quot;&gt;Long parameters list&lt;/h1&gt;
 
@@ -302,7 +310,198 @@
 
 &lt;p&gt;&lt;strong&gt;How to avoid data clamps&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Probably these credentials should become a self-contained object holding the necessary data a Connection needs. Or even make the connection be instantiated one single time in a DI container avoiding the duplication.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Here a brief list of some code smells and what to do to get ride from them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">The 23 Design Patterns you must know</title><link href="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" rel="alternate" type="text/html" title="The 23 Design Patterns you must know" /><published>2019-09-12T00:00:00+01:00</published><updated>2019-09-12T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/">&lt;p&gt;Based on a famous book I will try to simplify and give examples of the 
+&lt;p&gt;Probably these credentials should become a self-contained object (Parameter Object) holding the necessary data a Connection needs. Or even make the Connection be instantiated one a single place like a DI container avoiding the duplication.&lt;/p&gt;
+
+&lt;h1 id=&quot;divergent-change&quot;&gt;Divergent change&lt;/h1&gt;
+
+&lt;p&gt;When you have to change a class in multiple ways for multiple reasons, then you have a &lt;strong&gt;Divergent change&lt;/strong&gt;. This is because you have a &lt;strong&gt;Large class&lt;/strong&gt; code smell where the class is doing to much for too many purposes. A poor separation of concerns Design is generally the main cause.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid a divergent change&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use proper separation of concerns.&lt;/li&gt;
+  &lt;li&gt;Split large class into specialized classes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;shotgun-surgery&quot;&gt;Shotgun Surgery&lt;/h1&gt;
+
+&lt;p&gt;When to support a new requirement to your system you have to do a change to a lot of places instead of a centralized location. This is called &lt;strong&gt;Shotgun Surgery&lt;/strong&gt; and probably was caused by poor design choices and violation of Design principles.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid it?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Respect Design principles.&lt;/li&gt;
+  &lt;li&gt;Use SOLID principles.&lt;/li&gt;
+  &lt;li&gt;Centralize object creations and business rules validations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;feature-envy&quot;&gt;Feature Envy&lt;/h1&gt;
+
+&lt;p&gt;When a method in one class constantly talks to a method of another class and vice-versa, and this method is only used for this purpose, probably they should be together in the same class. Of course, it is not always the case. Sometimes these methods are to complex and their responsibilities should be separated in other class.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid Feature Envy?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Consider moving the common method to class it concerns.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;inappropriate-intimacy&quot;&gt;Inappropriate intimacy&lt;/h1&gt;
+
+&lt;p&gt;When two classes depending to much each other in a two-way communication, they were probably split by mistake or should be talking each other in a non-coupled way.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to remove Inappropriate intimacy&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Try to unify the classes into once.&lt;/li&gt;
+  &lt;li&gt;Extract methods both classes use in another class.&lt;/li&gt;
+  &lt;li&gt;Try to use a non-coupled approach like &lt;strong&gt;Observer&lt;/strong&gt; pattern.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;message-chains&quot;&gt;Message chains&lt;/h1&gt;
+
+&lt;p&gt;When your class method depends on a chain of methods to get its job done, than you have a &lt;strong&gt;message chain&lt;/strong&gt; problem. It causes &lt;strong&gt;rigidity&lt;/strong&gt; and complexity on your design. Example:&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Demeter's law violation&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid message chains?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Respect the Law of Demeter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;primitive-obsession&quot;&gt;Primitive obsession&lt;/h1&gt;
+
+&lt;p&gt;It happens when you rely too much on primitive or built-in types, like: &lt;strong&gt;Int, Float, String&lt;/strong&gt;, etc. For sure these types will be used, but we should try to retain its usage to low levels of our implementation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid Primitive obsession&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create your own objects to represent primitive values with particular purpose. Example:
+    &lt;ul&gt;
+      &lt;li&gt;The “postal code”, could be handled as a “String” all over your system, but you can easily encapsulate and validate it inside a a class “PostalCode”.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Avoid passing collection of primitives that represents important subjects in your system. Prefer to implement a collection class.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;switch-statements&quot;&gt;Switch statements&lt;/h1&gt;
+
+&lt;p&gt;Switch statements (and if / else) are code smells when they try to replace Polymorphism. Example:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Processor&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Order&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$oder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$paymentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$paymentType&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'creditCard'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cardProcessor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'payPal'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;payPalProcessor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;defaultPalProcessor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid it?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Instead, use Polymorphism:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IOrderProcessor&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Order&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;supportsPaymentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PaypalProcessor&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IOrderProcessor&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Order&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;supportsPaymentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bool&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'paypal'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CreditCardProcessor&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IOrderProcessor&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Order&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;supportsPaymentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bool&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'creditCard'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DefaultProcessor&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IOrderProcessor&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Order&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;supportsPaymentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bool&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cd&quot;&gt;/**
+ * As you can see we can add as many Order Processors we without increase the method complexity.
+ */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Processor&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cd&quot;&gt;/**
+     * @var IOrderProcessor[]
+     */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$orderProcessors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Order&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$oder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$paymentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;orderProcessors&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$orderProcessor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$orderProcessor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;supportsPaymentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$paymentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$orderProcessor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;speculative-generality&quot;&gt;Speculative Generality&lt;/h1&gt;
+
+&lt;p&gt;This code smell happens when code is created, but it is not used (or not needed) because we think that “We might need this come day”. The “code”, could be a feature, superclass or even and interface that is not necessary.&lt;/p&gt;
+
+&lt;p&gt;Imagine for instance that you create an interface that is used by a single class, just because “someone” might need to generalize this in the future. It is against Agile Development and Just In Time (JIT) delivery. You do not want to waste time writing code that is not needed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid Speculative generality?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Keep the code simple.&lt;/li&gt;
+  &lt;li&gt;Make code flexible, but avoid over-engineering. Find a balance.&lt;/li&gt;
+  &lt;li&gt;Do not create code based on assumptions that feature will evolve. Requirements are dropped and priority drops every time, so do not waste time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;refused-bequest&quot;&gt;Refused bequest&lt;/h1&gt;
+
+&lt;p&gt;Might happen you create a super class very useful for many cases, so &lt;strong&gt;subclass might inherit something it does not need&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Does it make sense to extend this class? Maybe not.&lt;/li&gt;
+  &lt;li&gt;Try to extract the unused behavior from super class.&lt;/li&gt;
+  &lt;li&gt;Maybe defined this behaviors in the subclasses only.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Here a brief list of some code smells and what to do to get ride from them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">The 23 Design Patterns you must know</title><link href="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" rel="alternate" type="text/html" title="The 23 Design Patterns you must know" /><published>2019-09-12T00:00:00+01:00</published><updated>2019-09-12T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/">&lt;p&gt;Based on a famous book I will try to simplify and give examples of the 
 23 famous design patterns that can help your daily work as developer.&lt;/p&gt;
 
 &lt;!-- more --&gt;
