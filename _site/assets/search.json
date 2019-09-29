@@ -48,9 +48,16 @@
       },
     
       {
+        "title": "Dependency Inversion Principle - DIP",
+        "excerpt": "Avoid to make your classes depending on single concrete class to avoid coupling.\n\n",
+        "content": "Avoid to make your classes depending on single concrete class to avoid coupling.\n\n\n\nThe Dependency Inversion principle says that classes should relay on generalizations rather than implementation details.\n\nTo accomplish this always develop oriented to interfaces, not implementation. Extract the behavior representation of classes to interfaces and abstract classes, so they can easily be replaced.\n\n",
+        "url": "/design-principles/solid/2019/09/28/dependency-inversion-principle-copy/"
+      },
+    
+      {
         "title": "Open / Closed Principle - OCP",
-        "excerpt": "This Open/Close Principle says that a class must be open for extension, but closed to change. Let’s take a look on it.\n\n",
-        "content": "This Open/Close Principle says that a class must be open for extension, but closed to change. Let’s take a look on it.\n\n\n\nIf classes are tested, stable and the system is proven to be working with those, probably you do not want (need) to change then to add more features. So the classes will be open for extension, but closed to changes.\n\nTO overcome this you can use polymorphism to add new features by inheritance or implementing same interfaces.\n",
+        "excerpt": "The Open/Close Principle says that a class must be open for extension, but closed to change. Let’s take a look on it.\n\n",
+        "content": "The Open/Close Principle says that a class must be open for extension, but closed to change. Let’s take a look on it.\n\n\n\nIf classes are tested, stable and the system is proven to be working with those, probably you do not want (need) to change then to add more features. So the classes will be open for extension, but closed to changes.\n\nTo overcome this you can use polymorphism to add new features by inheritance or implementing same interfaces.\n",
         "url": "/design-principles/solid/2019/09/28/open-closed-principle/"
       },
     
