@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-29T07:57:04+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - SOLID</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - SOLID" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-29T11:33:41+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - LSP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - LSP" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -255,7 +255,54 @@
         &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed, cause C2 is a base class of C and A only knows C!&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A class should know as less as possible about other classes implementation. There is a law for it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">The 23 Design Patterns you must know</title><link href="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" rel="alternate" type="text/html" title="The 23 Design Patterns you must know" /><published>2019-09-12T00:00:00+01:00</published><updated>2019-09-12T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/">&lt;p&gt;Based on a famous book I will try to simplify and give examples of the 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A class should know as less as possible about other classes implementation. There is a law for it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Code Smells &amp;amp; Anti-patterns</title><link href="http://0.0.0.0:4000/design-principles/2019/09/24/code-smells/" rel="alternate" type="text/html" title="Code Smells &amp; Anti-patterns" /><published>2019-09-24T00:00:00+01:00</published><updated>2019-09-24T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/2019/09/24/code-smells</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/2019/09/24/code-smells/">&lt;p&gt;Here a brief list of some code smells and what to do to get ride from them.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&quot;comments&quot;&gt;Comments&lt;/h1&gt;
+
+&lt;p&gt;If you have to write a comment to explain what the code is doing, probably you used a poor design, code is doing too much or you are not sure what it is doing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to get ride of comments?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Avoid comments and prefer separations of concerns, smaller and specialized classes with self-explainable names. A class and method’s purpose should be clear just by reading its name. Avoid creating to generic classes like “CustomerService” that does everything. Instead use specialized classes like: &lt;strong&gt;UpdateCustomerService, NotifyCustomerOderService,&lt;/strong&gt; etc. By reading the name is really easy to know what is the class purpose.&lt;/p&gt;
+
+&lt;h1 id=&quot;long-methods&quot;&gt;Long methods&lt;/h1&gt;
+
+&lt;p&gt;The name is self-explainable. A long method most probably is doing more than what should and it is hard to understand. But what could be considered long? There is no magic number. Depending on the language you are using and what is being done.&lt;/p&gt;
+
+&lt;h1 id=&quot;long-parameters-list&quot;&gt;Long parameters list&lt;/h1&gt;
+
+&lt;p&gt;If you have a really long list of parameters, probably your method either is doing more than it should or the class is fat. It can cause some complications, cause every time you need to change or add behavior on this class you need to add a new parameter, that sometimes will ignore previous parameters or even add a lot of optional parameters.&lt;/p&gt;
+
+&lt;p&gt;It is a pain to maintain such class or method, cause it bring high coupling and low cohesion.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid long parameters list?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create new objects encapsulating the parameters. For example, in a program about geo location, a class with parameters “x, y, z” could become an object called “Point3D” and “latitude, longitude” might become a “Coordinates” object.&lt;/li&gt;
+  &lt;li&gt;Segregate methods in more specialized methods / classes. Sometimes you have a long list of parameters, cause your class / method has multiple concerns.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;According to &lt;strong&gt;Robert Martin&lt;/strong&gt; in the book &lt;a href=&quot;https://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882&quot;&gt;Clean Code&lt;/a&gt; methods should be &lt;strong&gt;monad, dyad or triad&lt;/strong&gt;. This means. Have maximum three parameters on the worst cases.&lt;/p&gt;
+
+&lt;h1 id=&quot;data-classes&quot;&gt;Data classes&lt;/h1&gt;
+
+&lt;p&gt;Data classes can be considered a code smell, when they are over abused and logic concerned to those classes are treated in separate classes when could be done in the same class.&lt;/p&gt;
+
+&lt;p&gt;A data class is basically a class the contain only getters and setters (sometimes). Of course, Values objects or data objects can be useful to normalization, but there are some cases they are not used only for this.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid data classes?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Check if these classes should not be doing another kind of operation besides encapsulation, for example, calculating or checking something, etc that could being done by another classes.&lt;/p&gt;
+
+&lt;h1 id=&quot;data-clumps&quot;&gt;Data clumps&lt;/h1&gt;
+
+&lt;p&gt;Sometimes we start copying data from one class to another just for the sake of “save time” and end up generating a series of duplications. These parameters should become their own classes. For example. Imagine that you copy the database credentials in many services to create a new connection object.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How to avoid data clamps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Probably these credentials should become a self-contained object holding the necessary data a Connection needs. Or even make the connection be instantiated one single time in a DI container avoiding the duplication.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Here a brief list of some code smells and what to do to get ride from them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">The 23 Design Patterns you must know</title><link href="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/" rel="alternate" type="text/html" title="The 23 Design Patterns you must know" /><published>2019-09-12T00:00:00+01:00</published><updated>2019-09-12T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/design-patterns/2019/09/12/the-23-design-patterns-you-must-know/">&lt;p&gt;Based on a famous book I will try to simplify and give examples of the 
 23 famous design patterns that can help your daily work as developer.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -1830,86 +1877,4 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 
 &lt;h2 id=&quot;when-should-i-do-a-model-checking&quot;&gt;When should I do a Model checking?&lt;/h2&gt;
 
-&lt;p&gt;Always &lt;strong&gt;after implementation&lt;/strong&gt; and &lt;strong&gt;before production deploy&lt;/strong&gt;. It is untrue that a Software can be perfect during the planning or modeling phases. The beauty of software is that it can change many times before and after its implementation. Business needs flexibility, but we (developers) need to make sure it will work as expected after all those changes.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems occur even in the best companies.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Software Architecture Design Principles</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/07/software-architecture-design-principles/" rel="alternate" type="text/html" title="Software Architecture Design Principles" /><published>2019-09-07T00:00:00+01:00</published><updated>2019-09-07T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/07/software-architecture-design-principles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/07/software-architecture-design-principles/">&lt;p&gt;There are 4 important &lt;em&gt;Design Principles&lt;/em&gt; to guide architects when modeling software. They are the &lt;strong&gt;CoSICi&lt;/strong&gt; principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;&lt;small&gt;
-&lt;em&gt;WIP:&lt;/em&gt; This article is a working in progress. There could be some errors. I will also add some images to help the understanding :)
-&lt;/small&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-co-coupling--cohesion&quot;&gt;1. (Co) Coupling &amp;amp; Cohesion&lt;/h2&gt;
-
-&lt;p&gt;Besides the different names, Coupling and Cohesion are intimately related, cause 
-both concern about &lt;em&gt;software complexity&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Before explain each one, lets first define what is considered a &lt;em&gt;module&lt;/em&gt; within this scope.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Module&lt;/em&gt; can be a:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Software Component.&lt;/li&gt;
-  &lt;li&gt;A Class&lt;/li&gt;
-  &lt;li&gt;A Method of a Class&lt;/li&gt;
-  &lt;li&gt;A Function&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;coupling&quot;&gt;Coupling&lt;/h3&gt;
-
-&lt;p&gt;Coupling represents the level of complexity involving multiple modules.&lt;/p&gt;
-
-&lt;h3 id=&quot;cohesion&quot;&gt;Cohesion&lt;/h3&gt;
-
-&lt;p&gt;Cohesion represents the level of complexity inside a single module.&lt;/p&gt;
-
-&lt;h3 id=&quot;and-how-to-evaluate-complexity&quot;&gt;And how to evaluate complexity?&lt;/h3&gt;
-
-&lt;p&gt;To evaluate complexity we consider 3 important aspects: Degree, Easy, Flexibility:&lt;/p&gt;
-
-&lt;h4 id=&quot;degree&quot;&gt;Degree&lt;/h4&gt;
-
-&lt;p&gt;The Degree relates to the number of connections between modules. Are they tightly coupled
-to other modules?&lt;/p&gt;
-
-&lt;h4 id=&quot;easy&quot;&gt;Easy&lt;/h4&gt;
-
-&lt;p&gt;The Easy relates to how obvious are these connections. Do they follow a standard with meaningful names and purpose?&lt;/p&gt;
-
-&lt;h4 id=&quot;flexibility&quot;&gt;Flexibility&lt;/h4&gt;
-
-&lt;p&gt;Can the module be used by others without refactoring? Does it have a generic interface that can be easily used by other modules without collateral effect?&lt;/p&gt;
-
-&lt;h2 id=&quot;2-s-separation-of-concerns&quot;&gt;2. (S) Separation of Concerns&lt;/h2&gt;
-
-&lt;p&gt;A component, service, class or method should have a single, clear and meaningful purpose.&lt;/p&gt;
-
-&lt;p&gt;Here comes handy the usage of SOLID principles, specially the (S) Single Responsibility.&lt;/p&gt;
-
-&lt;p&gt;Tips:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Relay on interfaces instead of concrete classes. When creating interfaces, you can better define the classes responsibility.&lt;/li&gt;
-  &lt;li&gt;Use properties and methods access modifiers to restrict access.&lt;/li&gt;
-  &lt;li&gt;Expose only necessary information on the APIs.&lt;/li&gt;
-  &lt;li&gt;Avoid to appropriate data from other &lt;em&gt;Domains&lt;/em&gt; to your application. Respect the &lt;em&gt;Softwares Boundaries&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-i-information-hiding&quot;&gt;3. (I) Information Hiding&lt;/h2&gt;
-
-&lt;p&gt;A module should only expose necessary information for other components. This means that a module
-should only know what he needs to know to fill his purpose and also only expose information that is necessary for other modules purposes.&lt;/p&gt;
-
-&lt;p&gt;Be aware to use &lt;em&gt;encapsulation&lt;/em&gt; and guard methods (i.e setter / constructors / getters) to receive and expose information in the correct ways.&lt;/p&gt;
-
-&lt;h2 id=&quot;4-ci-conceptual-integrity&quot;&gt;4. (CI) Conceptual Integrity&lt;/h2&gt;
-
-&lt;p&gt;I like to say the Conceptual Integrity is as good as the the alignment of business knowledge, technical expertise and process compliance that the individuals have.&lt;/p&gt;
-
-&lt;p&gt;Tips:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Follow a code standard.&lt;/li&gt;
-  &lt;li&gt;Training and adjust knowledge levels of the individuals to be as similar as possible.&lt;/li&gt;
-  &lt;li&gt;Do Code Reviews to reinforce the standards are being applied.&lt;/li&gt;
-  &lt;li&gt;Have a well defined, accepted and execute SDLC (Software Development Life Cycle). Does not matter if you use Scrum, Kanban, water fall or whatever. If it is accepted and used by the individuals, this is what matters.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">There are 4 important Design Principles to guide architects when modeling software. They are the CoSICi principles. I have invented this word to help me out memorize them! So far it is working and I would like to share it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
+&lt;p&gt;Always &lt;strong&gt;after implementation&lt;/strong&gt; and &lt;strong&gt;before production deploy&lt;/strong&gt;. It is untrue that a Software can be perfect during the planning or modeling phases. The beauty of software is that it can change many times before and after its implementation. Business needs flexibility, but we (developers) need to make sure it will work as expected after all those changes.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems occur even in the best companies.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
