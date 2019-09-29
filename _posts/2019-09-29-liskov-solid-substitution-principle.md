@@ -1,5 +1,5 @@
 ---
-title: Liskov Substitution Principle - SOLID
+title: Liskov Substitution Principle - LSP
 categories:
 - Design-Principles
 - SOLID
