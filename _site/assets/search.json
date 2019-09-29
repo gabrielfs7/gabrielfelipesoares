@@ -49,9 +49,9 @@
     
       {
         "title": "Dependency Inversion Principle - DIP",
-        "excerpt": "Avoid to make your classes depending on single concrete class to avoid coupling.\n\n",
-        "content": "Avoid to make your classes depending on single concrete class to avoid coupling.\n\n\n\nThe Dependency Inversion principle says that classes should relay on generalizations rather than implementation details.\n\nTo accomplish this always develop oriented to interfaces, not implementation. Extract the behavior representation of classes to interfaces and abstract classes, so they can easily be replaced.\n\n",
-        "url": "/design-principles/solid/2019/09/28/dependency-inversion-principle-copy/"
+        "excerpt": "Avoid making classes depending on concrete class to reduce coupling. Reduce the maintainance\n\n",
+        "content": "Avoid making classes depending on concrete class to reduce coupling. Reduce the maintainance\n\n\n\nThe Dependency Inversion principle says that classes should relay on generalizations rather than implementation details.\n\nTo accomplish this always develop oriented to interfaces, not implementation. Extract the behavior representation of classes to interfaces and abstract classes, so they can easily be replaced.\n\n",
+        "url": "/design-principles/solid/2019/09/28/dependency-inversion-principle/"
       },
     
       {

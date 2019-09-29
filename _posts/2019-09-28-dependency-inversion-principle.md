@@ -6,7 +6,7 @@ categories:
 feature_image: "https://picsum.photos/2560/600?image=872"
 ---
 
-Avoid to make your classes depending on single concrete class to reduce coupling.
+Avoid making classes depending on concrete class to reduce coupling. Reduce the maintenance effort and risk of your system.
 
 <!-- more -->
 
