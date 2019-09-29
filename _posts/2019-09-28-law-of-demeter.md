@@ -39,7 +39,7 @@ class A
 }
 ```
 
-And not allowed!
+And these are not allowed:
 
 ``` java
 class A
