@@ -20,7 +20,7 @@ As an architect, you would have **high level** concerns, such as:
 - How are they connected / accessible?
 - What would be the best house position, angle, size?
 - What is the region where the house is located? 
-- What materials should I use?
+- What materials should I use for that region?
 
 These are higher level questions and show **interactions of many "components"** on a wide scope.
 
@@ -53,6 +53,19 @@ A tradeoff happens when to make an improvement you must sacrifice some other qua
 - **Soft skills**: It's true that we use computers to create our applications, but we actually work with people for people. It's important to maintain good relationship with colleagues from the team and other departments. Make the work environment pleasant and collaborative. Happy people produce more and do not get sick so often.
 
 - **Know what is available**: Do not get stuck on your technologies and ideas. Always try to find out what is happening in the market, which technologies are available, what can you use? I mean, you do not need to know everything in details, but it comes handy when you have a problem to solve and plenty of alternatives to nail it.
+
+As an Architect it is necessary to interact, collect feedback and meet the stakeholders expectations.
+
+## Who are the Stakeholders and how the Software Architect interacts to them?
+
+- **Developers**: The role of Architect is to provide a direction, organization and conceptual integrity for the developers towards to achieve the company goals in the better way possible.
+
+- **Project Managers**: The architect must inform the Project Manager about risks, dependencies, impact, task's responsible and so. 
+
+- **Clients**: Clients are the reason the system exists, cause they are funding it. The Architect must keep communication with clients to collect feedback and assure the system is being build according to their expectations.
+
+- **End users**: Users do not care (and might not even understand) how the software is built, but they care it is working properly. An architect must know the software is meeting to end users expectations and support the proper functional and no functional requirements to improve it.
+
 
 # Software Design
 

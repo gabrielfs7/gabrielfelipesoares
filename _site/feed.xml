@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-09-29T13:23:10+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - LSP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - LSP" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-06T17:15:53+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - LSP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - LSP" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -1925,7 +1925,7 @@ Even nowadays the Book is still handy and we realize how timeless is its content
   &lt;li&gt;How are they connected / accessible?&lt;/li&gt;
   &lt;li&gt;What would be the best house position, angle, size?&lt;/li&gt;
   &lt;li&gt;What is the region where the house is located?&lt;/li&gt;
-  &lt;li&gt;What materials should I use?&lt;/li&gt;
+  &lt;li&gt;What materials should I use for that region?&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;These are higher level questions and show &lt;strong&gt;interactions of many “components”&lt;/strong&gt; on a wide scope.&lt;/p&gt;
@@ -1967,6 +1967,25 @@ Even nowadays the Book is still handy and we realize how timeless is its content
     &lt;p&gt;&lt;strong&gt;Soft skills&lt;/strong&gt;: It’s true that we use computers to create our applications, but we actually work with people for people. It’s important to maintain good relationship with colleagues from the team and other departments. Make the work environment pleasant and collaborative. Happy people produce more and do not get sick so often.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Know what is available&lt;/strong&gt;: Do not get stuck on your technologies and ideas. Always try to find out what is happening in the market, which technologies are available, what can you use? I mean, you do not need to know everything in details, but it comes handy when you have a problem to solve and plenty of alternatives to nail it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As an Architect it is necessary to interact, collect feedback and meet the stakeholders expectations.&lt;/p&gt;
+
+&lt;h2 id=&quot;who-are-the-stakeholders-and-how-the-software-architect-interacts-to-them&quot;&gt;Who are the Stakeholders and how the Software Architect interacts to them?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Developers&lt;/strong&gt;: The role of Architect is to provide a direction, organization and conceptual integrity for the developers towards to achieve the company goals in the better way possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Project Managers&lt;/strong&gt;: The architect must inform the Project Manager about risks, dependencies, impact, task’s responsible and so.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Clients&lt;/strong&gt;: Clients are the reason the system exists, cause they are funding it. The Architect must keep communication with clients to collect feedback and assure the system is being build according to their expectations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;End users&lt;/strong&gt;: Users do not care (and might not even understand) how the software is built, but they care it is working properly. An architect must know the software is meeting to end users expectations and support the proper functional and no functional requirements to improve it.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;software-design&quot;&gt;Software Design&lt;/h1&gt;
