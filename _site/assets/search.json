@@ -89,6 +89,13 @@
         "url": "/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/"
       },
     
+      {
+        "title": "Kruchten's 4 + 1",
+        "excerpt": "The Kruchten’s 4 + 1 technique consists to represent how a system should be implemented by dividing it in 4 different views that are discovered through some business Scenarios or “Stories”.\n\n",
+        "content": "The Kruchten’s 4 + 1 technique consists to represent how a system should be implemented by dividing it in 4 different views that are discovered through some business Scenarios or “Stories”.\n\n\n\n\n  \n  Source: https://upload.wikimedia.org/wikipedia/commons/e/e6/4%2B1_Architectural_View_Model.svg\n\n\nLogical View\n\nThis view’s intent is to capture the software functionality provided to the end-users. Here we can abstract the actors and process of our system in classes.\n\nThe UML Diagrams used here are:\n\n\n  Class Diagram\n  State Diagram\n\n\nProcess View\n\nTo show how process and subprocess interaction within the logical view. The efficiency and performance of the system comes in evidence here.\n\nThe UML Diagrams used here are:\n\n\n  Activity Diagram\n  Sequence Diagram\n\n\nDevelopment view\n\nThis view focus on implementation details, such as hierarchical structure of the software and other constraints from programing the language and technologies used.\n\nThe UML Diagrams used here are:\n\n\n  Component Diagram\n  Package Diagram\n\n\nPhysical View\n\nHere we can map how system interact with physical devices. The deployment process generally is part of the Physical view.\n\nThe UML Diagrams used here are:\n\n\n  Deployment Diagram\n  Package Diagram\n\n",
+        "url": "/software-architecture/2019/10/01/kruchtens-4-1-view-model/"
+      },
+    
   
   
   

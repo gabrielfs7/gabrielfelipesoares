@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-06T17:15:53+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Liskov Substitution Principle - LSP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - LSP" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-07T19:47:29+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Kruchten’s 4 + 1</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/" rel="alternate" type="text/html" title="Kruchten's 4 + 1" /><published>2019-10-01T00:00:00+01:00</published><updated>2019-10-01T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/">&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/4%2B1_architectural_view_model&quot;&gt;Kruchten’s 4 + 1&lt;/a&gt; technique consists to represent how a system should be implemented by dividing it in &lt;strong&gt;4 different views&lt;/strong&gt; that are discovered through some business &lt;strong&gt;Scenarios&lt;/strong&gt; or “Stories”.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;figure class=&quot;figure  figure--left&quot;&gt;
+  &lt;img class=&quot;image&quot; src=&quot;https://upload.wikimedia.org/wikipedia/commons/e/e6/4%2B1_Architectural_View_Model.svg&quot; alt=&quot;Source: https://upload.wikimedia.org/wikipedia/commons/e/e6/4%2B1_Architectural_View_Model.svg&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;caption&quot;&gt;Source: https://upload.wikimedia.org/wikipedia/commons/e/e6/4%2B1_Architectural_View_Model.svg&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;logical-view&quot;&gt;Logical View&lt;/h2&gt;
+
+&lt;p&gt;This view’s intent is to capture the software functionality provided to the end-users. Here we can abstract the actors and process of our system in classes.&lt;/p&gt;
+
+&lt;p&gt;The UML Diagrams used here are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Class Diagram&lt;/li&gt;
+  &lt;li&gt;State Diagram&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;process-view&quot;&gt;Process View&lt;/h2&gt;
+
+&lt;p&gt;To show how process and subprocess interaction within the logical view. The efficiency and performance of the system comes in evidence here.&lt;/p&gt;
+
+&lt;p&gt;The UML Diagrams used here are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Activity Diagram&lt;/li&gt;
+  &lt;li&gt;Sequence Diagram&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;development-view&quot;&gt;Development view&lt;/h2&gt;
+
+&lt;p&gt;This view focus on implementation details, such as hierarchical structure of the software and other constraints from programing the language and technologies used.&lt;/p&gt;
+
+&lt;p&gt;The UML Diagrams used here are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Component Diagram&lt;/li&gt;
+  &lt;li&gt;Package Diagram&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;physical-view&quot;&gt;Physical View&lt;/h2&gt;
+
+&lt;p&gt;Here we can map how system interact with physical devices. The deployment process generally is part of the Physical view.&lt;/p&gt;
+
+&lt;p&gt;The UML Diagrams used here are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Deployment Diagram&lt;/li&gt;
+  &lt;li&gt;Package Diagram&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">The Kruchten’s 4 + 1 technique consists to represent how a system should be implemented by dividing it in 4 different views that are discovered through some business Scenarios or “Stories”.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Liskov Substitution Principle - LSP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/" rel="alternate" type="text/html" title="Liskov Substitution Principle - LSP" /><published>2019-09-29T00:00:00+01:00</published><updated>2019-09-29T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/29/liskov-solid-substitution-principle/">&lt;p&gt;Lets talk about Liskov Substitution Principle and how inheritance should be implemented. Yes, we are talking about the “L” from SOLID Design Principles.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -2061,38 +2112,4 @@ Even nowadays the Book is still handy and we realize how timeless is its content
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;YOUR_USERNAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Library/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sdk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;emulator&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;So you can just replace the files and restart your Android studio.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">If you are having problems to emulate Android using Mac OSX El Captain 10.11.6, may this can help you.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Model Checking, What it is and why to use it</title><link href="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking/" rel="alternate" type="text/html" title="Model Checking, What it is and why to use it" /><published>2019-09-08T00:00:00+01:00</published><updated>2019-09-08T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/09/08/software-architecture-model-checking/">&lt;p&gt;After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems occur even in the best companies.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;&lt;small&gt;
-&lt;em&gt;WIP:&lt;/em&gt; This article is a working in progress. There could be some errors. I will also add some images to help the understanding :)
-&lt;/small&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-model-checking&quot;&gt;What is Model Checking?&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Model checking&lt;/strong&gt; is the technique to check if the behavior of the &lt;strong&gt;State Model&lt;/strong&gt; of your system work as expected and notify any &lt;strong&gt;violation&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-a-state-model&quot;&gt;What is a State Model?&lt;/h2&gt;
-
-&lt;p&gt;The &lt;strong&gt;State Model&lt;/strong&gt; is an abstract &lt;strong&gt;State Machine&lt;/strong&gt; that can be in one or various states, so the &lt;strong&gt;Model checker&lt;/strong&gt; can verify if the state mode conforms with expected behavior and properties.&lt;/p&gt;
-
-&lt;h3 id=&quot;modeling-phase&quot;&gt;Modeling phase&lt;/h3&gt;
-
-&lt;p&gt;Describe all possible states and properties to be checked against your system.&lt;/p&gt;
-
-&lt;p&gt;You can use Unit Tests, BDD, etc. There are many tools out there to help you.&lt;/p&gt;
-
-&lt;h3 id=&quot;running-phase&quot;&gt;Running phase&lt;/h3&gt;
-
-&lt;p&gt;Run the necessary test of your &lt;strong&gt;State Machine&lt;/strong&gt; against the expectations described on the previous phase.&lt;/p&gt;
-
-&lt;h3 id=&quot;analysis-phase&quot;&gt;Analysis phase&lt;/h3&gt;
-
-&lt;p&gt;Check the results of the previous phase. If the State Model does not conforms with certain behavior or property we ha a &lt;strong&gt;Violation&lt;/strong&gt; AKA &lt;strong&gt;Counterexamples&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The output of a &lt;strong&gt;Counterexample&lt;/strong&gt; must show you exactly how to reproduce the violation, so you system can be fixed.&lt;/p&gt;
-
-&lt;h2 id=&quot;when-should-i-do-a-model-checking&quot;&gt;When should I do a Model checking?&lt;/h2&gt;
-
-&lt;p&gt;Always &lt;strong&gt;after implementation&lt;/strong&gt; and &lt;strong&gt;before production deploy&lt;/strong&gt;. It is untrue that a Software can be perfect during the planning or modeling phases. The beauty of software is that it can change many times before and after its implementation. Business needs flexibility, but we (developers) need to make sure it will work as expected after all those changes.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">After finish the implementation of the so (or sometimes not) desired system, how do you know that it is (and behave) exactly as expected? Requirements change, people can forget, communications problems occur even in the best companies.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
+&lt;p&gt;So you can just replace the files and restart your Android studio.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">If you are having problems to emulate Android using Mac OSX El Captain 10.11.6, may this can help you.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
