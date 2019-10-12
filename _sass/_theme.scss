@@ -16,6 +16,10 @@ body {
 
 
 // Header, feature and footer
+.header {
+  background: $headerBackgroundColour;
+}
+
 .header,
 .footer {
   .nav {
