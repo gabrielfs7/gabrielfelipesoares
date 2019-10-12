@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-07T19:47:29+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Kruchten’s 4 + 1</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/" rel="alternate" type="text/html" title="Kruchten's 4 + 1" /><published>2019-10-01T00:00:00+01:00</published><updated>2019-10-01T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/">&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/4%2B1_architectural_view_model&quot;&gt;Kruchten’s 4 + 1&lt;/a&gt; technique consists to represent how a system should be implemented by dividing it in &lt;strong&gt;4 different views&lt;/strong&gt; that are discovered through some business &lt;strong&gt;Scenarios&lt;/strong&gt; or “Stories”.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-12T20:03:41+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&quot;language-based-systems&quot;&gt;Language-based Systems&lt;/h1&gt;
+
+&lt;p&gt;The programing language you choose to build your software will define the way you will architect it due their limitations or advantages.&lt;/p&gt;
+
+&lt;p&gt;For instance, a OOP (i.e. Java) will probably give you a better domain abstraction than a procedural language (i.e. C), but you cost you more performance and wont work for embedded software.&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract-types-and-object-oriented&quot;&gt;Abstract Types and Object Oriented&lt;/h2&gt;
+
+&lt;p&gt;Using a OOP paradigm we have better application of “Abstraction”, “Encapsulation” and “Decomposition” principles. The code produced can better translate the business language and generally the learning curve is smaller. High-level programing languages generally are intuitive and have lots of third-party libraries that already solve common problems.&lt;/p&gt;
+
+&lt;p&gt;The cons is that it generally implies less performance and higher computational power is required. It is more difficult (and impossible sometimes) to create lightweight or embedded software with this paradigm.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Usages:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Management and administrative systems.&lt;/li&gt;
+  &lt;li&gt;Web apps.&lt;/li&gt;
+  &lt;li&gt;Mobile apps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;main-program-and-subroutines&quot;&gt;Main program and Subroutines&lt;/h2&gt;
+
+&lt;p&gt;This paradigm consists in usage of procedural code based on routines and subroutines sharing globals variables and procedures. It advantage is a very lightweight and highly performative software that consumes less computational power and energy. The cons is that is really difficult to maintain and the learning curve is higher. Low-level programing languages are generally not intuitive at all do not translate well the business language.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Usages:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Embedded software.&lt;/li&gt;
+  &lt;li&gt;Computational focused systems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;repository-based-systems&quot;&gt;Repository Based Systems&lt;/h1&gt;
+&lt;p&gt;TBD.&lt;/p&gt;
+&lt;h2 id=&quot;databases&quot;&gt;Databases&lt;/h2&gt;
+
+&lt;h1 id=&quot;layered-systems&quot;&gt;Layered Systems&lt;/h1&gt;
+&lt;h2 id=&quot;layered-systems-1&quot;&gt;Layered Systems&lt;/h2&gt;
+&lt;h2 id=&quot;client-server-n-tier&quot;&gt;Client Server n-tier&lt;/h2&gt;
+
+&lt;h1 id=&quot;interpreter-based-systems&quot;&gt;Interpreter-based systems&lt;/h1&gt;
+&lt;p&gt;TBD.&lt;/p&gt;
+&lt;h2 id=&quot;interpreters&quot;&gt;Interpreters&lt;/h2&gt;
+&lt;h2 id=&quot;state-transition-systems&quot;&gt;State Transition Systems&lt;/h2&gt;
+
+&lt;h1 id=&quot;dataflow-systems&quot;&gt;DataFlow Systems&lt;/h1&gt;
+&lt;p&gt;TBD.&lt;/p&gt;
+&lt;h2 id=&quot;pipes&quot;&gt;Pipes&lt;/h2&gt;
+&lt;h2 id=&quot;filters&quot;&gt;Filters&lt;/h2&gt;
+
+&lt;h1 id=&quot;implicit-invocation-systems&quot;&gt;Implicit Invocation Systems&lt;/h1&gt;
+&lt;p&gt;TBD.&lt;/p&gt;
+&lt;h2 id=&quot;event-based&quot;&gt;Event-Based&lt;/h2&gt;
+&lt;h2 id=&quot;publish-subscribe&quot;&gt;Publish Subscribe&lt;/h2&gt;
+
+&lt;h1 id=&quot;process-control-systems&quot;&gt;Process Control Systems&lt;/h1&gt;
+&lt;p&gt;TBD.&lt;/p&gt;
+&lt;h2 id=&quot;process-control&quot;&gt;Process Control&lt;/h2&gt;
+
+&lt;p&gt;#&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A brief overview about the main software architectural styles and why and when we use them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Kruchten’s 4 + 1</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/" rel="alternate" type="text/html" title="Kruchten's 4 + 1" /><published>2019-10-01T00:00:00+01:00</published><updated>2019-10-01T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/">&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/4%2B1_architectural_view_model&quot;&gt;Kruchten’s 4 + 1&lt;/a&gt; technique consists to represent how a system should be implemented by dividing it in &lt;strong&gt;4 different views&lt;/strong&gt; that are discovered through some business &lt;strong&gt;Scenarios&lt;/strong&gt; or “Stories”.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -2096,20 +2158,4 @@ Even nowadays the Book is still handy and we realize how timeless is its content
   &lt;li&gt;&lt;strong&gt;Entity Objects&lt;/strong&gt;: Real world entities that know their rules and attributes. Example: Customer.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Boundary objects&lt;/strong&gt;: Objects responsible to collect / send information to other systems. Example: Gateway, ContactForm.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Control objects&lt;/strong&gt;: Objects that control other objects. Example: “Mediator”.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">What is Software Design and Architecture? How they relate and differ each other?</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Emulate Android on Android Studio 3 using Mac OSX El Captain 10.11.6</title><link href="http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/" rel="alternate" type="text/html" title="Emulate Android on Android Studio 3 using Mac OSX El Captain 10.11.6" /><published>2019-09-10T00:00:00+01:00</published><updated>2019-09-10T00:00:00+01:00</updated><id>http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6</id><content type="html" xml:base="http://0.0.0.0:4000/android/macos/2019/09/10/android-emulator-does-not-work-macos-el-captain-10-11-6/">&lt;p&gt;If you are having problems to emulate Android using Mac OSX El Captain 10.11.6, may this can help you.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;If when trying to run the emulation you got the following message:&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Emulator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Sorry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;qemu-system-x86_64&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Qt&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;requires&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;later&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;macOS&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The solution can be to downgrade your emulator version to &lt;a href=&quot;https://dl.google.com/android/repository/emulator-darwin-5395263.zip&quot;&gt;Android Emulator Version 28.0.25&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;After download you should replace your current emulator with this one. The emulator for &lt;strong&gt;Android Studio&lt;/strong&gt; generally is located on:&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;YOUR_USERNAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Library/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sdk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;emulator&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;So you can just replace the files and restart your Android studio.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">If you are having problems to emulate Android using Mac OSX El Captain 10.11.6, may this can help you.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">What is Software Design and Architecture? How they relate and differ each other?</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
