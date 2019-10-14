@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-14T20:53:51+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-14T21:22:45+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -78,6 +78,28 @@
 &lt;p&gt;When we have a layered architecture the components are only allowed to talk to adjacent components. So they do not know about upper or lower layers of the system. With this we ensure our applications will be loosely coupled and their state will not affect or be affected directly by other applications.&lt;/p&gt;
 
 &lt;h2 id=&quot;client-server-n-tier&quot;&gt;Client Server n-tier&lt;/h2&gt;
+
+&lt;p&gt;Layered architecture is about make components loosely coupled and restricting their communication within only adjacent layers.&lt;/p&gt;
+
+&lt;p&gt;The n-tier or multi-tier happens when this components are also separated by being located in separate machines. So their performance, computational power consumption and environment requirements will not directly affect each other. Also other benefits like load balancing and autoscaling are benefited by a multi-tier architecture.&lt;/p&gt;
+
+&lt;p&gt;The relation between client and server components in a multi-tear architecture can occur in an synchronous our asynchronous way using events, web sockets and request/response handlers.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Advantages&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Scalable&lt;/strong&gt;: As components are distributed in different servers, it is possible to farm them and increase application capacity using techniques like load balancing and autoscaling.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Centralization&lt;/strong&gt;: Centralized functionalities and computational power only to the relevant components.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Distribution of computational power&lt;/strong&gt;: Only necessary application servers need to have specific hardware. It can scales horizontally if needed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Disadvantages&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ad complexity do infrastructure management.&lt;/li&gt;
+  &lt;li&gt;Ad complexity to data synchronization.&lt;/li&gt;
+  &lt;li&gt;Demands extra resource to manage&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;interpreter-based-systems&quot;&gt;Interpreter-based systems&lt;/h1&gt;
 &lt;p&gt;TBD.&lt;/p&gt;

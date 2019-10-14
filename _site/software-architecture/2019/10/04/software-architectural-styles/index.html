@@ -301,6 +301,28 @@
 
 <h2 id="client-server-n-tier">Client Server n-tier</h2>
 
+<p>Layered architecture is about make components loosely coupled and restricting their communication within only adjacent layers.</p>
+
+<p>The n-tier or multi-tier happens when this components are also separated by being located in separate machines. So their performance, computational power consumption and environment requirements will not directly affect each other. Also other benefits like load balancing and autoscaling are benefited by a multi-tier architecture.</p>
+
+<p>The relation between client and server components in a multi-tear architecture can occur in an synchronous our asynchronous way using events, web sockets and request/response handlers.</p>
+
+<p><strong>Advantages</strong></p>
+
+<ul>
+  <li><strong>Scalable</strong>: As components are distributed in different servers, it is possible to farm them and increase application capacity using techniques like load balancing and autoscaling.</li>
+  <li><strong>Centralization</strong>: Centralized functionalities and computational power only to the relevant components.</li>
+  <li><strong>Distribution of computational power</strong>: Only necessary application servers need to have specific hardware. It can scales horizontally if needed.</li>
+</ul>
+
+<p><strong>Disadvantages</strong></p>
+
+<ul>
+  <li>Ad complexity do infrastructure management.</li>
+  <li>Ad complexity to data synchronization.</li>
+  <li>Demands extra resource to manage</li>
+</ul>
+
 <h1 id="interpreter-based-systems">Interpreter-based systems</h1>
 <p>TBD.</p>
 <h2 id="interpreters">Interpreters</h2>
