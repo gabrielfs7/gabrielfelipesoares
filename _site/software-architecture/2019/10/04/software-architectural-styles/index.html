@@ -270,11 +270,22 @@
   <figcaption class="caption">UML Data Centric Software Architecture</figcaption>
 </figure>
 
-<p>The main benefits of a data centric architecture style, besides share data are:</p>
+<p>The <strong>main benefits</strong> of a data centric architecture style, besides share data are:</p>
 
 <ul>
   <li><strong>Data Integrity</strong>: Data will be store with proper normalization and will be accurate.</li>
+  <li><strong>Data Backup</strong>: Data containing the current state of the system can be saved to be used later.</li>
+  <li><strong>Data Restoration</strong>: System state can be restored through backup.</li>
   <li><strong>Data Persistence</strong>: Data will keep alive to be used later.</li>
+  <li><strong>Central Data is Passive</strong>: The main focus is storage, so the business rules stay in the application level.</li>
+</ul>
+
+<p>But some <strong>disadvantages of a data centric architecture</strong> are:</p>
+
+<ul>
+  <li>System <strong>rely on a single data source</strong>, that, if fails, compromise all the applications.</li>
+  <li><strong>Difficult to change schema</strong>, cause it is being used for many components.</li>
+  <li>As the data is used by many places, the <strong>overload</strong> of one application can <strong>affect all the others</strong>.</li>
 </ul>
 
 <h1 id="layered-systems">Layered Systems</h1>

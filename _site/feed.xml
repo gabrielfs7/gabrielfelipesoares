@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-14T20:05:38+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-14T20:20:24+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -48,11 +48,22 @@
   &lt;figcaption class=&quot;caption&quot;&gt;UML Data Centric Software Architecture&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;The main benefits of a data centric architecture style, besides share data are:&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;main benefits&lt;/strong&gt; of a data centric architecture style, besides share data are:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Data Integrity&lt;/strong&gt;: Data will be store with proper normalization and will be accurate.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Backup&lt;/strong&gt;: Data containing the current state of the system can be saved to be used later.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Restoration&lt;/strong&gt;: System state can be restored through backup.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Data Persistence&lt;/strong&gt;: Data will keep alive to be used later.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Central Data is Passive&lt;/strong&gt;: The main focus is storage, so the business rules stay in the application level.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But some &lt;strong&gt;disadvantages of a data centric architecture&lt;/strong&gt; are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;System &lt;strong&gt;rely on a single data source&lt;/strong&gt;, that, if fails, compromise all the applications.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Difficult to change schema&lt;/strong&gt;, cause it is being used for many components.&lt;/li&gt;
+  &lt;li&gt;As the data is used by many places, the &lt;strong&gt;overload&lt;/strong&gt; of one application can &lt;strong&gt;affect all the others&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;layered-systems&quot;&gt;Layered Systems&lt;/h1&gt;
