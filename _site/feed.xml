@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-14T21:22:45+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-14T21:23:04+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -98,7 +98,7 @@
 &lt;ul&gt;
   &lt;li&gt;Ad complexity do infrastructure management.&lt;/li&gt;
   &lt;li&gt;Ad complexity to data synchronization.&lt;/li&gt;
-  &lt;li&gt;Demands extra resource to manage&lt;/li&gt;
+  &lt;li&gt;Demands extra resource to manage client/server relationships.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;interpreter-based-systems&quot;&gt;Interpreter-based systems&lt;/h1&gt;
