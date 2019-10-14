@@ -63,8 +63,13 @@ But some __disadvantages of a data centric architecture__ are:
 - As the data is used by many places, the **overload** of one application can **affect all the others**.
 
 # Layered Systems
-TBD.
-## Layered Systems
+
+In the real world when we need to send or receive some information, we may need to talk to representatives instead of directly communicate with the final receivers. This way we guarantee the information will arrive in a standard way and we can continue focusing on our main work, emphasizing the **separation of concerns**.
+
+{% include post-figure.html image="layered-software-architecture.png" caption="Layered Software Architecture" %}
+
+When we have a layered architecture the components are only allowed to talk to adjacent components. So they do not know about upper or lower layers of the system. With this we ensure our applications will be loosely coupled and their state will not affect or be affected directly by other applications.
+
 ## Client Server n-tier
 
 
