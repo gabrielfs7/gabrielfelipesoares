@@ -37,9 +37,21 @@ This paradigm consists in usage of procedural code based on routines and subrout
 - Computational focused systems.
 
 # Repository Based Systems
-TBD.
-## Databases
+When it is needed to shared data within modules and components an often used solution is a **Data Centric** Software Architecture.
 
+## Databases
+At the core of a Data Centric architecture are __2 different types of components__:
+
+**Central Data**: Stores and share data across all the components that connect to it.
+
+**Data Accessors**: They are the components that connect to the Central Data component. These run queries, transactions to store and retrieve data from the Database.
+
+{% include post-figure.html image="data-centric-software-architecture.png" caption="UML Data Centric Software Architecture" %}
+
+The main benefits of a data centric architecture style, besides share data are:
+
+- **Data Integrity**: Data will be store with proper normalization and will be accurate.
+- **Data Persistence**: Data will keep alive to be used later.
 
 # Layered Systems
 TBD.

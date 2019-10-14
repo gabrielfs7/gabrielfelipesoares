@@ -256,8 +256,26 @@
 </ul>
 
 <h1 id="repository-based-systems">Repository Based Systems</h1>
-<p>TBD.</p>
+<p>When it is needed to shared data within modules and components an often used solution is a <strong>Data Centric</strong> Software Architecture.</p>
+
 <h2 id="databases">Databases</h2>
+<p>At the core of a Data Centric architecture are <strong>2 different types of components</strong>:</p>
+
+<p><strong>Central Data</strong>: Stores and share data across all the components that connect to it.</p>
+
+<p><strong>Data Accessors</strong>: They are the components that connect to the Central Data component. These run queries, transactions to store and retrieve data from the Database.</p>
+
+<figure class="figure  figure--center">
+  <img class="image" src="/assets/post_images/data-centric-software-architecture.png" alt="UML Data Centric Software Architecture" width="" height="" />
+  <figcaption class="caption">UML Data Centric Software Architecture</figcaption>
+</figure>
+
+<p>The main benefits of a data centric architecture style, besides share data are:</p>
+
+<ul>
+  <li><strong>Data Integrity</strong>: Data will be store with proper normalization and will be accurate.</li>
+  <li><strong>Data Persistence</strong>: Data will keep alive to be used later.</li>
+</ul>
 
 <h1 id="layered-systems">Layered Systems</h1>
 <p>TBD.</p>

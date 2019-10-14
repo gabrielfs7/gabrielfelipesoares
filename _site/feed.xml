@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-12T20:41:26+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-14T20:05:38+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -34,8 +34,26 @@
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;repository-based-systems&quot;&gt;Repository Based Systems&lt;/h1&gt;
-&lt;p&gt;TBD.&lt;/p&gt;
+&lt;p&gt;When it is needed to shared data within modules and components an often used solution is a &lt;strong&gt;Data Centric&lt;/strong&gt; Software Architecture.&lt;/p&gt;
+
 &lt;h2 id=&quot;databases&quot;&gt;Databases&lt;/h2&gt;
+&lt;p&gt;At the core of a Data Centric architecture are &lt;strong&gt;2 different types of components&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Central Data&lt;/strong&gt;: Stores and share data across all the components that connect to it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Data Accessors&lt;/strong&gt;: They are the components that connect to the Central Data component. These run queries, transactions to store and retrieve data from the Database.&lt;/p&gt;
+
+&lt;figure class=&quot;figure  figure--center&quot;&gt;
+  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/data-centric-software-architecture.png&quot; alt=&quot;UML Data Centric Software Architecture&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;caption&quot;&gt;UML Data Centric Software Architecture&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The main benefits of a data centric architecture style, besides share data are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Data Integrity&lt;/strong&gt;: Data will be store with proper normalization and will be accurate.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Persistence&lt;/strong&gt;: Data will keep alive to be used later.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;layered-systems&quot;&gt;Layered Systems&lt;/h1&gt;
 &lt;p&gt;TBD.&lt;/p&gt;
