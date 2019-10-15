@@ -145,7 +145,7 @@ The filters are responsible to receive the input from the Pipe, transform it and
 
 Derived from the Event-Driven paradigm, the Event Based Architecture happens when functions are executed trigged by Events, that could be inputs, signals, messages or data coming from other functions or programs. These Events are created by and Event Generator and listened by an Event Consumer or Subscriber.
 
-{% include post-figure.html image="event-driven.png" caption="Filter and Pipes Architecture" %}
+{% include post-figure.html image="event-driven.png" caption="Event Driven Architecture" %}
 
 **Event generators**: Generate and send the messages to be processed.
 **Event consumers**: Receive the messages to be processed and process them.
