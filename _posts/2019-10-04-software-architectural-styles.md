@@ -92,20 +92,70 @@ The relation between client and server components in a multi-tear architecture c
 
 
 # Interpreter-based systems
-TBD.
+
 ## Interpreters
+
+Interpreters are programs that read and execute code provided by the user. The user does not need to know how the underlying logic of the interpreter, just the right code to provide.
+
+Interpreters are used to execute Scripts os Macros. Examples os Interpreter-based systems are:
+
+- **Google Chrome**: Where you can create your extension using Javascript to customize or add features to the browser.
+- **Microsoft Excel**: The Excel formulas are core instructions that will be executed by it internal interpreter. The user does not know how the interpreter works, just how to declare the functions correctly.
+
 ## State Transition Systems
+
+This is actually a concept to describe all potential behaviors a system can have, does not matter they have a low probability to happen, a State Transition will describe how to reach that state.
+
+Terminology:
+
+- **State**: It is a information the system remembers. Example: An e-commerce system can have the states: "Empty cart", "Full cart" or "Under Checkout" states.
+
+- **Transition**: Defines the transition from one state to another. We have a non-deterministic transition when from on state, multiple states are possible.
+
+- **Behavior**: Describes what the system will do when arrive to a condition. This can be determined by user input, events or time.
+
+Some practical usage example is how operational systems manage resource allocation using state machine and multithread.
 
 
 # DataFlow Systems 
-TBD.
-## Pipes
-## Filters
 
+A data flow architecture treats the system as a series of transformations in a data set.
+
+## Pipes & Filters
+
+The pipes are the channels from which the date flows from a filter to another.
+
+The filters are responsible to receive the input from the Pipe, transform it and follow to another Pipe, that will follow to another Filter and so on.
+
+{% include post-figure.html image="filter_pipes.jpg" caption="Filter and Pipes Architecture" %}
+
+**Advantages:**
+
+- Loosely coupled architecture.
+- Better maintainability, flexibility and scalability.
+
+**Disadvantages:**
+
+- Become slower as more filters and pipes are added.
+- Since the filters are loosely coupled and independent, redundancy can happen.
 
 # Implicit Invocation Systems
-TBD.
+
 ## Event-Based
+
+Derived from the Event-Driven paradigm, the Event Based Architecture happens when functions are executed trigged by Events, that could be inputs, signals, messages or data coming from other functions or programs. These Events are created by and Event Generator and listened by an Event Consumer or Subscriber.
+
+{% include post-figure.html image="event-driven.png" caption="Filter and Pipes Architecture" %}
+
+**Event generators**: Generate and send the messages to be processed.
+**Event consumers**: Receive the messages to be processed and process them.
+
+The communication between Event Generators and Event Consumers is not direct, being called "Implicit Invocation". This intermediation is done by a "Event Bus".
+
+When working with event based is important to be aware of **race conditions** to avoid undesired results when shared data is not updated correctly. 
+
+For instance, when one event updates a resource before a previous event that also updates the same resource was executed. To solve this there are some techniques like **semaphores** and message acknowledgement.
+
 ## Publish Subscribe
 
 # Process Control Systems
