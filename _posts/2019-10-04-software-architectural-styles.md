@@ -182,8 +182,19 @@ One of the techniques of process control is called **Feedback Loop**. It consist
 
 {% include post-figure.html image="feedback-loop.png" caption="Feed-back Loop process control" %}
 
-In this case the Feed-back loop keeps always monitoring the water volume based on the set point and adjusting the water pump (open / close) to maintain the water volume.
+In this case the Feed-back loop runs continuously monitoring the water volume based on the set point and adjusting the water pump (open / close) to maintain the water volume.
 
-# 
+Another process control technique, commonly used for more complex process controls is the **MAPE-K**.
 
+{% include post-figure.html image="mape-k.png" caption="Mape-k process control" %}
 
+In this technique all the steps must have knowledge of the process state. 
+
+The MAPE-K technique is used for instance on **self-driving cars** software in combination with **machine learning** and **big data** to help in the analyze and plan steps.
+
+The new steps here are:
+
+- **Monitor**: Check the state and other metrics provide by the sensors, beside the current state of the process.
+- **Analyze**: Evaluate metrics according to system configurations, set points, etc.
+- **Plan**: This part the system needs to understand what is happening to know which action to take to reach the desired result. This can be done using machine learning, big data or some AI techniques.
+- **Execute**: Update the process based on previous analyze and plan.

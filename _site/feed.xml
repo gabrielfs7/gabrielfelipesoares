@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-16T21:01:07+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-16T21:41:21+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -216,9 +216,27 @@
   &lt;figcaption class=&quot;caption&quot;&gt;Feed-back Loop process control&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;In this case the Feed-back loop keeps always monitoring the water volume based on the set point and adjusting the water pump (open / close) to maintain the water volume.&lt;/p&gt;
+&lt;p&gt;In this case the Feed-back loop runs continuously monitoring the water volume based on the set point and adjusting the water pump (open / close) to maintain the water volume.&lt;/p&gt;
 
-&lt;p&gt;#&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A brief overview about the main software architectural styles and why and when we use them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Kruchten’s 4 + 1</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/" rel="alternate" type="text/html" title="Kruchten's 4 + 1" /><published>2019-10-01T00:00:00+01:00</published><updated>2019-10-01T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/">&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/4%2B1_architectural_view_model&quot;&gt;Kruchten’s 4 + 1&lt;/a&gt; technique consists to represent how a system should be implemented by dividing it in &lt;strong&gt;4 different views&lt;/strong&gt; that are discovered through some business &lt;strong&gt;Scenarios&lt;/strong&gt; or “Stories”.&lt;/p&gt;
+&lt;p&gt;Another process control technique, commonly used for more complex process controls is the &lt;strong&gt;MAPE-K&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;figure  figure--center&quot;&gt;
+  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/mape-k.png&quot; alt=&quot;Mape-k process control&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;caption&quot;&gt;Mape-k process control&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In this technique all the steps must have knowledge of the process state.&lt;/p&gt;
+
+&lt;p&gt;The MAPE-K technique is used for instance on &lt;strong&gt;self-driving cars&lt;/strong&gt; software in combination with &lt;strong&gt;machine learning&lt;/strong&gt; and &lt;strong&gt;big data&lt;/strong&gt; to help in the analyze and plan steps.&lt;/p&gt;
+
+&lt;p&gt;The new steps here are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Monitor&lt;/strong&gt;: Check the state and other metrics provide by the sensors, beside the current state of the process.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Analyze&lt;/strong&gt;: Evaluate metrics according to system configurations, set points, etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Plan&lt;/strong&gt;: This part the system needs to understand what is happening to know which action to take to reach the desired result. This can be done using machine learning, big data or some AI techniques.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Execute&lt;/strong&gt;: Update the process based on previous analyze and plan.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A brief overview about the main software architectural styles and why and when we use them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Kruchten’s 4 + 1</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/" rel="alternate" type="text/html" title="Kruchten's 4 + 1" /><published>2019-10-01T00:00:00+01:00</published><updated>2019-10-01T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/">&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/4%2B1_architectural_view_model&quot;&gt;Kruchten’s 4 + 1&lt;/a&gt; technique consists to represent how a system should be implemented by dividing it in &lt;strong&gt;4 different views&lt;/strong&gt; that are discovered through some business &lt;strong&gt;Scenarios&lt;/strong&gt; or “Stories”.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
