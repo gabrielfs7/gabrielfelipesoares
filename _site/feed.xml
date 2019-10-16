@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-15T20:37:26+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-16T21:01:07+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Software Architectural Styles</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/" rel="alternate" type="text/html" title="Software Architectural Styles" /><published>2019-10-04T00:00:00+01:00</published><updated>2019-10-04T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/04/software-architectural-styles/">&lt;p&gt;A brief overview about the main software architectural styles and why and when we use them.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -170,8 +170,8 @@
 &lt;p&gt;Derived from the Event-Driven paradigm, the Event Based Architecture happens when functions are executed trigged by Events, that could be inputs, signals, messages or data coming from other functions or programs. These Events are created by and Event Generator and listened by an Event Consumer or Subscriber.&lt;/p&gt;
 
 &lt;figure class=&quot;figure  figure--center&quot;&gt;
-  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/event-driven.png&quot; alt=&quot;Filter and Pipes Architecture&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
-  &lt;figcaption class=&quot;caption&quot;&gt;Filter and Pipes Architecture&lt;/figcaption&gt;
+  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/event-driven.png&quot; alt=&quot;Event Driven Architecture&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;caption&quot;&gt;Event Driven Architecture&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Event generators&lt;/strong&gt;: Generate and send the messages to be processed.
@@ -185,9 +185,38 @@
 
 &lt;h2 id=&quot;publish-subscribe&quot;&gt;Publish Subscribe&lt;/h2&gt;
 
+&lt;p&gt;Different of Event-Based architecture, “Publish Subscribe” systems enforces that components should be either publishes or subscribers, but never both. Also the relationship between Publisher and Subscriber can vary in form and closeness.&lt;/p&gt;
+
+&lt;p&gt;Publishes and subscribers are not explicitly related, so they are also following Implicit Invocation. Examples are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RSS Feed.&lt;/li&gt;
+  &lt;li&gt;Mail lists.&lt;/li&gt;
+  &lt;li&gt;Mobile messages subscriptions.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h1 id=&quot;process-control-systems&quot;&gt;Process Control Systems&lt;/h1&gt;
-&lt;p&gt;TBD.&lt;/p&gt;
+
+&lt;p&gt;Control is important for many types of process in order to know they will operate in a safe way and achieve the expectations with efficiency.&lt;/p&gt;
+
 &lt;h2 id=&quot;process-control&quot;&gt;Process Control&lt;/h2&gt;
+
+&lt;p&gt;One of the techniques of process control is called &lt;strong&gt;Feedback Loop&lt;/strong&gt;. It consists in some elements (Let’s take a water level control system):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Sensor&lt;/strong&gt;: Monitor important information to be checked. I.e. Sensor to detect water volume.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Controller&lt;/strong&gt;: The logic to check the information monitored and act accordingly. I.e. Check water volume and increase / decrease volume.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Actuator (or effector)&lt;/strong&gt;: How the manipulate the process. I.e. A Water pump (increase / decrease the water level).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Process&lt;/strong&gt;: What is being controlled. I.e: Water tank.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Set Point&lt;/strong&gt;: The desired state of the process. I.e: 5 cubic meters of water.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;figure  figure--center&quot;&gt;
+  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/feedback-loop.png&quot; alt=&quot;Feed-back Loop process control&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;caption&quot;&gt;Feed-back Loop process control&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In this case the Feed-back loop keeps always monitoring the water volume based on the set point and adjusting the water pump (open / close) to maintain the water volume.&lt;/p&gt;
 
 &lt;p&gt;#&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A brief overview about the main software architectural styles and why and when we use them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Kruchten’s 4 + 1</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/" rel="alternate" type="text/html" title="Kruchten's 4 + 1" /><published>2019-10-01T00:00:00+01:00</published><updated>2019-10-01T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/01/kruchtens-4-1-view-model/">&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/4%2B1_architectural_view_model&quot;&gt;Kruchten’s 4 + 1&lt;/a&gt; technique consists to represent how a system should be implemented by dividing it in &lt;strong&gt;4 different views&lt;/strong&gt; that are discovered through some business &lt;strong&gt;Scenarios&lt;/strong&gt; or “Stories”.&lt;/p&gt;
 

@@ -158,9 +158,31 @@ For instance, when one event updates a resource before a previous event that als
 
 ## Publish Subscribe
 
+Different of Event-Based architecture, "Publish Subscribe" systems enforces that components should be either publishes or subscribers, but never both. Also the relationship between Publisher and Subscriber can vary in form and closeness.
+
+Publishes and subscribers are not explicitly related, so they are also following Implicit Invocation. Examples are:
+
+- RSS Feed.
+- Mail lists.
+- Mobile messages subscriptions.
+
 # Process Control Systems
-TBD.
+
+Control is important for many types of process in order to know they will operate in a safe way and achieve the expectations with efficiency.
+
 ## Process Control
+
+One of the techniques of process control is called **Feedback Loop**. It consists in some elements (Let's take a water level control system):
+
+- **Sensor**: Monitor important information to be checked. I.e. Sensor to detect water volume.
+- **Controller**: The logic to check the information monitored and act accordingly. I.e. Check water volume and increase / decrease volume.
+- **Actuator (or effector)**: How the manipulate the process. I.e. A Water pump (increase / decrease the water level).
+- **Process**: What is being controlled. I.e: Water tank.
+- **Set Point**: The desired state of the process. I.e: 5 cubic meters of water.
+
+{% include post-figure.html image="feedback-loop.png" caption="Feed-back Loop process control" %}
+
+In this case the Feed-back loop keeps always monitoring the water volume based on the set point and adjusting the water pump (open / close) to maintain the water volume.
 
 # 
 
