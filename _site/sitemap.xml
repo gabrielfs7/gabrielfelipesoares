@@ -57,6 +57,10 @@
 <lastmod>2019-10-04T00:00:00+01:00</lastmod>
 </url>
 <url>
+<loc>http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/</loc>
+<lastmod>2019-10-11T00:00:00+01:00</lastmod>
+</url>
+<url>
 <loc>http://0.0.0.0:4000/categories/</loc>
 </url>
 <url>
@@ -85,5 +89,8 @@
 </url>
 <url>
 <loc>http://0.0.0.0:4000/blog/page7/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/blog/page8/</loc>
 </url>
 </urlset>
