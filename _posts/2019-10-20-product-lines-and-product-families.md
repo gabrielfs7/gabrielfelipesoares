@@ -11,7 +11,7 @@ Producing software has costs that can be reduced with code reusability. Lets tal
 
 According to the book [Software Product Lines in Action](https://www.goodreads.com/book/show/1434086.Software_Product_Lines_in_Action) by _Frank J. van der Linden_. To discover the product lines we must separate the features that stay the same, from the features that change by each product.
 
-We can do this through the classification of three groups feature's groups:
+We can do this through the classification of three feature's groups:
 
 - **Commonalities**: _Product line_ features that stay the same for all the products. For instance: The UI components, Hardware Drivers, etc.
 
@@ -29,7 +29,7 @@ There will be 2 different teams that can vary according to size of product, comm
 
 {% include post-figure.html image="product-lines-team-organization.png" caption="Product Lines Team Organization" %}
 
-Of course, there are some trade-offs by using this approach. There will be needed an _extra upfront investment_ to adapt your architecture and code base to support reusable code. The creation of **commonalities**, like libraries, definition of boundaries, communications standards and protocols within components among others must be planned and done in advance.
+Of course, there are some trade-offs by using this approach. There will be needed for an _extra upfront investment_ to adapt your architecture and code base to support reusable code. The creation of **commonalities**, like libraries, definition of boundaries, communications standards and protocols within components among others must be planned and done in advance.
 
 {% include post-figure.html image="product-lines-tradeoffs.png" caption="Product Lines" %}
 
