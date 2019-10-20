@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-20T11:31:28+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Product Lines and Product Families</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/" rel="alternate" type="text/html" title="Product Lines and Product Families" /><published>2019-10-20T00:00:00+01:00</published><updated>2019-10-20T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/">&lt;p&gt;Producing software has costs that can be reduced with code reusability. Lets talk about how the creation of “Product Lines” can help you achieve this.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-20T15:06:29+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Product Lines and Product Families</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/" rel="alternate" type="text/html" title="Product Lines and Product Families" /><published>2019-10-20T00:00:00+01:00</published><updated>2019-10-20T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/">&lt;p&gt;Producing software has costs that can be reduced with code reusability. Lets talk about how the creation of “Product Lines” can help you achieve this.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -97,7 +97,50 @@
     &lt;p&gt;&lt;strong&gt;Involve other teams&lt;/strong&gt; or at least a main responsible before a new feature or components being developed to help validated the interoperability and reusability.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;Use &lt;strong&gt;code reviews&lt;/strong&gt; to validate new components are following company standards and conventions.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Lets understand how the organization structure can affect the way the system is developed.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Software Architecture Quality Attributes</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/" rel="alternate" type="text/html" title="Software Architecture Quality Attributes" /><published>2019-10-11T00:00:00+01:00</published><updated>2019-10-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/">&lt;p&gt;When we are talking about evaluate the quality of a Software Architecture, there are some questions that cannot be answered by Design Patterns and Principles or how the elements in the architecture interact each other.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Lets understand how the organization structure can affect the way the system is developed.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Using ATAM to Analyze &amp;amp; Evaluate Architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture/" rel="alternate" type="text/html" title="Using ATAM to Analyze &amp; Evaluate Architecture" /><published>2019-10-18T00:00:00+01:00</published><updated>2019-10-18T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture/">&lt;p&gt;Software development is becoming more complex over the years. Let’s talk about how the &lt;strong&gt;Architecture Trade-offs Analysis Method&lt;/strong&gt; can help to validate the architecture and and expose hidden risks to the Stakeholders.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;When validating an &lt;em&gt;Architecture Design&lt;/em&gt; we want to fulfill the interests and concerns of all the Stakeholders. On way to do this is using &lt;em&gt;Quality Attributes Scenarios&lt;/em&gt; for every &lt;em&gt;Quality Attribute&lt;/em&gt;. There are 2 types of scenarios:&lt;/p&gt;
+
+&lt;h3 id=&quot;general-attribute-scenario&quot;&gt;General Attribute Scenario&lt;/h3&gt;
+
+&lt;p&gt;Are generic scenarios used to characterize any kind of system.&lt;/p&gt;
+
+&lt;h3 id=&quot;concrete-attribute-scenario&quot;&gt;Concrete Attribute Scenario&lt;/h3&gt;
+
+&lt;p&gt;Are dedicated scenarios used to characterize an specific kind of system.&lt;/p&gt;
+
+&lt;h2 id=&quot;scenarios-components&quot;&gt;Scenarios Components&lt;/h2&gt;
+
+&lt;figure class=&quot;figure  figure--center&quot;&gt;
+  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/qa-scenarios.png&quot; alt=&quot;Quality Attributes Scenarios&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;caption&quot;&gt;Quality Attributes Scenarios&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;stimulus-source&quot;&gt;Stimulus Source&lt;/h3&gt;
+
+&lt;p&gt;It is any action that can create a stimulus. They could be &lt;em&gt;internal&lt;/em&gt; or external. An &lt;strong&gt;Internal Stimulus&lt;/strong&gt; example is a CRON tab, that time to time triggers an action. An &lt;strong&gt;External Stimulus&lt;/strong&gt; example could be an end-user button click or simply request a page load.&lt;/p&gt;
+
+&lt;h3 id=&quot;stimulus&quot;&gt;Stimulus&lt;/h3&gt;
+
+&lt;p&gt;The Stimulus source sends a &lt;em&gt;Stimulus&lt;/em&gt; which is any kind of condition that makes the system to respond. They can also be internal or external, so an invalid input provided by the end-user is a external stimulus whereas internal server error, like memory limit exceeds, is an internal stimulus.&lt;/p&gt;
+
+&lt;h3 id=&quot;artifact&quot;&gt;Artifact&lt;/h3&gt;
+
+&lt;p&gt;The artifact is the subsystem or component that handles the stimulus and generates the response. For instance it could be the end-user invalid input error handling or a failure recovery for an internal fault issue.&lt;/p&gt;
+
+&lt;p&gt;The stimulus should not communicate directly with the whole system, instead its response will become source of other stimulus and communicate with them as a chain.&lt;/p&gt;
+
+&lt;h3 id=&quot;environment&quot;&gt;Environment&lt;/h3&gt;
+
+&lt;p&gt;The environment is the mode or state of the system when receiving an stimulus. It could be for instance the state of the user (logged in / out), the amount of free memory in the server, the environment variables set, the server configuration, network configuration and so on.&lt;/p&gt;
+
+&lt;h3 id=&quot;response&quot;&gt;Response&lt;/h3&gt;
+
+&lt;p&gt;How the artifact behave after it receives a stimulus in certain environment will generate an specific response. It could be for instance, logging the error, sending an alert message, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;response-measure&quot;&gt;Response Measure&lt;/h3&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Software development is becoming more complex over the years. Let’s talk about how the Architecture Trade-offs Analysis Method can help to validate the architecture and and expose hidden risks to the Stakeholders.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Software Architecture Quality Attributes</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/" rel="alternate" type="text/html" title="Software Architecture Quality Attributes" /><published>2019-10-11T00:00:00+01:00</published><updated>2019-10-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/">&lt;p&gt;When we are talking about evaluate the quality of a Software Architecture, there are some questions that cannot be answered by Design Patterns and Principles or how the elements in the architecture interact each other.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -647,67 +690,4 @@
 
 &lt;p&gt;The Dependency Inversion principle says that classes should relay on generalizations rather than implementation details.&lt;/p&gt;
 
-&lt;p&gt;To accomplish this always develop oriented to interfaces, not implementation. Extract the behavior representation of classes to interfaces and abstract classes, so they can easily be replaced.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Avoid making classes depending on concrete class to reduce coupling. Reduce the maintenance effort and risk of your system.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Law of Demeter - Least Knowledge Principle</title><link href="http://0.0.0.0:4000/design-principles/2019/09/25/law-of-demeter/" rel="alternate" type="text/html" title="Law of Demeter - Least Knowledge Principle" /><published>2019-09-25T00:00:00+01:00</published><updated>2019-09-25T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/2019/09/25/law-of-demeter</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/2019/09/25/law-of-demeter/">&lt;p&gt;A class should know as less as possible about other classes implementation. There is a law for it!&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;A class should only know about first implementation of its “immediate fried” classes. This is important to avoid coupling and make your system more flexible, reusable, maintainable and with low coupling.&lt;/p&gt;
-
-&lt;h1 id=&quot;example&quot;&gt;Example:&lt;/h1&gt;
-
-&lt;p&gt;Let’s check the allowed usages:&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Allowed!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Allowed!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;no&quot;&gt;D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Allowed!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And these are not allowed:&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doAgain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doAgain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;no&quot;&gt;D&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doAgain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;C2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT Allowed, cause C2 is a base class of C and A only knows C!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A class should know as less as possible about other classes implementation. There is a law for it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
+&lt;p&gt;To accomplish this always develop oriented to interfaces, not implementation. Extract the behavior representation of classes to interfaces and abstract classes, so they can easily be replaced.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Avoid making classes depending on concrete class to reduce coupling. Reduce the maintenance effort and risk of your system.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
