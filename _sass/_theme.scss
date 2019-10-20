@@ -14,6 +14,26 @@ body {
   margin: 0 auto;
 }
 
+.container table {
+    margin: 10px 0;
+    padding: 0;
+    border: 1px solid #CCC;
+}
+
+.container table td,
+.container table th
+{
+  padding: 5px;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+}
+
+.container table th
+{
+  background: #EAEAEA;
+  font-weight: bold;
+}
+
 
 // Header, feature and footer
 .header {

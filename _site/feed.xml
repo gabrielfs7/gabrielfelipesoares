@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-20T15:06:29+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Product Lines and Product Families</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/" rel="alternate" type="text/html" title="Product Lines and Product Families" /><published>2019-10-20T00:00:00+01:00</published><updated>2019-10-20T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/">&lt;p&gt;Producing software has costs that can be reduced with code reusability. Lets talk about how the creation of “Product Lines” can help you achieve this.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-20T17:29:36+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Product Lines and Product Families</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/" rel="alternate" type="text/html" title="Product Lines and Product Families" /><published>2019-10-20T00:00:00+01:00</published><updated>2019-10-20T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/">&lt;p&gt;Producing software has costs that can be reduced with code reusability. Lets talk about how the creation of “Product Lines” can help you achieve this.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -97,7 +97,7 @@
     &lt;p&gt;&lt;strong&gt;Involve other teams&lt;/strong&gt; or at least a main responsible before a new feature or components being developed to help validated the interoperability and reusability.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;Use &lt;strong&gt;code reviews&lt;/strong&gt; to validate new components are following company standards and conventions.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Lets understand how the organization structure can affect the way the system is developed.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Using ATAM to Analyze &amp;amp; Evaluate Architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture/" rel="alternate" type="text/html" title="Using ATAM to Analyze &amp; Evaluate Architecture" /><published>2019-10-18T00:00:00+01:00</published><updated>2019-10-18T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture/">&lt;p&gt;Software development is becoming more complex over the years. Let’s talk about how the &lt;strong&gt;Architecture Trade-offs Analysis Method&lt;/strong&gt; can help to validate the architecture and and expose hidden risks to the Stakeholders.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Lets understand how the organization structure can affect the way the system is developed.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Using ATAM to Analyze and Evaluate Architecture</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture/" rel="alternate" type="text/html" title="Using ATAM to Analyze and Evaluate Architecture" /><published>2019-10-18T00:00:00+01:00</published><updated>2019-10-18T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/18/atam-analyze-evaluate-architecture/">&lt;p&gt;Software development is becoming more complex over the years. Let’s talk about how the &lt;strong&gt;Architecture Trade-offs Analysis Method&lt;/strong&gt; can help to validate the architecture and and expose hidden risks to the Stakeholders.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -107,9 +107,61 @@
 
 &lt;p&gt;Are generic scenarios used to characterize any kind of system.&lt;/p&gt;
 
+&lt;p&gt;In this example we want to check the server availability quality attribute:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Component&lt;/th&gt;
+      &lt;th&gt;Component Value&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Stimulus Source&lt;/td&gt;
+      &lt;td&gt;End-user input, CRON tab, etc&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Stimulus&lt;/td&gt;
+      &lt;td&gt;Invalid input, High request volume, etc&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Environment&lt;/td&gt;
+      &lt;td&gt;Stating up, Shutting down, Recovering from failure, Operating normally&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
 &lt;h3 id=&quot;concrete-attribute-scenario&quot;&gt;Concrete Attribute Scenario&lt;/h3&gt;
 
 &lt;p&gt;Are dedicated scenarios used to characterize an specific kind of system.&lt;/p&gt;
+
+&lt;p&gt;Here we can test an specific attribute value regarding consistency of the stock while purchasing a product.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Component&lt;/th&gt;
+      &lt;th&gt;Component Value&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Stimulus Source&lt;/td&gt;
+      &lt;td&gt;Customer (end-user)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Stimulus&lt;/td&gt;
+      &lt;td&gt;Request to ad item to shopping cart&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Environment&lt;/td&gt;
+      &lt;td&gt;Not enough stock&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;With both types of scenarios we can now identify the possibles responses and response measurements.&lt;/p&gt;
 
 &lt;h2 id=&quot;scenarios-components&quot;&gt;Scenarios Components&lt;/h2&gt;
 
@@ -140,7 +192,165 @@
 
 &lt;p&gt;How the artifact behave after it receives a stimulus in certain environment will generate an specific response. It could be for instance, logging the error, sending an alert message, etc.&lt;/p&gt;
 
-&lt;h3 id=&quot;response-measure&quot;&gt;Response Measure&lt;/h3&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Software development is becoming more complex over the years. Let’s talk about how the Architecture Trade-offs Analysis Method can help to validate the architecture and and expose hidden risks to the Stakeholders.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Software Architecture Quality Attributes</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/" rel="alternate" type="text/html" title="Software Architecture Quality Attributes" /><published>2019-10-11T00:00:00+01:00</published><updated>2019-10-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/">&lt;p&gt;When we are talking about evaluate the quality of a Software Architecture, there are some questions that cannot be answered by Design Patterns and Principles or how the elements in the architecture interact each other.&lt;/p&gt;
+&lt;h3 id=&quot;response-measure&quot;&gt;Response Measure&lt;/h3&gt;
+
+&lt;p&gt;It is a metric to quantify a quality attribute though the response. It must be quantitative and objective. Example: response time, recovery or repair time, etc.&lt;/p&gt;
+
+&lt;p&gt;It is a good practice to map the scenarios in tables to get a more accurate vision of the quality attributes being tested. Let’s see some general and concrete scenarios examples:&lt;/p&gt;
+
+&lt;h1 id=&quot;atam---architecture-tradeoff-analysis-method&quot;&gt;ATAM - Architecture Tradeoff Analysis Method&lt;/h1&gt;
+
+&lt;p&gt;After understanding how to classify and measure quality attributes we can use the &lt;a href=&quot;https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=513908&quot;&gt;ATAM&lt;/a&gt; method created by the &lt;em&gt;Software Engineering Institute&lt;/em&gt; to analyze and evaluate the architecture.&lt;/p&gt;
+
+&lt;p&gt;The ATAM method intend do be unbiased allowing outsiders that did not participate of the system conception os architecture to evaluate it. The ATAM requires three main groups for the analysis and evaluation:&lt;/p&gt;
+
+&lt;h2 id=&quot;evaluation-team&quot;&gt;Evaluation Team&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Designers&lt;/strong&gt;: Who did the system architectural design. I.e. Software architects and engineers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Peers&lt;/strong&gt;: They are part of the project, but did not participate of the design.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Outsiders&lt;/strong&gt;: Architecture specialists outside of the group or organization. This group is important to eliminate any kind of bias within the project.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;project-decision-makers&quot;&gt;Project Decision Makers.&lt;/h2&gt;
+
+&lt;p&gt;According to the evaluation output, it is important to have people to make decisions and accepts the trade-offs or system changes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Clients&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Product Owners&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Project Managers&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lead Developers&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Software Architects&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;architecture-stakeholders&quot;&gt;Architecture Stakeholders&lt;/h2&gt;
+
+&lt;p&gt;This groups includes the ones who want the architecture meets the business needs, but are not directly or actively involved with the analysis/evaluation process.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;End-users&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Developers&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Support&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s have a high level vision of the ATAM flow:&lt;/p&gt;
+
+&lt;figure class=&quot;figure  figure--center&quot;&gt;
+  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/atam-flow.png&quot; alt=&quot;ATAM flow: https://www.researchgate.net/figure/The-process-Flow-of-ATAM-2_fig2_221553429&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;caption&quot;&gt;ATAM flow: https://www.researchgate.net/figure/The-process-Flow-of-ATAM-2_fig2_221553429&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;strong&gt;Business Drivers&lt;/strong&gt; have an issue to be solved. So a software need to be created to solve it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;These Business Drivers will show the &lt;strong&gt;Software Architecture&lt;/strong&gt; created as a solution to their issue to every one involved.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Business Drivers use the Software Architecture to identify the system &lt;strong&gt;Quality Attributes&lt;/strong&gt;, chose and &lt;strong&gt;Architectural Approach&lt;/strong&gt; and make the &lt;strong&gt;Architectural Decisions&lt;/strong&gt; and finally create the quality attribute &lt;strong&gt;Scenarios&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;These scenarios run through &lt;strong&gt;Analysis&lt;/strong&gt; and are evaluated generating as output: &lt;strong&gt;Tradeoffs&lt;/strong&gt;, &lt;strong&gt;Sensitivity points&lt;/strong&gt;, &lt;strong&gt;Non-risk&lt;/strong&gt; and &lt;strong&gt;Risk&lt;/strong&gt; scenarios.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Risk Scenarios are analyzed individually and classified in &lt;strong&gt;Risk Themes&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;atam-steps&quot;&gt;ATAM Steps&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-present-the-atam&quot;&gt;1. Present the ATAM&lt;/h3&gt;
+
+&lt;p&gt;Present the context for evaluation, expectations, procedures, outputs and evaluation metrics used in the ATAM.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-present-the-business-drivers&quot;&gt;2. Present the business Drivers&lt;/h3&gt;
+
+&lt;p&gt;At this phase all these must be identified:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Who are the business drivers.&lt;/li&gt;
+  &lt;li&gt;Business problems and goals for the system are presented by the &lt;strong&gt;Project decision makers&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;System’s features.&lt;/li&gt;
+  &lt;li&gt;System’s requirements.&lt;/li&gt;
+  &lt;li&gt;Project constraints.&lt;/li&gt;
+  &lt;li&gt;Project scope.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-present-the-architecture&quot;&gt;3. Present the Architecture&lt;/h3&gt;
+
+&lt;p&gt;Present:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Current Architecture state.&lt;/li&gt;
+  &lt;li&gt;Expected Architecture state.&lt;/li&gt;
+  &lt;li&gt;Impact of following project constraints in the architecture:
+    &lt;ul&gt;
+      &lt;li&gt;Time / Deadline.&lt;/li&gt;
+      &lt;li&gt;Cost / Available resources.&lt;/li&gt;
+      &lt;li&gt;Complexity of the problem.&lt;/li&gt;
+      &lt;li&gt;Quality expectations.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-identify-the-architecture-approaches&quot;&gt;4. Identify the Architecture approaches&lt;/h3&gt;
+
+&lt;p&gt;This is the first analysis activity.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Examine the architectural patterns used in the system.&lt;/li&gt;
+  &lt;li&gt;Analyze documentation.&lt;/li&gt;
+  &lt;li&gt;Ask questions and clarify any doubt about the system.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-create-a-quality-attribute-tree&quot;&gt;5. Create a Quality Attribute Tree&lt;/h3&gt;
+
+&lt;p&gt;Create a quality attribute utility tree, the requirements for each quality attribute is detailed in a quality attribute utility tree.&lt;/p&gt;
+
+&lt;p&gt;The ASRs (Architecturally Significant Requirements) provided by the Business Drivers for all the quality attributes are mapped in the &lt;strong&gt;Quality Attribute Utility Tree&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;As quality attributes are general, the utility tree splits them into attribute refinements, which are more specific qualities of a system.&lt;/p&gt;
+
+&lt;p&gt;For each ASR we can associate a priority value to identify &lt;strong&gt;must-haves&lt;/strong&gt; requirements.&lt;/p&gt;
+
+&lt;figure class=&quot;figure  figure--center&quot;&gt;
+  &lt;img class=&quot;image&quot; src=&quot;/assets/post_images/quality-attributes-tree.png&quot; alt=&quot;Quality Attribute Tree: https://docs.arc42.org/tips/10-2/&quot; width=&quot;&quot; height=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;caption&quot;&gt;Quality Attribute Tree: https://docs.arc42.org/tips/10-2/&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;6-analyze-the-architectural-approaches&quot;&gt;6. Analyze the Architectural approaches&lt;/h3&gt;
+
+&lt;p&gt;For each ASR collected in the previous step, check how the architecture meets them or not, them document the &lt;strong&gt;Tradeoffs&lt;/strong&gt;, &lt;strong&gt;Sensitivity points&lt;/strong&gt; and &lt;strong&gt;Risk and non-risk scenarios&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;7-brainstorm-and-prioritize-scenarios&quot;&gt;7. Brainstorm and prioritize scenarios&lt;/h3&gt;
+
+&lt;p&gt;To have an idea about how would the day-to-day system usage be, gather scenarios from all the ATM group of participants. The scenarios will be prioritized by the Stake holders and using the ASRs collected previously.&lt;/p&gt;
+
+&lt;h3 id=&quot;8-re-analyze-the-architectural-approaches&quot;&gt;8. Re-analyze the architectural approaches&lt;/h3&gt;
+
+&lt;p&gt;Based on the top 5 to 10 scenarios collected in the previous step, create a utility tree and validate with the system architect to discover which and how the scenarios can be achieved with the system design.&lt;/p&gt;
+
+&lt;h3 id=&quot;9-present-the-results&quot;&gt;9. Present the results&lt;/h3&gt;
+
+&lt;p&gt;At this step you must have:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Evaluation results.&lt;/li&gt;
+  &lt;li&gt;Risk scenarios grouped and categorized into risk themes.&lt;/li&gt;
+  &lt;li&gt;Architecture documents produced.&lt;/li&gt;
+  &lt;li&gt;Utility tress produced.&lt;/li&gt;
+  &lt;li&gt;Risk and non-risk scenarios&lt;/li&gt;
+  &lt;li&gt;Sensitivity points.&lt;/li&gt;
+  &lt;li&gt;Tradeoffs.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Software development is becoming more complex over the years. Let’s talk about how the Architecture Trade-offs Analysis Method can help to validate the architecture and and expose hidden risks to the Stakeholders.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Software Architecture Quality Attributes</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/" rel="alternate" type="text/html" title="Software Architecture Quality Attributes" /><published>2019-10-11T00:00:00+01:00</published><updated>2019-10-11T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/11/software-architecture-quality-attributes/">&lt;p&gt;When we are talking about evaluate the quality of a Software Architecture, there are some questions that cannot be answered by Design Patterns and Principles or how the elements in the architecture interact each other.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
