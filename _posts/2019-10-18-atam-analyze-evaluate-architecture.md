@@ -15,6 +15,8 @@ When validating an _Architecture Design_ we want to fulfill the interests and co
 
 Are generic scenarios used to characterize any kind of system.
 
+**Example:**
+
 In this example we want to check the server availability quality attribute:
 
 | Component | Component Value |
@@ -26,6 +28,8 @@ In this example we want to check the server availability quality attribute:
 ### Concrete Attribute Scenario
 
 Are dedicated scenarios used to characterize an specific kind of system.
+
+**Example:**
 
 Here we can test an specific attribute value regarding consistency of the stock while purchasing a product.
 

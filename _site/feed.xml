@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-20T17:29:36+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Product Lines and Product Families</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/" rel="alternate" type="text/html" title="Product Lines and Product Families" /><published>2019-10-20T00:00:00+01:00</published><updated>2019-10-20T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/">&lt;p&gt;Producing software has costs that can be reduced with code reusability. Lets talk about how the creation of “Product Lines” can help you achieve this.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-20T17:31:13+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Product Lines and Product Families</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/" rel="alternate" type="text/html" title="Product Lines and Product Families" /><published>2019-10-20T00:00:00+01:00</published><updated>2019-10-20T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/">&lt;p&gt;Producing software has costs that can be reduced with code reusability. Lets talk about how the creation of “Product Lines” can help you achieve this.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -107,6 +107,8 @@
 
 &lt;p&gt;Are generic scenarios used to characterize any kind of system.&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
 &lt;p&gt;In this example we want to check the server availability quality attribute:&lt;/p&gt;
 
 &lt;table&gt;
@@ -135,6 +137,8 @@
 &lt;h3 id=&quot;concrete-attribute-scenario&quot;&gt;Concrete Attribute Scenario&lt;/h3&gt;
 
 &lt;p&gt;Are dedicated scenarios used to characterize an specific kind of system.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Here we can test an specific attribute value regarding consistency of the stock while purchasing a product.&lt;/p&gt;
 
