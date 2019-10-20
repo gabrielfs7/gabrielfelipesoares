@@ -15,7 +15,7 @@ _A system will tend to take a form that is congruous to the organization that pr
 
 Imagine that your organization has only one team that is responsible to develop a new component. It is easy to them to agree how it will be developed: message format, interfaces, code style, etc.
 
-When happens that another team comes to develop a new component that will integrate with the first one, they also can easily agree on a message format and protocol without thinking about other cases, since for now. Only these two components are talking each other. The developers teams are on the same floor, so the communication flows smoothly.
+When happens that another team comes to develop a new component that will integrate with the first one. They also can easily agree on a message format and protocol without thinking about other cases, since for now only these two components are talking to each other. The developers teams are on the same floor, so the communication flows smoothly.
 
 As the organization starts to grow, other teams are being created and new components are needed. They keep talking to each other and creating agreements separately. Sooner or later it is realized that the costs and risk to introduce new features are big due to tightly coupled components and lack of standards that were "not needed" at the beginning, but their absence became a huge problem now.
 
