@@ -1,4 +1,303 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-10-20T17:31:13+01:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Product Lines and Product Families</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/" rel="alternate" type="text/html" title="Product Lines and Product Families" /><published>2019-10-20T00:00:00+01:00</published><updated>2019-10-20T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/">&lt;p&gt;Producing software has costs that can be reduced with code reusability. Lets talk about how the creation of “Product Lines” can help you achieve this.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" hreflang="en-GB" /><updated>2019-11-02T20:02:58+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Gabriel’s Blog</title><subtitle>Sharing my thoughts about IT related subjects</subtitle><author><name>Gabriel Felipe Soares</name></author><entry><title type="html">Explain REST using Trello</title><link href="http://0.0.0.0:4000/software-architecture/2019/11/01/explain-rest-trello/" rel="alternate" type="text/html" title="Explain REST using Trello" /><published>2019-11-01T00:00:00+00:00</published><updated>2019-11-01T00:00:00+00:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/11/01/explain-rest-trello</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/11/01/explain-rest-trello/">&lt;p&gt;The goal of this article is to analyze a real world RESTful application and explain how it adheres to the 5 REST restraints.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;For this example I will going to use Trello’s web-services APIs. Bellow there are the 5 main principles.&lt;/p&gt;
+
+&lt;h1 id=&quot;rest-restraints&quot;&gt;REST Restraints&lt;/h1&gt;
+
+&lt;h3 id=&quot;client-server-architecture&quot;&gt;Client-Server Architecture&lt;/h3&gt;
+
+&lt;p&gt;A REST architecture should always separate Server code from Client code. In case of Trello web application we can assume that is being done by:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Component&lt;/th&gt;
+      &lt;th&gt;Role&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Web Browser&lt;/td&gt;
+      &lt;td&gt;Client&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;API Client&lt;/td&gt;
+      &lt;td&gt;Client&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Web Server&lt;/td&gt;
+      &lt;td&gt;Server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Application Server&lt;/td&gt;
+      &lt;td&gt;Server&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Client and Server do not know this internal details, only the interface and message format / protocol they should use in order to communicate each other.&lt;/p&gt;
+
+&lt;h3 id=&quot;layered-system&quot;&gt;Layered System&lt;/h3&gt;
+
+&lt;p&gt;I could not find prove that Trello’s has a layered architecture, but as most of modern and hight demand applications it probably contains many applications and web servers that are probably scaled and called depending on user request.&lt;/p&gt;
+
+&lt;h3 id=&quot;stateless&quot;&gt;Stateless&lt;/h3&gt;
+
+&lt;p&gt;The server does not save client state during REST API interaction. It is the opposite of &lt;strong&gt;Statefull&lt;/strong&gt; applications that generally persist in internal storage client’s session data, for example.&lt;/p&gt;
+
+&lt;p&gt;With Trello’s api the client needs to provide always its oAuth token and API key, so the server can do the authorization.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;URI example&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;POST https://api.trello.com/1/boards/560bf4298b3dda300c18d09c?fields=name,url&amp;amp;key={YOUR-API-KEY}&amp;amp;token={AN-OAUTH-TOKEN}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.trello.com/reference#api-key-tokens&quot;&gt;Check doc here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;clients-can-cache-responses&quot;&gt;Clients can cache responses:&lt;/h3&gt;
+
+&lt;p&gt;Web browser caches the user credentials as cookies, so user can stay logged in even without server knowing client’s state. The same can be done with API client using cache headers.&lt;/p&gt;
+
+&lt;h3 id=&quot;uniform-communication-interface&quot;&gt;Uniform Communication Interface&lt;/h3&gt;
+
+&lt;p&gt;The server must provide a uniform interface for communication with client.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;API must use common HTTP methods&lt;/strong&gt;: Lets take the &lt;em&gt;board&lt;/em&gt; resource as example:
+    &lt;ul&gt;
+      &lt;li&gt;POST: &lt;a href=&quot;https://developers.trello.com/reference#boardsid&quot;&gt;Create a new &lt;em&gt;board&lt;/em&gt;&lt;/a&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;POST /1/boards/?name=name+here
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;PUT: &lt;a href=&quot;https://developers.trello.com/reference#idnext&quot;&gt;Update an existing &lt;em&gt;board&lt;/em&gt;&lt;/a&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PUT /1/boards/123456/name?value=new+name+here
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;GET: &lt;a href=&quot;https://developers.trello.com/reference#boardsboardid-1&quot;&gt;Get &lt;em&gt;board&lt;/em&gt; by identifier&lt;/a&gt;:
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; GET /1/boards/123456
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;DELETE: &lt;a href=&quot;https://developers.trello.com/reference#boardsid-1&quot;&gt;Remove a &lt;em&gt;board&lt;/em&gt;&lt;/a&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE /1/boards/123456
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The resource must be identifiable in the URI&lt;/strong&gt;. Example: &lt;a href=&quot;https://developers.trello.com/reference#boardsboardid-1&quot;&gt;Get &lt;em&gt;board&lt;/em&gt; by identifier&lt;/a&gt;:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   GET /1/boards/123456
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Where &lt;em&gt;boards&lt;/em&gt; is the resource and &lt;strong&gt;123456&lt;/strong&gt; is the resource identifier.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Uses &lt;em&gt;nouns&lt;/em&gt; to build resource URIs&lt;/strong&gt;: As you can see in the &lt;a href=&quot;https://developers.trello.com/reference&quot;&gt;API documentation&lt;/a&gt;, boards, cards, labels, members, etc are all resources and &lt;em&gt;nouns&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Unified response format&lt;/strong&gt;: Trello uses JSON messages format as response. Example:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Request example:&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  curl --request POST \
+  --url 'https://api.trello.com/1/boards/?name=name&amp;amp;defaultLabels=true&amp;amp;defaultLists=true&amp;amp;keepFromSource=none&amp;amp;prefs_permissionLevel=private&amp;amp;prefs_voting=disabled&amp;amp;prefs_comments=members&amp;amp;prefs_invitations=members&amp;amp;prefs_selfJoin=true&amp;amp;prefs_cardCovers=true&amp;amp;prefs_background=blue&amp;amp;prefs_cardAging=regular&amp;amp;key=SECRET&amp;amp;token=SECRET'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Response example:&lt;/p&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  {
+      &quot;id&quot;: &quot;123456&quot;,
+      &quot;name&quot;: &quot;name&quot;,
+      &quot;desc&quot;: &quot;&quot;,
+      &quot;descData&quot;: null,
+      &quot;closed&quot;: false,
+      &quot;idOrganization&quot;: null,
+      &quot;idEnterprise&quot;: null,
+      &quot;pinned&quot;: false,
+      &quot;url&quot;: &quot;https://trello.com/b/RWoxB8KB/name&quot;,
+      &quot;shortUrl&quot;: &quot;https://trello.com/b/RWoxB8KB&quot;,
+      &quot;prefs&quot;: {
+          &quot;permissionLevel&quot;: &quot;private&quot;,
+          &quot;hideVotes&quot;: false,
+          &quot;voting&quot;: &quot;disabled&quot;,
+          &quot;comments&quot;: &quot;members&quot;,
+          &quot;invitations&quot;: &quot;members&quot;,
+          &quot;selfJoin&quot;: true,
+          &quot;cardCovers&quot;: true,
+          &quot;isTemplate&quot;: false,
+          &quot;cardAging&quot;: &quot;regular&quot;,
+          &quot;calendarFeedEnabled&quot;: false,
+          &quot;background&quot;: &quot;blue&quot;,
+          &quot;backgroundImage&quot;: null,
+          &quot;backgroundImageScaled&quot;: null,
+          &quot;backgroundTile&quot;: false,
+          &quot;backgroundBrightness&quot;: &quot;dark&quot;,
+          &quot;backgroundColor&quot;: &quot;#0079BF&quot;,
+          &quot;backgroundBottomColor&quot;: &quot;#0079BF&quot;,
+          &quot;backgroundTopColor&quot;: &quot;#0079BF&quot;,
+          &quot;canBePublic&quot;: true,
+          &quot;canBeEnterprise&quot;: true,
+          &quot;canBeOrg&quot;: true,
+          &quot;canBePrivate&quot;: true,
+          &quot;canInvite&quot;: true
+      },
+      &quot;labelNames&quot;: {
+          &quot;green&quot;: &quot;&quot;,
+          &quot;yellow&quot;: &quot;&quot;,
+          &quot;orange&quot;: &quot;&quot;,
+          &quot;red&quot;: &quot;&quot;,
+          &quot;purple&quot;: &quot;&quot;,
+          &quot;blue&quot;: &quot;&quot;,
+          &quot;sky&quot;: &quot;&quot;,
+          &quot;lime&quot;: &quot;&quot;,
+          &quot;pink&quot;: &quot;&quot;,
+          &quot;black&quot;: &quot;&quot;
+      }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;rest-design-principles&quot;&gt;REST Design Principles&lt;/h1&gt;
+
+&lt;h3 id=&quot;use-only-nouns-for-a-uri&quot;&gt;Use only nouns for a URI&lt;/h3&gt;
+
+&lt;p&gt;URI should not use verbs, only &lt;em&gt;nouns&lt;/em&gt;, otherwise they will not be &lt;strong&gt;resource based&lt;/strong&gt;. Let the HTTP methods be the &lt;em&gt;verbs&lt;/em&gt; when define your REST API.&lt;/p&gt;
+
+&lt;p&gt;Analyzing Trello’s API documentation, there are only &lt;em&gt;nouns&lt;/em&gt; used to identify the resources. Examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GET /boards/{id}&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DELETE /customFields/{id}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Although there are some URIs not using sub resources in plural. Examples: checklist, checkItem, avatars.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;POST /members/{id}/avatar&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PUT /cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;get-methods-should-not-alter-the-state-of-resource&quot;&gt;GET methods should not alter the state of resource&lt;/h3&gt;
+
+&lt;p&gt;The HTTP GET must be only a &lt;strong&gt;Query&lt;/strong&gt; method, which means, it can be used to search and retrieve a single or collection of resources, but never change resource’s state.&lt;/p&gt;
+
+&lt;p&gt;The only HTTP methods allowed to do that are &lt;strong&gt;PUT&lt;/strong&gt;, &lt;strong&gt;POST&lt;/strong&gt; or &lt;strong&gt;DELETE&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;use-plural-nouns-for-a-uri&quot;&gt;Use plural nouns for a URI&lt;/h3&gt;
+
+&lt;p&gt;As mentioned before, it is a convention to use always plural for resources and sub-resources on REST apis, but some exceptions were found in Trello’s API, such as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;POST /members/{id}/avatar&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PUT /cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;use-sub-resources-for-relationships-between-resources&quot;&gt;Use sub-resources for relationships between resources&lt;/h3&gt;
+
+&lt;p&gt;Always when we need to get a resource related to another. It is preferable to use sub-resources rather than main resource as query string. It is more declarative.&lt;/p&gt;
+
+&lt;p&gt;Examples found in Trello’s api:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GET /cards/{id}/stickers/{idSticker}&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GET /members/{id}/boards&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;use-http-headers-to-specify-inputoutput-format&quot;&gt;Use HTTP headers to specify input/output format&lt;/h3&gt;
+
+&lt;p&gt;In REST apis we can specify specific headers to identify input/output format. These would be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Content-Type&lt;/strong&gt;: The request input format send to the server in the request body.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Accept&lt;/strong&gt;: The output format accepted in the response by the client.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In case of Trello’s API, there is no need to provide neither of the headers above, cause Trello supports only JSON format and will always return objects with this format.&lt;/p&gt;
+
+&lt;p&gt;But for the input, Trello’s API only works with &lt;strong&gt;query string&lt;/strong&gt; parameters even for write HTTP methods like POST and DELETE. Example: &lt;a href=&quot;https://developers.trello.com/reference#boardsid&quot;&gt;POST /boards/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl --request POST \
+  --url 'https://api.trello.com/1/boards/?name=name&amp;amp;defaultLabels=true&amp;amp;defaultLists=true&amp;amp;keepFromSource=none&amp;amp;prefs_permissionLevel=private&amp;amp;prefs_voting=disabled&amp;amp;prefs_comments=members&amp;amp;prefs_invitations=members&amp;amp;prefs_selfJoin=true&amp;amp;prefs_cardCovers=true&amp;amp;prefs_background=blue&amp;amp;prefs_cardAging=regular&amp;amp;key=6c2c4ce603f505695348c9957ae7f789&amp;amp;token=ae767ab75666fb1c83bb0b121da74ef435c76f3309dca898ce8f93c103ec8079'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It is inconsistent in my opinion.&lt;/p&gt;
+
+&lt;h3 id=&quot;provide-users-with-filtering-and-paging-for-collections&quot;&gt;Provide users with filtering and paging for collections&lt;/h3&gt;
+
+&lt;p&gt;To avoid overload client and server with high volume and unnecessary resources, the API server should provide some sort of pagination. It is generally done by usage of query strings like &lt;em&gt;limit&lt;/em&gt; and &lt;em&gt;offset&lt;/em&gt; or &lt;em&gt;page&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are some cases that there is no pagination available, only limit of resources returned. Example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.trello.com/reference#boardsboardidlabels&quot;&gt;GET /boards/{id}/labels?fields=all&amp;amp;limit=100&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So the API could be optimized for those cases.&lt;/p&gt;
+
+&lt;h3 id=&quot;version-the-api&quot;&gt;Version the API&lt;/h3&gt;
+
+&lt;p&gt;According to the first segment of URI, Trello’s API is versioned and its current version is &lt;strong&gt;1&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://api.trello.com/1/boards
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;provide-proper-http-status-codes&quot;&gt;Provide proper HTTP status codes&lt;/h3&gt;
+
+&lt;p&gt;A RESTful API must return proper status according to action executed and the generated result. Example:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;HTTP Method&lt;/th&gt;
+      &lt;th&gt;action&lt;/th&gt;
+      &lt;th&gt;response&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;GET&lt;/td&gt;
+      &lt;td&gt;/resources/{id}&lt;/td&gt;
+      &lt;td&gt;404&lt;/td&gt;
+      &lt;td&gt;Resource not found&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;GET&lt;/td&gt;
+      &lt;td&gt;/resources/{id}&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+      &lt;td&gt;Resource found&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;POST&lt;/td&gt;
+      &lt;td&gt;/resources&lt;/td&gt;
+      &lt;td&gt;201&lt;/td&gt;
+      &lt;td&gt;Resource created&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;POST&lt;/td&gt;
+      &lt;td&gt;/resources&lt;/td&gt;
+      &lt;td&gt;400&lt;/td&gt;
+      &lt;td&gt;Invalid request&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;PUT&lt;/td&gt;
+      &lt;td&gt;/resources/{id}&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+      &lt;td&gt;Resource updated&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DELETE&lt;/td&gt;
+      &lt;td&gt;/resources/{id}&lt;/td&gt;
+      &lt;td&gt;204&lt;/td&gt;
+      &lt;td&gt;Resource removed&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The Trello’s API as the Web application are providing the prover status code in the response, but I noticed some inconsistencies. For example, when creating a resource, the API returns status code &lt;em&gt;200&lt;/em&gt; instead of &lt;em&gt;201&lt;/em&gt;.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">The goal of this article is to analyze a real world RESTful application and explain how it adheres to the 5 REST restraints.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Product Lines and Product Families</title><link href="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/" rel="alternate" type="text/html" title="Product Lines and Product Families" /><published>2019-10-20T00:00:00+01:00</published><updated>2019-10-20T00:00:00+01:00</updated><id>http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families</id><content type="html" xml:base="http://0.0.0.0:4000/software-architecture/2019/10/20/product-lines-and-product-families/">&lt;p&gt;Producing software has costs that can be reduced with code reusability. Lets talk about how the creation of “Product Lines” can help you achieve this.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -898,10 +1197,4 @@
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A class should not be forced to do what it does not do. What? Yes, the way you built interfaces can cause this side effect.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry><entry><title type="html">Dependency Inversion Principle - DIP</title><link href="http://0.0.0.0:4000/design-principles/solid/2019/09/26/dependency-inversion-principle/" rel="alternate" type="text/html" title="Dependency Inversion Principle - DIP" /><published>2019-09-26T00:00:00+01:00</published><updated>2019-09-26T00:00:00+01:00</updated><id>http://0.0.0.0:4000/design-principles/solid/2019/09/26/dependency-inversion-principle</id><content type="html" xml:base="http://0.0.0.0:4000/design-principles/solid/2019/09/26/dependency-inversion-principle/">&lt;p&gt;Avoid making classes depending on concrete class to reduce coupling. Reduce the maintenance effort and risk of your system.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;The Dependency Inversion principle says that classes should relay on generalizations rather than implementation details.&lt;/p&gt;
-
-&lt;p&gt;To accomplish this always develop oriented to interfaces, not implementation. Extract the behavior representation of classes to interfaces and abstract classes, so they can easily be replaced.&lt;/p&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">Avoid making classes depending on concrete class to reduce coupling. Reduce the maintenance effort and risk of your system.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Gabriel Felipe Soares</name></author><summary type="html">A class should not be forced to do what it does not do. What? Yes, the way you built interfaces can cause this side effect.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://0.0.0.0:4000/assets/default-social-image.png" /></entry></feed>

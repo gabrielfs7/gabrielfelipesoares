@@ -73,6 +73,10 @@
 <lastmod>2019-10-20T00:00:00+01:00</lastmod>
 </url>
 <url>
+<loc>http://0.0.0.0:4000/software-architecture/2019/11/01/explain-rest-trello/</loc>
+<lastmod>2019-11-01T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://0.0.0.0:4000/categories/</loc>
 </url>
 <url>
@@ -107,5 +111,8 @@
 </url>
 <url>
 <loc>http://0.0.0.0:4000/blog/page9/</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/blog/page10/</loc>
 </url>
 </urlset>
