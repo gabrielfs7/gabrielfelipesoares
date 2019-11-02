@@ -190,7 +190,7 @@ But for the input, Trello's API only works with **query string** parameters even
 
 ```
 curl --request POST \
-  --url 'https://api.trello.com/1/boards/?name=name&defaultLabels=true&defaultLists=true&keepFromSource=none&prefs_permissionLevel=private&prefs_voting=disabled&prefs_comments=members&prefs_invitations=members&prefs_selfJoin=true&prefs_cardCovers=true&prefs_background=blue&prefs_cardAging=regular&key=6c2c4ce603f505695348c9957ae7f789&token=ae767ab75666fb1c83bb0b121da74ef435c76f3309dca898ce8f93c103ec8079'
+  --url 'https://api.trello.com/1/boards/?name=name&defaultLabels=true&defaultLists=true&keepFromSource=none&prefs_permissionLevel=private&prefs_voting=disabled&prefs_comments=members&prefs_invitations=members&prefs_selfJoin=true&prefs_cardCovers=true&prefs_background=blue&prefs_cardAging=regular&key=SECRET&token=SECRET'
 ```
 
 It is inconsistent in my opinion.
