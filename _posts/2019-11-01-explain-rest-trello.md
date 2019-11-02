@@ -34,7 +34,7 @@ I could not find prove that Trello's has a layered architecture, but as most of 
 
 The server does not save client state during REST API interaction. It is the opposite of __Statefull__ applications that generally persist in internal storage client's session data, for example.
 
-With Trello's api the client needs to provide always its oAuth token and API key, so the server can do the authorization.
+With Trello's api the client needs to provide always its oAuth token and API key, so the server can do the authorization. The browser caches the user credentials, so server does not need to be aware of user state.
 
 **URI example**: 
 

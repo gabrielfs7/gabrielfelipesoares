@@ -269,7 +269,7 @@
 
 <p>The server does not save client state during REST API interaction. It is the opposite of <strong>Statefull</strong> applications that generally persist in internal storage client’s session data, for example.</p>
 
-<p>With Trello’s api the client needs to provide always its oAuth token and API key, so the server can do the authorization.</p>
+<p>With Trello’s api the client needs to provide always its oAuth token and API key, so the server can do the authorization. The browser caches the user credentials, so server does not need to be aware of user state.</p>
 
 <p><strong>URI example</strong>:</p>
 
